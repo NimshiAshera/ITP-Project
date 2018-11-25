@@ -1,0 +1,152 @@
+@CHARSET "ISO-8859-1";
+
+.footerFirst{
+    box-sizing: border-box;
+    clear: left;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height: 45px;
+    text-align: left;
+    font-size:23px;
+    background-color: #ccccb3;
+    box-shadow: 5px 5px #999966;
+}
+
+.footerFirst td a{
+    text-align: center;
+    //border: 1px solid black;
+    margin: auto;
+    width: 200px;
+    font-family: "Times New Roman";
+    font-weight: normal;
+    float: left;
+    color: blue;
+
+}
+
+.footerEnd{
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    margin-top: -25px;
+    min-height: 350px;
+    text-align: center;
+    background-color: #999966;
+    box-shadow: 5px 5px #999966;
+}
+
+.footerEnd .contact-box{
+    box-sizing: border-box;
+    width: 500px;
+    height: 300px;
+    //border: 2px solid black;
+    float: left;
+}
+
+.contact-box h2{
+    font-family: "Times New Roman cm";
+    font-weight: normal;
+    font-size: 30px;
+    color: white;
+    margin-top: 70px;
+}
+
+.contact-box p{
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 25px;
+    color: white;
+    padding-bottom: 2px;
+    text-align: center;
+}
+
+.footerEnd .copyrights-box{
+    box-sizing: border-box;
+    width: 500px;
+    height: 300px;
+    //border: 2px solid black;
+    float: right;
+}
+
+.copyrights-box .p-box{
+    box-sizing: border-box;
+    width: 400px;
+    height: 100px;
+    //border: 2px solid black;
+    margin: 70px auto;
+    padding-top: 40px;
+}
+
+.copyrights-box p{
+    font-family: serif;
+    font-size:20px;
+    color: white;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.footerEnd .connect-box{
+    box-sizing: border-box;
+    width: 500px;
+    height: 300px;
+    //border: 2px solid black;
+    margin: 0 auto;
+}
+
+.connect-box h2{
+    font-family: "Times New Roman cm";
+    font-weight: normal;
+    font-size: 30px;
+    color: white;
+    padding-top: 70px;
+}
+
+.connect-box table{
+    //border: 2px solid black;
+    margin: auto;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px auto;
+    border-radius: 10%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+
+.fa-rss {
+    background: #ff6600;
+    color: white;
+}

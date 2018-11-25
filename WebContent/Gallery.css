@@ -1,0 +1,48 @@
+@CHARSET "ISO-8859-1";
+
+.container{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 1420px;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100em;
+    background-color:#ccccb3;
+    box-shadow: 8px 8px #999966;
+    border: 1px solid #999966;
+}
+
+.container h1{
+    font-family: "Times New Roman";
+    padding-top: 50px;
+    //margin-left: 20px;
+    text-align: center;
+    font-size: 100px;
+    font-weight: bold;
+    color: #999966;
+    text-shadow: 2px 2px #999966;
+}
+
+.gallery{
+	margin: 10px 50px;
+}
+
+.gallery img{
+	width:250px;
+	//height:250px;
+	padding:5px;
+	filter:saturate(100%);
+	transition:ls;
+}
+
+.gallery img:hover{
+	filter:saturate(0);
+	transform:scale(1.1);
+}
+
+
+
+
+
