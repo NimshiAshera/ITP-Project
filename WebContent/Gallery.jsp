@@ -13,9 +13,7 @@
 </head>
 
 <body style="background:url(background-images/b1.jpg)">
-
 	<div class="container">
-
 		<h1>Our Gallery</h1>
 		
 		<div class="gallery">
