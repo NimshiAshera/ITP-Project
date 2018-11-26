@@ -10,39 +10,81 @@
 
 <title>header</title>
 
-<link rel="stylesheet" type="text/css" href="header2.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="h.css">
 
 </head>
-
 <body style="background-color: whitesmoke">
-
-<div class="container">
-
 	<div class="headerBar">
-		<header><img src="background-images/LOGO.jpg" height="270px" width="800px"></header>
-
-		<ul>
-			<li><a href="login.jsp">Sign in</a></li>
-			<li id="join"><a href="register.jsp">Join</a></li>
-		</ul>
-	</div>	
+			<div class="menu">
+				<a href="home.jsp">Home</a>
+				<a href="siteMap.jsp">Site Map</a>
+				<a href="#">About Us</a>
+				<a href="#">Contact Us</a>
+			
+				<ul>
+					<li><a href="login.jsp">Sign in</a></li>
+					<li id="join"><a href="register.jsp">Join</a></li>
+				</ul>
 		
-	<div class="nav">	
-		<table>
-			<tr>
-				<td><a href="home.jsp" />Home</td>
-				<td><a href="#" />Services</td>
-				<td><a href="#" />Packages</td>
-				<td><a href="#" >Booking</a></td>
-				<td><a href="Gallery.jsp" >Gallery</a></td>
-				<td><a href="#" />About Us</td>
-				<td><a href="#" />Contact Us</td>
-			</tr>
-		</table>
-	
-	</div>
-	
-</div>	
+	<div class="nav">
+			<div class="dropdown">
+				<button class="button">Things To Do??
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="#">What To Do??</a>
+					</div>	
+			</div>
+			
+			<div class="dropdown">
+				<button class="button">Things To Do??
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="#">Whale Watching</a>
+						<a href="#">Hiking</a>
+						<a href="#">Wild Safari</a>	
+						<a href="#">Beach Holidays</a>									
+						<a href="#">Spa</a>
+						<a href="#">Ayurveda</a>
+						<a href="#">Spa</a>
+					</div>
+			</div>
+			
+			<div class="dropdown">
+				<button class="button">Gallery
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="Gallery.jsp">Traveler's Gallery</a>
+					</div>	
+			</div>
+					
+			<div class="dropdown">
+				<button class="button">Plan With Our Packages
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="#">Platinum</a>
+						<a href="#">Gold</a>										
+						<a href="#">Silver</a>
+						<a href="#">Bronze</a>
+					</div>
+			</div>
 		
+			<div class="dropdown">
+				<button class="button">Plan On Your Own 
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="#">Plan Your Own Package </a>
+					</div>	
+			</div>
+																			
+			
+	</div>																		
+	</div>		
+	</div>		
 </body>
 </html>
