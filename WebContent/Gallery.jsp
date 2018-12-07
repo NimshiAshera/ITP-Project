@@ -11,11 +11,10 @@
 <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
 
 </head>
-
-<body style="background:url(background-images/b1.jpg)">
-	<div class="container">
-		<h1>Our Gallery</h1>
 		
+<body>
+	<div class="container">
+		<h1>Our Gallery</h1>	
 		<div class="gallery">
 			<a href="gallery/01.jpg" data-lightbox="my-gallery" data-title="Sigiriya Rock"><img src="gallery/01.jpg" height="180px"></a>
 			<a href="gallery/02.jpg" data-lightbox="my-gallery" data-title="Peacock"><img src="gallery/02.jpg" height="180px"></a>
@@ -54,7 +53,6 @@
 			<a href="gallery/39.jpg" data-lightbox="my-gallery" data-title="Citrus Hotel Waskaduwa"><img src="gallery/39.jpg" height="180px"></a>
 						
 			</div>
-
 	</div>
 
 </body>
