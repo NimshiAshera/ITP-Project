@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	background:url(background-images/b9.jpg);
+}
+
+.container{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 1420px;
+    padding-top: 20px;
+    margin-top: 175px;
+    margin-left: 280px;
+    margin-right: 100px;
+    height: auto;
+    min-height: 60em;
+    background-color: #ccccb3;
+    box-shadow: 5px 5px #999966;
+    border: 1px solid #999966;
+}
+
+.map{
+	padding-top:50px;
+	margin-left:300px;
+	padding-right:200px;
+}
