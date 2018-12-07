@@ -8,7 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="home.css">
+<link rel="stylesheet" type="text/css" href="homepage.css">
+<link rel="stylesheet" type="text/css" href="search.css">
 
 <title>Home</title>
 
@@ -16,6 +17,15 @@
 		<%@include file="header.jsp"%>
 <body>
 	<div class="container">
+	
+			<div class="search">
+				<h3>Search</h3>
+					<form class="example" action="/action_page.php">
+ 					<input type="text" placeholder="Search.." name="search">
+  					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+			
 			<h2>About Sri Lanka..</h2>
 				<div class="Box">
 					<div class="Box-Details">
