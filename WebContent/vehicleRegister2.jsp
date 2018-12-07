@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="vehicleRegister123.css">
+<link rel="stylesheet" type="text/css" href="vehicleRegister1.css">
 <script type="text/javascript" src=""></script>
 
 <title>Vehicle</title>
 </head>
-
-<body style="background:url(background-images/b2.jpg)">
+		<%@include file="header.jsp"%>
+<body>
 	<div class="container">
 	
 	<div class="form">
