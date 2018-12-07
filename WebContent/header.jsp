@@ -19,8 +19,8 @@
 			<div class="menu">
 				<a href="home.jsp">Home</a>
 				<a href="siteMap.jsp">Site Map</a>
-				<a href="#">About Us</a>
-				<a href="#">Contact Us</a>
+				<a href="aboutUs.jsp">About Us</a>
+				<a href="contactUs.jsp">Contact Us</a>
 			
 				<ul>
 					<li><a href="login.jsp">Sign in</a></li>
@@ -29,11 +29,22 @@
 		
 	<div class="nav">
 			<div class="dropdown">
-				<button class="button">Things To Do??
+				<button class="button">Hire To Your Step
 					<i class="fa fa-caret-down"></i>
 				</button>
 					<div class="dropdown-content">
-						<a href="#">What To Do??</a>
+						<a href="#">Hire Vehicle</a>
+					</div>	
+			</div>
+			
+			<div class="dropdown">
+				<button class="button">Where To Go??
+					<i class="fa fa-caret-down"></i>
+				</button>
+					<div class="dropdown-content">
+						<a href="#">Hotel & Resort</a>
+						<a href="#">Restaurants</a>
+						<a href="#">Traveling Places</a>
 					</div>	
 			</div>
 			
@@ -48,7 +59,6 @@
 						<a href="#">Beach Holidays</a>									
 						<a href="#">Spa</a>
 						<a href="#">Ayurveda</a>
-						<a href="#">Spa</a>
 					</div>
 			</div>
 			
