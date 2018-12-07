@@ -1,11 +1,15 @@
 @CHARSET "ISO-8859-1";
 
+body{
+	background:url(background-images/b1.jpg);
+}
+
 .container{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     width: 1420px;
     padding-top: 20px;
-    margin-top: 20px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     min-height: 100em;
