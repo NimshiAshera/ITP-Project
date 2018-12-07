@@ -20,7 +20,7 @@
     <table>
         <tr>
             <td><a href="aboutUs.jsp"/>About Us</td>
-            <td><a href="contact.jsp"/>Help & Contact </td>
+            <td><a href="contactUs.jsp"/>Help & Contact </td>
         </tr>
     </table>
 </footer>
@@ -30,13 +30,13 @@
     <div class="contact-box">
         <h2>CONTACT INFORMATION</h2>
 
-        <p>ostrich@gmail.com</p>
+        <p>eco.tours@gmail.com</p>
         <p>St Michaels Rd, Colombo</p>
     </div>
 
     <div class="copyrights-box">
         <div class="p-box">
-            <p>Copyright © 2018 Ostrich Tourist Management System</p>
+            <p>Copyright © 2018 ECO-Tours Tourism Management System</p>
             <p>About · Disclosure + Privacy Policy</p>
             <p>Web Design by November 2018</p>
         </div>
