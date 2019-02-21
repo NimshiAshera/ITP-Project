@@ -22,18 +22,18 @@ String uname=(String)session.getAttribute("username");
 					<div id="header-wrapper">
 						<div id="header">
 							<div id="logo">
-								<h1><a href="#">Sri Lankan Tour</a></h1> &nbsp; &nbsp; &nbsp;<a  href="profilepage1.jsp" ><font size="3"> Welcome Back Profile! <% out.println(session.getAttribute("username")); %></font></a>
+								<h1><a href="#">Sri Lankan Tour</a></h1> &nbsp; &nbsp; &nbsp;<a  href="hotelUpdate.jsp" ><font size="3"> Welcome Back Profile! <% out.println(session.getAttribute("username")); %></font></a>
 								                                                                                                                   
 								                                                                                                                       
 								<div id="menu">
 								<ul>
 								<li class="current_page_item"><a href="homepage.jsp">Home</a></li>
 								<li><a href="Map.jsp">Site Map</a></li>
-								<li><a href="aboutUs.jsp">About Us</a></li>
-								<li><a href="contactUs.jsp">Contact Us</a></li>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact Us</a></li>
 								<li><a href="customerLogin.jsp">Sign In</a></li>
 								<li><a href="OwnerLogout">Sign Out</a></li>
-								<li><a href="customerRegister.jsp">Join</a></li>
+								<li><a href="ownerRegister.jsp">Join</a></li>
 								</ul>
 							</div>
 						</div>
@@ -78,7 +78,7 @@ String uname=(String)session.getAttribute("username");
 					 <a href="#">Wild Safari</a>
 					 <a href="#">Beach Holidays</a>
 					 <a href="#">Spa</a>
-					 
+					 <a href="#">Ayurveda</a>
 </div>
 </div> 			
 								
@@ -94,7 +94,7 @@ String uname=(String)session.getAttribute("username");
 					 <a href="#"></a>
 					 <a href="#"></a>
 					 <a href="#"></a>
-					 <a href="gallery.jsp">Travelers Gallary</a>
+					 <a href="Gallery_we.jsp">Travelers Gallary</a>
 								
 								
 </div>

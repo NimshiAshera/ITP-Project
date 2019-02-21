@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="form-styles.css">
 <script type="text/javascript" src=""></script>
 
-<title>Vehicle</title>
+<title>Driver</title>
 </head>
 	<%@include file="header.jsp"%>
 <body>
@@ -19,14 +19,14 @@
 	
 	<form action="" method="post" enctype="multipart/form-data">
 	
-	<h2><font color ="#E91370">Register Your Vehicle Step 01</font></h2>
+	<h2><font color ="#E91370">Register As A Driver</font></h2>
 	
 								<label>First Name</label>
-                                <p><input type="text" class="form-control"  name="fusername" placeholder="First Name" required   ></p>
+                                <p><input type="text" class="form-control"  name="fname" placeholder="First Name" required   ></p>
                             
                             
                                 <label> Last Name</label>
-                               <p> <input type="text" class="form-control" name="lusername" placeholder="Last Name" required  ></p>
+                               <p> <input type="text" class="form-control" name="lname" placeholder="Last Name" required  ></p>
                             
                                                                                    
                                <label>NIC</label>
@@ -41,29 +41,42 @@
                                 <label>Contact Number</label>
                                <p> <input type="text" class="form-control"  name="phone" placeholder="011999999" required  ></p>
                                
-                                
-                                
-                                <label>User Name</label>
-                               <p> <input type="text" class="form-control"  name="username" placeholder="UserName" required  ></p>
                                
+                               <label>License Number</label>
+                               <p> <input type="text" class="form-control"  name="license" placeholder="X1111111" required  ></p>
+                               
+                               
+                               <label>Date Issued</label>
+                               <p> <input type="text" class="form-control"  name="dI" placeholder="01/01/2019" required  ></p>
+                               
+                               
+                               <label>Date Expired</label>
+                               <p> <input type="text" class="form-control"  name="dE" placeholder="01/01/2019" required  ></p>
+                               
+                               <label>Upload Image</label>
+                                <p><input id="vehicle" type="file" name="image" required ></p><br/>
+                                                                                              
+                                <label>Service Availability Status</label>
+                               <p><input type="radio"  name="part" id="part" value="a1" />Available</input></p>
+							   <p><input type="radio" name="part" id="part" value="a2" />Not available</input></p><br/>
                                 
-                              
+                               <label>User Name</label>
+                               <p> <input type="text" class="form-control"  name="uname" placeholder="UserName" required  ></p>                              
+                                                             
                                <label>Password</label>
                                <p> <input type="text" class="form-control"  name="password" placeholder="Password" required  ></p>
                               
                                 
                                
                                 <label>Confirm Password</label>
-                              <p>  <input type="text" class="form-control"  name="repassword" placeholder="Re-Password" required  ></p>
+                              <p>  <input type="text" class="form-control"  name="cPassword" placeholder="Re-Password" required  ></p>
                              
 	
-	<input type="submit" value="Next" name="submitButton"
+	<input type="submit" value="Register" name="submitButton"
 					id="sButton">		
 	</form>
 	</div>
 	</div>
 	</div>
 </body>
-	
-
 </html>

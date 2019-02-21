@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+
+body{
+	background:url(images/b9.jpg);
+}
+
+
+
+.map{
+	padding-top:50px;
+	margin-left:70px;
+	padding-right:200px;
+}

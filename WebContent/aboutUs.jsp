@@ -9,22 +9,54 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="aboutUs.css">
+
 <title>About Us</title>
 </head>
 		<%@include file="header.jsp"%>
 <body>
 	<div class="container">
-		<h2>About Us</h2>
+	
+				<h5>We look forward to welcoming you soon!!!</h5>
+				<img src="images/about.jpg" width="940px" height="300px" >				
 		
-			<div class="about">
-				<div class="Details">
-						<h3>Since 2018, ECO-Tours,
-						we are playing a  
-						</h3>
-					</div>
+	
+		<div class="content">
+			<div class="box"><img src="images/b24.jpg" >
+				<div class="details">
+					<p>	We began in 2018.Since then,ECO-Tours,
+						we dream of planning a perfect 
+						tour for you. Whether you are a foreigner or a 
+						SriLankan we are ready to take you to an unforgettable 
+						tour, from begin to end. 
+						And we have many more years in us.</p>
+				</div>
 			</div>
-	</div>
+	
+			<div class="box"><img src="images/b22.png" >
+				<div class="details">
+					<h5><u>Travel With Passion.</u></h5>
+					<p>That's is out motto.
+					And that's what sets apart our entire team,
+					our staff including guides, drivers & others,
+					we seek out and harness the <u>PASSIONATE</u>, 
+					and work together to create memories that 
+					last longer than a selfie.</p>
+				</div>
+			</div>
 			
+			<div class="box"><img src="images/b23.png" >
+				<div class="details">
+					<p> We provide a wide range of options on selecting
+						hotel & resort,traveling places, adventures,spa and  Ayurveda.Our vehicle 
+						renting system is ready to pick you from your door step/from 
+						the airport.Our guide service consist with the guides who are excellent in
+						communication in several languages & experience.</p>
+				</div>
+			</div>
+
+	</div>
+	
+	</div>
+
 </body>
-		<%@include file="footer.jsp"%>	
 </html>
