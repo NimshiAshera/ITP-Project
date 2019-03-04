@@ -65,18 +65,22 @@
                                                              
                                <label>Password</label>
                                <p> <input type="text" class="form-control"  name="password" placeholder="Password" required  ></p>
-                              
-                                
-                               
-                                <label>Confirm Password</label>
-                              <p>  <input type="text" class="form-control"  name="cPassword" placeholder="Re-Password" required  ></p>
+                                                                                        
+                               <label>Confirm Password</label>
+                               <p><input type="text" class="form-control"  name="cPassword" placeholder="Re-Password" required  ></p>
                              
-	
+							   <label>Do you agree with our <a href="terms.jsp"><u>Terms & Conditions</u></a>???</label>
+                                <p><input type="radio" id="part"  name="terms"  required  ></p>
+							   
+							   
 	<input type="submit" value="Register" name="submitButton"
 					id="sButton">		
 	</form>
 	</div>
 	</div>
 	</div>
+	
+	<%@include file="footer.jsp"%>
+	
 </body>
 </html>

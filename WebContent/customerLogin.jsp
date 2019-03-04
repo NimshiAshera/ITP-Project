@@ -32,13 +32,15 @@
 			<br/>
 			<button type="submit">Sign In</button>
 			<br/>
-			<a href="#"><p class="small">Login As A Driver</p></a>
+			<a href="driverSignin.jsp"><p class="small">Login As A Driver</p></a>
+			<a href="guideSignin.jsp"><p class="small">Login As A Tour Guide</p></a>
+			
 			<p class="small">Login As A Owner</p><br>
 			
-			
+			<a href="vehicleSignin.jsp">Vehicle Owner</a><br/>
 			<a href="">Spa..</a><br/>
-			
-			<a href="ownerSignin.jsp">Hotel</a>
+			<a href="">Restaurant</a><br/>
+			<a href="ownerSignin.jsp">Hotel & Resort</a>
 			
 			</div>
 		</div>
