@@ -12,8 +12,6 @@
 <%@include file="header.jsp"%>
 
 <body>
-
-
 					
 	<div id="wrapper">
 	<div id="page">
@@ -23,13 +21,17 @@
 					
 					<div class="post">
 					<div class="search">
-								
+					
+					<br/>			
 								
                     <form action="/action_page.php">
      
-                   <input type="text" name="search" placeholder="Search..">
-</form>
-</div>
+                   		<input type="text" name="search" placeholder="Search..">
+					
+					</form>
+					</div>
+					
+					<br/>
 				
 			       <p><img src="images/beach.jpg" width="925" height="300" alt="" class="border" />
 									
@@ -94,6 +96,9 @@
 							</li>
 							<li>
 								<h2>Attractions</h2>
+								<div class="entry">
+							<p><img src="images/horton.jpg" width="220" height="300" alt="" class="border" /> </p>
+							</div>
 								<ul>
 									<li><a href=>Kithulgala</a></li>
 									<li><a href=>Horton Plains</a></li>

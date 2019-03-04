@@ -6,36 +6,40 @@
 <link rel="stylesheet" type="text/css" href="ownerlog.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-	<title>Hotel Owner Signin</title>
-
+	<title>Tour Guide Signin</title>
 </head>
 
-<body style=background-image:url("images/tour.jpg") >
+<body style=background-image:url("images/trip.jpg") >
 
 <div class="container">
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Hotel Owner Login<span></span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">Tour Guide Login<span></span></span></h1>
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
-			<form action="OwnerLoginCheck" method="post"  >
-				<h2>Log In</h2>
+				<form action="" method="post"  >
+					
+					<h2>Log In</h2>
+				</form>
 			</div>
+			
 			<label for="username">Username</label>
 			<br/>
+			
 			<input type="text"  placeholder="Username" name="username" required autofocus>
 			<br/>
+			
 			<label for="password">Password</label>
 			<br/>
-			 <input type="text"  placeholder="Password" name="password" required>
-			 
-			  
-			<br/>
-			<span style="color:black"><%=(request.getAttribute("errmessage") == null) ? "" : request.getAttribute("errmessage")%></span>
-			<br/>
-			<button type="submit">Sign In</button>
 			
+			 <input type="text"  placeholder="Password" name="password" required>
+			 <br/>
+			 
+			 <span style="color:black"><%=(request.getAttribute("errmessage") == null) ? "" : request.getAttribute("errmessage")%></span>
+			 <br/>
+			
+			 <button type="submit">Sign In</button>
+				
 		</div>
 	</div>
 

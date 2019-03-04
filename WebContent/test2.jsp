@@ -72,7 +72,8 @@
                                 <label>Password</label>
                                <p> <input type="text" class="form-control"  name="password" placeholder="Password"></p>
                                
-                                
+                                <label>Do you agree with our <a href="terms.jsp"><u>Terms & Conditions</u></a>???</label>
+                                <p><input type="radio" id="part"  name="terms"  required  ></p>
 		
 	
 	<input type="submit" value="Submit" name="submitButton"

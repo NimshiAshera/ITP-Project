@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+
+.container{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 1000px;
+    padding-top: 0px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    min-height: 100em;
+    background-color:white;
+    box-shadow: 8px 8px #E91370;
+    border: 1px solid #E91370;;
+}
+
+.container h4{
+    font-family: "Times New Roman";
+    //padding-top: 50px;
+    //margin-left: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #E91370;;
+    text-shadow: 2px 2px #E91370;;
+}
+
+.gallery{
+	margin-left: 55px;
+    margin-right: 10px;
+}
+
+.gallery img{
+	width:210px;
+	height:150px;
+	padding:3px;
+	filter:saturate(100%);
+	transition:ls;
+}
+
+.gallery img:hover{
+	filter:saturate(0);
+	transform:scale(1.1);
+}

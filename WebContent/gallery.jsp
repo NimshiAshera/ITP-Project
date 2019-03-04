@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 
-<link rel="stylesheet" type="text/css" href="gallery.css">
+<link rel="stylesheet" type="text/css" href="gallery_we.css">
 <link rel="stylesheet" type="text/css" href="lightbox.min.css"> 
 <script type="text/javascript" src="lightbox-plus-jquery.min.js"></script>
 
@@ -63,7 +63,9 @@
 			<a href="gallery/44.jpg" data-lightbox="my-gallery" data-title="Pasikuda Beach"><img src="gallery/44.jpg" height="180px"></a>
 						
 			</div>
+				
 		</div>
-
+		<%@include file="footer.jsp"%>
 </body>
+
 </html>

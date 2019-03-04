@@ -29,7 +29,7 @@
 
  <a href="#"><font size="6">Please Select Your Position..</font></a><br><br><br><br>
 <fieldset>
-<legend><span class="number">1</span> <a href="#"><font size="5">Customer </font></a></legend>
+<legend><span class="number">1</span> <a href="#"><font size="5">Traveler </font></a></legend>
 </fieldset>
  
  <fieldset>
@@ -45,28 +45,44 @@
 </fieldset>
 
   <fieldset>
-<legend><span class="number">5</span> <a href="profilePage.jsp"><font size="5">Hotel Owner</font></a></legend>
+<legend><span class="number">5</span> <a href="profilePage.jsp"><font size="5">Hotel & Resort Owner</font></a></legend>
 </fieldset>
 
  <fieldset>
-<legend><span class="number">6</span> <a href="#"><font size="5">Resort Owner</font></a></legend>
-</fieldset>
-
-
- <fieldset>
-<legend><span class="number">7</span> <a href="#"><font size="5">Restaurant Owner</font></a></legend>
+<legend><span class="number">6</span> <a href="#"><font size="5">Restaurant Owner</font></a></legend>
 </fieldset>
 
 
 <fieldset>
-<legend><span class="number">8</span> <a href="#"><font size="5">Spa Owner</font></a></legend>
+<legend><span class="number">7</span> <a href="#"><font size="5">Spa Owner</font></a></legend>
 </fieldset>
 
  <fieldset>
-<legend><span class="number">9</span> <a href="#"><font size="5">Adventure Company Owner</font></a></legend>
+<legend><span class="number">8</span> <a href="#"><font size="5">Adventure Company Owner</font></a></legend>
 </fieldset>
 
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <fieldset>
+<legend><span class="number">9</span> <a href="#"><font size="5">Company Owner</font></a></legend>
+</fieldset>
+
+
+<fieldset>
+<legend><span class="number">10</span> <a href="#"><font size="5">Accountant</font></a></legend>
+</fieldset>
+
+ <fieldset>
+<legend><span class="number">11</span> <a href="#"><font size="5">Tour Package Manager</font></a></legend>
+</fieldset>
+
+ <fieldset>
+<legend><span class="number">12</span> <a href="#"><font size="5">Event Manager</font></a></legend>
+</fieldset>
+
+ <fieldset>
+<legend><span class="number">13</span> <a href="#"><font size="5">Booking Handler</font></a></legend>
+</fieldset>
+
+ <br><br><br><br><br><br><br><br><br><br><br>
 
 			
 			</div>

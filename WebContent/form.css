@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+/*---terms & conditions---*/
+
+.terms h2{
+	font-size: 2.5em ;
+	color: #ff4da6 ;
+	font-family: 'Oswald', sans-serif ;
+	text-align: center;
+}
+
+.terms p{
+	font-size: 1.5em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-left: 10px;
+}

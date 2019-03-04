@@ -55,16 +55,27 @@ String uname=(String)session.getAttribute("username");
                                 <a href="#"></a>
                                 <a href="#"></a>
                                 <a href="#">Hire Vehicle</a>
+                                <a href="#">Hire Driver</a>
+                                <a href="#">Hire Tour Guide</a>
 </div>
                         
 </div>
                    
-                              <div class="subnav">
+                                <div class="subnav">
 								<button class="subnavbtn"><u><li>Where To Go??</li><i class="fa fa-caret-down"></i></u></button>
-								<div class="subnav-content">
-					 <a href="hotel&Resorts.jsp">Hotel & Resort</a>
-					 <a href="Restaurants.jsp">Restaurants</a>
-					 <a href="#">Traveling Places</a>
+								<div class="subnav-content">							
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+                                <a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="hotel&Resorts.jsp">Hotel & Resort</a>
+					 			<a href="Restaurants.jsp">Restaurants</a>
+					 			<a href="#">Traveling Places</a>
 </div>
 </div> 		
 								
@@ -73,11 +84,19 @@ String uname=(String)session.getAttribute("username");
 								<div class="subnav">
 								<button class="subnavbtn"><u><li>Things To Do??</li><i class="fa fa-caret-down"></i></u></button>
 								<div class="subnav-content">
-					 <a href="#">Whale Watching</a>
-					 <a href="#">Hiking</a>
-					 <a href="#">Wild Safari</a>
-					 <a href="#">Beach Holidays</a>
-					 <a href="#">Spa</a>
+								<a href="#"></a>
+                                <a href="#"></a>
+                                <a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#">Whale Watching</a>
+					 			<a href="#">Hiking</a>
+					 			<a href="#">Wild Safari</a>
+					 			<a href="#">Beach Holidays</a>
+					 			<a href="#">Spa</a>
 					 
 </div>
 </div> 			
@@ -85,16 +104,22 @@ String uname=(String)session.getAttribute("username");
 								<div class="subnav">
 								<button class="subnavbtn"><u><li>Gallary</li><i class="fa fa-caret-down"></i></u></button>
 								<div class="subnav-content">
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="gallery.jsp">Travelers Gallary</a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="gallery.jsp">Travelers Gallary</a>
 								
 								
 </div>
@@ -104,34 +129,40 @@ String uname=(String)session.getAttribute("username");
 								<div class="subnav">
 								<button class="subnavbtn"><u><li> Our Packages</li><i class="fa fa-caret-down"></i></u></button>
 								<div class="subnav-content">
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>			
-					 <a href="#">Platinum</a>
-					 <a href="#">Gold</a>
-					 <a href="#">Silver</a>
-					 <a href="#">Bronze</a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>				 			
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>
+					 			<a href="#"></a>			
+					 			<a href="#">Platinum</a>
+					 			<a href="#">Gold</a>
+					 			<a href="#">Silver</a>
+					 			<a href="#">Bronze</a>
 					 
 </div>
 </div> 								
 								<div class="subnav">
 								
-								<button class="subnavbtn"><u><li>Plan On Your Own Package</li><i class="fa fa-caret-down"></i></u></button>
-											<div class="subnav-content">
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="#"></a>
-					 <a href="">Plan Your Own Package</a>
+								<button class="subnavbtn"><u><li>Book / Request On Your Own</li><i class="fa fa-caret-down"></i></u></button>
+								
+								<div class="subnav-content">					 	
+					 			<a href="#">Event Request</a>
+					 			<a href="">Vehicle Booking</a>
+					 			<a href="#">Driver Booking</a>
+					 			<a href="#">Tour Guide Booking</a>
+					 			<a href="#">Hotel & Resort Booking</a>
+					 			<a href="#">Restaurant Booking</a>
+					 			<a href="#">Spa Booking</a>
+					 			<a href="">Adventure Booking</a>					 			
+					 			<a href="#">Tour Package Booking</a>
 					 
 							</ul>
 						</div>

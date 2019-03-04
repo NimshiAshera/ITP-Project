@@ -48,6 +48,8 @@
                                 <label>Facilities</label>
                                 <p><textarea id="vehicle" type="text" placeholder="Features" name="features" ></textarea></p>                                                                                                                        
 	
+								<label>Do you agree with our <a href="terms.jsp"><u>Terms & Conditions</u></a>???</label>
+                                <p><input type="radio" id="part"  name="terms"  required  ></p>
 				
 	<input type="submit" value="Register" name="submitButton" id="sButton">	
 	
@@ -55,7 +57,8 @@
 	</div>
 	</div>
 	</div>
-</body>
 	
-
+	<%@include file="footer.jsp"%>
+	
+</body>
 </html>
