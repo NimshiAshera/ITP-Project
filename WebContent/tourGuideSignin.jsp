@@ -6,26 +6,24 @@
 <link rel="stylesheet" type="text/css" href="login-styles.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-	<title>Driver Signin</title>
-
+	<title>Tour Guide Signin</title>
 </head>
 
 
-<body style=background-image:url("background/drive.jpg") >
+<body style=background-image:url("background/trip.jpg") >
 
 <div class="container">
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Driver Login<span></span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">Tour Guide Login<span></span></span></h1>
 		</div>
 		
 		<form action="loginCheck" method="post"  >
 		
 		<div class="login-box animated fadeInUp">
-			<div class="box-header">
-					
-					<h2>Log In</h2>
+			<div class="box-header">			
 				
+					<h2>Log In</h2>
+			
 			</div>
 			
 			<label for="username">Username</label>
@@ -45,8 +43,7 @@
 			
 			 <button type="submit">Sign In</button>
 				
-		
-	</div>
+		</div>
 	</form>
 </div>
 </body>

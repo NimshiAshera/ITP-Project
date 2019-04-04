@@ -3,15 +3,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="log.css">
+<link rel="stylesheet" type="text/css" href="login-styles.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
+<title>Customer</title>
 </head>
-<body>
+
+<body style=background-image:url("background/90.jpg")>
+
 <div class="container">
+	
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Login<span></span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">Login As Customer<span></span></span></h1>
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
@@ -33,14 +37,9 @@
 			<button type="submit">Sign In</button>
 			<br/>
 			<a href="driverSignin.jsp"><p class="small">Login As A Driver</p></a>
-			<a href="guideSignin.jsp"><p class="small">Login As A Tour Guide</p></a>
-			
-			<p class="small">Login As A Owner</p><br>
-			
-			<a href="vehicleSignin.jsp">Vehicle Owner</a><br/>
-			<a href="">Spa..</a><br/>
-			<a href="">Restaurant</a><br/>
-			<a href="ownerSignin.jsp">Hotel & Resort</a>
+			<a href="tourGuideSignin.jsp"><p class="small">Login As A Tour Guide</p></a>
+			<a href="ownerSignin.jsp"><p class="small">Login As Owner </p></a>
+						
 			
 			</div>
 		</div>

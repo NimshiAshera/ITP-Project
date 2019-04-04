@@ -39,15 +39,15 @@
 				}
 			
 			
-			var nic = document.form1.nic.value;
-			var NIC =  /^[0-9]{9}[vV]$/;
+			var pass = document.form1.nic.value;
+			var Pass =  /^[0-15]{15}$/;
 			
 			
-				if(nic==""){
-					alert("Please insert the NIC");
+				if(pass==""){
+					alert("Please insert the Passport No");
 					return false;
-				}else if(!nic.match(NIC)){
-					alert("Please insert a valid NIC");
+				}else if(!pass.match(Pass)){
+					alert("Please insert a valid Passport No");
 					return false;
 				}
 				
@@ -114,7 +114,7 @@
 
 </script>
 
-<title>Local Customer</title>
+<title>Foreign Customer</title>
 
 </head>
 	
@@ -180,7 +180,7 @@
 	
 	<form action="" name="form1" method="post" enctype="multipart/form-data" onSubmit="return validation()">
 	
-	<i style='font-size:48px' class='fas'>&#xf183;</i><font color ="#00cc7a" size="8"> Customer Registration</font>
+	<i style='font-size:48px' class='fas'>&#xf183;</i><font color ="#00cc7a" size="8"> Foreign Customer Registration</font>
  
 		<label>First Name</label>
 		<p><input type="text" class="form-control"  name="fname" id="fname" placeholder="Jone"   ></p>
@@ -188,8 +188,8 @@
 		<label> Last Name</label>
 		<p> <input type="text" class="form-control" name="lname" id="lname" placeholder="Silva"  ></p>
                             
-		<label>NIC</label>
-		<p> <input type="text" class="form-control"  name="nic" id="nic" placeholder="123456789V"   ></p>
+		<label>Passport No</label>
+		<p> <input type="text" class="form-control"  name="pass" id="pass" placeholder="123456789"   ></p>
                                
 		<label>Upload Image</label>
 		<p><input id="driver" type="file" name="avatar" id="avatar"></p><br/>

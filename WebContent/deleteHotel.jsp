@@ -47,7 +47,6 @@ tr:nth-child(even) {
 
 
 </head>
-<%@include file="test4.jsp"%>
 
 <body>
 
@@ -69,7 +68,7 @@ tr:nth-child(even) {
             
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false","root","root");
    
-            PreparedStatement ps = con.prepareStatement("select * from hotel2 where username='"+username+"'");
+            PreparedStatement ps = con.prepareStatement("select * from hotel10 where username='"+username+"'");
             
                ResultSet rs = ps.executeQuery();
                rs.next();
@@ -88,7 +87,7 @@ tr:nth-child(even) {
 			<tr></tr>
 			<tr></tr>
 			<tr>
-				<td>Hotel OR Restaurant:</td>
+				<td>Hotel ,Restaurant Or Resort:</td>
 				<td><%=rs.getString(1)%></td>
 			</tr>
 			<tr>
@@ -96,32 +95,63 @@ tr:nth-child(even) {
 				<td><%=rs.getString(2)%></td>
 			</tr>
 			<tr>
-				<td>Price:</td>
+				<td>Hotel_ID:</td>
 				<td><%=rs.getString(3)%></td>
 			</tr>
 			<tr>
-				<td>Contact Number:</td>
-				<td><%=rs.getString(4)%></td>
-			</tr>
+				<td>Image:</td>
+				<td><img src="<%=rs.getString("imagelocation")%>"></td>
 			<tr>
-				<td>Hotel ID:</td>
+				<td>Facilities:</td>
 				<td><%=rs.getString(5)%></td>
 			</tr>
 			<tr>
-				<td>Address:</td>
+				<td>Activities:</td>
 				<td><%=rs.getString(6)%></td>
 			</tr>
 			
 			
 			<tr>
-				<td>User Name:</td>
+				<td>Food:</td>
 				<td><%=rs.getString(7)%></td>
 			</tr>
 			<tr>
-				<td>Password:</td>
+				<td>Reception Services:</td>
 				<td><%=rs.getString(8)%></td>
 
 			</tr>
+			<tr>
+				<td>Cleaning Services:</td>
+				<td><%=rs.getString(9)%></td>
+
+			</tr>
+			<tr>
+				<td>Pool:</td>
+				<td><%=rs.getString(10)%></td>
+
+			</tr>
+			<tr>
+				<td>Rooms:</td>
+				<td><%=rs.getString(11)%></td>
+
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td><%=rs.getString(12)%></td>
+
+			</tr>
+			<tr>
+				<td>User Name:</td>
+				<td><%=rs.getString(13)%></td>
+
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><%=rs.getString(14)%></td>
+
+			</tr>
+			
+			
 			<tr><td></td>
 				<td><br><br><input type="submit" value="DELETE"></td>
 			</tr>
@@ -146,13 +176,12 @@ tr:nth-child(even) {
         %>
  
 </div>
-					
 					</div>
 					</div>
 					</div>
 					</div>
 					</div>
 					</div>
-<%@include file="footer.jsp"%>
+
 </body>
 </html>

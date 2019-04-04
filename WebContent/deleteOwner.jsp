@@ -47,7 +47,6 @@ tr:nth-child(even) {
 
 
 </head>
-<%@include file="header.jsp"%>
 
 <body>
 
@@ -160,6 +159,6 @@ tr:nth-child(even) {
 					</div>
 					</div>
 					</div>
-<%@include file="footer.jsp"%>
+
 </body>
 </html>

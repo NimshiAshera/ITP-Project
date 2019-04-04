@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 .form-style-5{
-	max-width: 800px;
+	max-width: 500px;
 	padding: 10px 20px;
 	background: #f4f7f8;
 	margin: 10px auto;
@@ -60,7 +60,7 @@
 	height:35px;
 }
 .form-style-5 .number {
-	background: #e6fff5;
+	background: #E91370;
 	color: #fff;
 	height: 30px;
 	width: 30px;
@@ -79,21 +79,22 @@
 	position: relative;
 	display: block;
 	padding: 19px 39px 18px 39px;
-	color: #000;
+	color: #FFF;
 	margin: 0 auto;
-	background:  #e6fff5;
+	background: #E91370;
 	font-size: 18px;
 	text-align: center;
 	font-style: normal;
 	width: 100%;
-	border: 1px solid  #00cc7a;
+	border: 1px solid #E91370;
 	border-width: 1px 1px 3px;
 	margin-bottom: 10px;
 }
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
-	background:  #00cc7a;
+	background: #E91370;
 }
+
 
 

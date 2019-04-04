@@ -54,13 +54,28 @@
         <a href="#" class="w3-bar-item w3-button">EVENT</a>
       </div>
     </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG OUT</a>
+    <a href="logoutCheck" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG OUT</a>
+    			
     			<%
 					if (session.getAttribute("loggedAs") == "driver") {
 				%>
-    <a href="DriverDetails" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Welcome To Your Profile</a>
-    			<% }
+    			<a href="DriverDetails" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Welcome To Your Profile</a>
+    			  			
+    			<%
+					}
+    				if (session.getAttribute("loggedAs") == "guide") {
+				%>
+				<a href="TourGuideDetails" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Welcome To Your Profile</a>
+    			
+    			<% 
+    				}
+    				if (session.getAttribute("loggedAs") == "vehicle") {
+    			%>	
+    			<a href="TourGuideDetails" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Welcome To Your Profile</a>
+    			<% 
+    				}
     			%>
+    					
     <a href="customerLogin.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG IN</a>   
     <a href="customerRegister.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">SIGN IN</a>
     

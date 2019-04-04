@@ -70,7 +70,7 @@ tr:nth-child(even) {
             
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false","root","root");
    
-            PreparedStatement ps = con.prepareStatement("select * from hotel10 where username='"+username+"'");
+            PreparedStatement ps = con.prepareStatement("select * from spa where username='"+username+"'");
             
                ResultSet rs = ps.executeQuery();
                rs.next();
@@ -78,96 +78,84 @@ tr:nth-child(even) {
                
         %>
 
-		<form method="post" action="UpdateHotel">
+		<form method="post" action="UpdateSpa">
 	
 
 		<table width="800" border="0" align="center">
-		    <br><center><font size="4">Update Hotel & Resort Details</font></center>
+		    <br><center><font size="4">Update Spa Details</font></center>
 			<br><br><center><font size="5">Detail Information of <%=rs.getString(1)%> <%=rs.getString(2)%></font></center>
 			<tr></tr>
 			<tr></tr>
 			<tr></tr>
 			<tr></tr>
 			<tr>
-				<td>Hotel & Resort:</td>
-				<td><input type="text" name="part" id="part"
+				
+			<tr>
+				<td>Spa Name:</td>
+				<td><input type="text" name="name" id="name"
 					value="<%=rs.getString(1)%>" disabled /></td>
 			</tr>
 			<tr>
-				<td>Hotel Or Restaurant Name:</td>
-				<td><input type="text" name="name" id="name"
-					value="<%=rs.getString(2)%>" disabled /></td>
-			</tr>
-			<tr>
 				<td>Hotel ID:</td>
-				<td><input type="text" name="hotel_id" id="hotel_id"
-					value="<%=rs.getString(3)%>" disabled/></td>
+				<td><input type="text" name="id" id="id"
+					value="<%=rs.getString(2)%>" disabled/></td>
 			</tr>
 			
 			<tr>
 				<td>Image:</td>
 				<td><input type="file" name="avatar" id="avatar"
-					value="<%=rs.getString(4)%>"disabled /></td>
+					value="<%=rs.getString(3)%>"disabled /></td>
 			</tr>
 			<tr>
-				<td>Facilities:</td>
-				<td><input type="text" name="facilities" id="facilities" 
+				<td>Facials:</td>
+				<td><input type="text" name="facials" id="facials" 
+					value="<%=rs.getString(4)%>" /></td>
+			</tr>
+			<tr>
+				<td>Waxing:</td>
+				<td><input type="text" name="waxing" id="waxing"
 					value="<%=rs.getString(5)%>" /></td>
 			</tr>
 			<tr>
-				<td>Activities:</td>
-				<td><input type="text" name="activities" id="activities"
+				<td>Body:</td>
+				<td><input type="text" name="body" id="body"
 					value="<%=rs.getString(6)%>" /></td>
 			</tr>
 			<tr>
-				<td>Food:</td>
-				<td><input type="text" name="food" id="food"
+				<td>Massage:</td>
+				<td><input type="text" name="massage" id="massage"
 					value="<%=rs.getString(7)%>" /></td>
 			</tr>
 			<tr>
-				<td>Reception Services:</td>
-				<td><input type="text" name="re_services" id="re_services"
+				<td>Tinting:</td>
+				<td><input type="text" name="tinting" id="tinting"
 					value="<%=rs.getString(8)%>" /></td>
 			</tr>
-			<tr>
-				<td>Cleaning Services:</td>
-				<td><input type="text" name="cleaning_services" id="cleaning_services"
-					value="<%=rs.getString(9)%>" /></td>
-			</tr>
-			<tr>
-				<td>Pool:</td>
-				<td><input type="text" name="pool" id="pool"
-					value="<%=rs.getString(10)%>" /></td>
-			</tr>
-			<tr>
-				<td>Rooms:</td>
-				<td><input type="text" name="rooms" id="rooms"
-					value="<%=rs.getString(11)%>" /></td>
-			</tr>
+			
 			
 			
 			<tr>
 				<td>Address:</td>
 				<td><input type="text" name="address" id="address"
-					value="<%=rs.getString(12)%>" disabled /></td>
+					value="<%=rs.getString(9)%>" disabled /></td>
 			</tr>
 			
 			<tr>
 				<td>User Name:</td>
 				<td><input type="text" name="username" id="username"
-					value="<%=rs.getString(13)%>" disabled/></td>
+					value="<%=rs.getString(10)%>" disabled/></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
 				<td><input type="text" name="password" id="password"
-					value="<%=rs.getString(14)%>" disabled/></td>
+					value="<%=rs.getString(11)%>" disabled/></td>
 
 			</tr>
 			<tr><td><input type="submit" value="Update"></td>
 			
 		</table>
 	</form>
-	<br><center><a href="deleteHotel.jsp"><font size="5">Delete My Hotel Details</font></a></center>
+	<br><center><a href="deleteSpa.jsp"><font size="5">Delete My Hotel Details</font></a></center>
 	
 	        <%
               

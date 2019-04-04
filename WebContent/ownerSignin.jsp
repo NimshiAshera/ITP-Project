@@ -3,19 +3,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="ownerlog.css">
+<link rel="stylesheet" type="text/css" href="login-styles.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-	<title>Hotel Owner Signin</title>
-
+<title>Owner</title>
 </head>
 
-<body style=background-image:url("images/tour.jpg") >
+<body style=background-image:url("background/vehicle.jpg") >
 
 <div class="container">
+
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Hotel Owner Login<span></span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">Owner Login<span></span></span></h1>
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">

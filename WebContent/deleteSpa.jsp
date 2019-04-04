@@ -4,6 +4,7 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -56,10 +57,7 @@ tr:nth-child(even) {
 				<div id="page-content">
 					
 					<div class="post">
-					<div class="form-style-5">
-					
-					
-	<%
+					<%
   if(session.getAttribute("username") != null){
 	  String username = (String) session.getAttribute("username");
 	  
@@ -70,7 +68,7 @@ tr:nth-child(even) {
             
            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false","root","root");
    
-            PreparedStatement ps = con.prepareStatement("select * from owner where username='"+username+"'");
+            PreparedStatement ps = con.prepareStatement("select * from spa where username='"+username+"'");
             
                ResultSet rs = ps.executeQuery();
                rs.next();
@@ -78,75 +76,78 @@ tr:nth-child(even) {
                
         %>
 
-		<form method="post" action="UpdateOwner">
+		<form action="DelSpa">
 	
 
-		<table width="800" border="0" align="center">
-		    <br><center><font size="4">Update Owner Details</font></center>
-			<br><br><center><font size="5">Detail Information of <%=rs.getString(1)%> <%=rs.getString(2)%></font></center>
+		<table width="800px" border="0" align="center">
+			 <br><br><center><font size="4">Delete Spa Details</font></center>
+			<br><br><center><font size="5">Detail Information of <%=rs.getString(1)%> <%=rs.getString(2)%></font></center><br><br>
 			<tr></tr>
 			<tr></tr>
 			<tr></tr>
 			<tr></tr>
+			
+				
 			<tr>
-				<td>Customer First Name:</td>
-				<td><input type="text" name="Fname" id="Fname"
-					value="<%=rs.getString(1)%>" disabled /></td>
+				<td>Name:</td>
+				<td><%=rs.getString(1)%></td>
 			</tr>
 			<tr>
-				<td>Customer Last Name:</td>
-				<td><input type="text" name="Lname" id="Lname"
-					value="<%=rs.getString(2)%>" disabled /></td>
+				<td>Spa ID:</td>
+				<td><%=rs.getString(2)%></td>
 			</tr>
 			<tr>
-				<td>Address:</td>
-				<td><input type="text" name="Address" id="Address"
-					value="<%=rs.getString(3)%>" /></td>
+				<td>Image:</td>
+				<td><img src="<%=rs.getString("imagelocation")%>"></td>
+			<tr>
+				<td>Facials:</td>
+				<td><%=rs.getString(4)%></td>
 			</tr>
 			<tr>
-				<td>National Identity card No:</td>
-				<td><input type="text" name="NIC" id="NIC"
-					value="<%=rs.getString(4)%>" disabled/></td>
+				<td>Waxing:</td>
+				<td><%=rs.getString(5)%></td>
+			</tr>
+			
+			
+			<tr>
+				<td>Body:</td>
+				<td><%=rs.getString(6)%></td>
 			</tr>
 			<tr>
-				<td>Gender:</td>
-				<td><input type="text" name="Gender" id="Gender"
-					value="<%=rs.getString(5)%>" disabled/></td>
+				<td>Massage:</td>
+				<td><%=rs.getString(7)%></td>
+
 			</tr>
 			<tr>
-				<td>Date Of Birth:</td>
-				<td><input type="text" name="DOB" id="DOB"
-					value="<%=rs.getString(6)%>" />yyyy-mm-dd</td>
-			</tr>
-			<tr>
-				<td>Email Address:</td>
-				<td><input type="text" name="Email" id="Email"
-					value="<%=rs.getString(7)%>" /></td>
-			</tr>
-			<tr>
-				<td>Phone Number:</td>
-				<td><input type="text" name="PhoneNo" id="PhoneNo"
-					value="<%=rs.getString(8)%>" /></td>
+				<td>Tinting:</td>
+				<td><%=rs.getString(8)%></td>
+
 			</tr>
 			
 			<tr>
+				<td>Address:</td>
+				<td><%=rs.getString(9)%></td>
+
+			</tr>
+			<tr>
 				<td>User Name:</td>
-				<td><input type="text" name="username" id="username"
-					value="<%=rs.getString(9)%>" disabled/></td>
+				<td><%=rs.getString(10)%></td>
+
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type="text" name="password" id="password"
-					value="<%=rs.getString(10)%>" /></td>
+				<td><%=rs.getString(11)%></td>
 
 			</tr>
-			<tr><td><input type="submit" value="Update"></td>
-			<td><a href="hotelUpdate.jsp"><font size="4"> NEXT ---> Update My Hotel & Resort Details</font></a></td></tr>
-			<td><a href="spaUpdate.jsp"><font size="4"> NEXT ---> Update Spa Details</font></a></td></tr>
+			
+			
+			<tr><td></td>
+				<td><br><br><input type="submit" value="DELETE"></td>
+			</tr>
+		
 		</table>
 	</form>
-	<br><center><a href="deleteOwner.jsp"><font size="5">Delete My Details</font></a></center>
-	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	        <%
               
       rs.close();
@@ -162,8 +163,6 @@ tr:nth-child(even) {
 }
 
         %>
-
-
  
 </div>
 					

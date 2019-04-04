@@ -56,7 +56,7 @@
     </div>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG OUT</a>
     <a href="customerLogin.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG IN</a>   
-    <a href="customerRegister.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">SIGN IN</a>
+    <a href="Register.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">SIGN IN</a>
     
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
@@ -110,12 +110,7 @@
       <h3>Mirissa</h3> 
     </div>
   </div>
-    <div class="mySlides w3-display-container w3-center">
-    <img src="images/11.jpg" style="width:100%; height:980px">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Deniyaye</h3> 
-    </div>
-  </div>
+    
   <!-- About SriLanka -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:900px" id="band">
     <h2 class="w3-wide">ABOUT PARADISE</h2>
