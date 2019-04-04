@@ -49,7 +49,7 @@ public class DriverImage extends HttpServlet {
 		Driver driver=new Driver();
 		
 		HttpSession session=request.getSession();  
-		driver.setNic((String)session.getAttribute("nic"));
+		driver.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
@@ -57,7 +57,7 @@ public class DriverImage extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select avatar,path from driver where nic = '"+ driver.getNic() +"'";
+			String sql = "select avatar,path from driver where username = '"+ driver.getUsername() +"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){

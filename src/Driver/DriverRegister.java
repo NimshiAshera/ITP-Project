@@ -103,8 +103,8 @@ public class DriverRegister extends HttpServlet {
 			
 			try {
 				Statement st = conn.createStatement();
-				String sql = "select * from driver where nic = '"
-						+ driver.getNic() + "'";
+				String sql = "select * from driver where username = '"
+						+ driver.getUsername() + "'";
 				ResultSet rs = st.executeQuery(sql);
 
 				if (rs.next()) {
@@ -115,13 +115,6 @@ public class DriverRegister extends HttpServlet {
 			   
 	           }
 
-				else if (!driver.getNic().matches("^[0-9]{9}[vV]$")) {
-					Object message = "Invalid NIC.";
-					request.setAttribute("modelExist", message);
-					request.getRequestDispatcher("/driverRegister.jsp").forward(
-							request, response);
-				
-				}
 
 				else  {
 					String sql2 = "insert into driver (fname,lname,nic,email,phone,avatar,path,license,dI,dE,part,terms,username,password)"

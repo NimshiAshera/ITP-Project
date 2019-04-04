@@ -1,4 +1,4 @@
-package Driver;
+package TourGuide;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,18 +13,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Driver.DBManager;
+import TourGuide.TourGuide;
 
 /**
- * Servlet implementation class DriverDetails
+ * Servlet implementation class TourGuideImage
  */
-@WebServlet("/DriverDetails")
-public class DriverDetails extends HttpServlet {
+@WebServlet("/TourGuideImage")
+public class TourGuideImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DriverDetails() {
+    public TourGuideImage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,52 +36,37 @@ public class DriverDetails extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
 		
-		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		Driver driver=new Driver();
+		TourGuide guide=new TourGuide();
 		
 		HttpSession session=request.getSession();  
-		driver.setUsername((String)session.getAttribute("username"));
+		guide.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
 		
-		//System.out.println("worked");
-		
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select * from driver where username = '"+ driver.getUsername()+"'";
+			String sql = "select avatar,path from tourguide where username = '"+ guide.getUsername() +"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){
-				  
-				driver.setFname(rs.getString(1));
-				driver.setLname(rs.getString(2));
-				driver.setNic(rs.getString(3));
-				driver.setEmail(rs.getString(4));
-				driver.setPhone(rs.getString(5));
-				driver.setAvatar(rs.getString(6));
-				driver.setPath(rs.getString(7));
-				driver.setLicense(rs.getString(8));
-				driver.setdI(rs.getString(9));
-				driver.setdE(rs.getString(10));
-				driver.setPart(rs.getString(11));
-				driver.setTerms(rs.getString(12));
-				driver.setUsername(rs.getString(13));
-				driver.setPassword(rs.getString(14));
+				
+				guide.setAvatar(rs.getString(1));
+				guide.setPath(rs.getString(2));
+				
 			}
-			System.out.println("worked");
 			
-			request.setAttribute("driver", driver);
-			request.getRequestDispatcher("/driverProfiles.jsp").forward(request,response);
+			request.setAttribute("guide", guide);
+			request.getRequestDispatcher("/tourGuideImageUpdate.jsp").forward(request,response);
 		}
 		catch(Exception p){
 			System.out.println(p);
 		}
+		
 	}
 
 	/**
@@ -87,7 +74,7 @@ public class DriverDetails extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

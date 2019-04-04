@@ -1,4 +1,4 @@
-package Driver;
+package TourGuide;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,17 +14,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Driver.DBManager;
+import TourGuide.TourGuide;
+
 /**
- * Servlet implementation class DeleteDriver
+ * Servlet implementation class DeleteTourGuide
  */
-@WebServlet("/DeleteDriver")
-public class DeleteDriver extends HttpServlet {
+@WebServlet("/DeleteTourGuide")
+public class DeleteTourGuide extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteDriver() {
+    public DeleteTourGuide() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,9 +43,9 @@ public class DeleteDriver extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		Driver driver = new Driver();
+		TourGuide guide = new TourGuide();
 		
-		driver.setUsername((String)session.getAttribute("username"));
+		guide.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn= db.getConnection();
@@ -51,9 +54,9 @@ public class DeleteDriver extends HttpServlet {
 				write.write("Connection Not Established");
 		
 		else {
-				write.write("Connection Established"+driver.getUsername());
+				write.write("Connection Established"+guide.getUsername());
 			
-				String sql = "delete from driver where username='"+driver.getUsername()+"'";
+				String sql = "delete from tourguide where username='"+guide.getUsername()+"'";
 				try {
 					Statement st = conn.createStatement();
 					st.executeUpdate(sql);
@@ -70,8 +73,6 @@ public class DeleteDriver extends HttpServlet {
 				
 			
 		}
-		
-		
 	}
 
 	/**

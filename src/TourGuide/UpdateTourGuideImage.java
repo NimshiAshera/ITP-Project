@@ -1,4 +1,4 @@
-package Driver;
+package TourGuide;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,19 +17,21 @@ import javax.servlet.http.Part;
 
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
+import Driver.DBManager;
+import Driver.Driver;
 
 /**
- * Servlet implementation class UpdateDriverImage
+ * Servlet implementation class UpdateTourGuideImage
  */
-@WebServlet("/UpdateDriverImage")
+@WebServlet("/UpdateTourGuideImage")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
-public class UpdateDriverImage extends HttpServlet {
+public class UpdateTourGuideImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateDriverImage() {
+    public UpdateTourGuideImage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,11 +50,12 @@ public class UpdateDriverImage extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		Driver driver = new Driver();
+		
+		TourGuide guide = new TourGuide();
 
 		HttpSession session = request.getSession();
 
-		driver.setUsername((String) session.getAttribute("username"));
+		guide.setUsername((String) session.getAttribute("username"));
 
 		response.setContentType("text/html");
 
@@ -60,11 +63,11 @@ public class UpdateDriverImage extends HttpServlet {
 
 		if (ServletFileUpload.isMultipartContent(request)) {
 			Part part = request.getPart("avatar");
-			driver.setAvatar(driver.extractAvatar(part));
-			driver.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\driver"
-					+ File.separator + driver.getAvatar());
-			File fileSaveDir = new File(driver.getPath());
-			part.write(driver.getPath() + File.separator);
+			guide.setAvatar(guide.extractAvatar(part));
+			guide.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\tourguide"
+					+ File.separator + guide.getAvatar());
+			File fileSaveDir = new File(guide.getPath());
+			part.write(guide.getPath() + File.separator);
 		}
 
 
@@ -75,16 +78,16 @@ public class UpdateDriverImage extends HttpServlet {
 			out.write("Connection Not Established");
 		} else {
 			try {
-				String sql = "update driver set " + "avatar='"
-						+ driver.getAvatar() + "'," + "path='"
-						+ driver.getPath() + "'" + " where username='" + driver.getUsername()
+				String sql = "update tourguide set " + "avatar='"
+						+ guide.getAvatar() + "'," + "path='"
+						+ guide.getPath() + "'" + " where username='" + guide.getUsername()
 						+ "'";
 
 				Statement st = conn.createStatement();
 				st.executeUpdate(sql);
 
-				session.setAttribute("loggedAs", "driver");
-				session.setAttribute("avatar", driver.getAvatar());
+				session.setAttribute("loggedAs", "guide");
+				session.setAttribute("avatar", guide.getAvatar());
 
 				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,
 						response);

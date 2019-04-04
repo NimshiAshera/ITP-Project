@@ -3,6 +3,7 @@ package Driver;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -43,88 +44,62 @@ public class UpdateDriver extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Driver driver = new Driver();
-
-		HttpSession session = request.getSession();
-			
 		
-		driver.setFname(request.getParameter("fname"));
-		driver.setLname(request.getParameter("lname"));
-		//driver.setNic(request.getParameter("nic"));
-		driver.setEmail(request.getParameter("email"));
-		driver.setPhone(request.getParameter("phone"));
-		//driver.setLicense(request.getParameter("license"));
-		//driver.setdI(request.getParameter("dI"));
-		//driver.setdE(request.getParameter("dE"));
-		driver.setPart(request.getParameter("part"));
-		//driver.setTerms(request.getParameter("terms"));
-		driver.setUsername(request.getParameter("username"));
-		driver.setPassword(request.getParameter("password"));
-		driver.setcPassword(request.getParameter("cPassword"));
-
+		String fname=request.getParameter("fname");
+		String lname=request.getParameter("lname");
+		//String nic=request.getParameter("nic");
+		String email=request.getParameter("email");
+		String phone=request.getParameter("phone");
+		String part=request.getParameter("part");
+		
+		
 		response.setContentType("text/html");
-
-		PrintWriter out = response.getWriter();
+		PrintWriter write =response.getWriter();
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
-
-		if (conn == null) {
-			out.write("Connection Not Established");
-		} else {
-			try {
-				Statement st = conn.createStatement();
-				String sql = "select * from driver where username = '"
-						+ driver.getUsername() +"'and nic ='" + driver.getNic() + "'";
-				ResultSet rs = st.executeQuery(sql);
-				
-				
-
-				if (rs.next()) {
-					Object message = "Username or NIC exist";
-					request.setAttribute("unameExist", message);
-					request.getRequestDispatcher("/DriverProfile")
-							.forward(request, response);
-
+		
+		if(conn==null){
+			write.write("Connection Not Established");
+		}
+		else{
+			HttpSession session = request.getSession();
+			if(session != null){
+				if(session.getAttribute("username")!= null){
+					String username = (String) session.getAttribute("username");
+					//String password = (String)session.getAttribute("password");
 				}
+				else{
+					response.sendRedirect("driverSignin.jsp");
+				}
+			}
+			
+			try{
+				String username = (String) session.getAttribute("username");
+				String sql2 = "update driver set  fname=? ,lname=? ,email=? , phone=? , part=? "
+						+ "where username = '"+username+"'";
+		
+				PreparedStatement pre = conn.prepareStatement(sql2);
 				
-
-				else if (!driver.getPassword().equals(driver.getcPassword())) {
-					Object message = "Password not maching";
-					request.setAttribute("passwordMatchingErr", message);
-					request.getRequestDispatcher("/DriverProfile")
-							.forward(request, response);
-				}
-
-
-				else {
-
-					String sql3 = "update driver set " + "fname='"
-							+ driver.getFname() + "'," + "lname='"
-							+ driver.getLname() + "'," + "email='"
-							+ driver.getEmail() + "'," + "phone='"
-							+ driver.getPhone() + "'," + "part='"
-							+ driver.getPart() + "'," + "username='"
-							+ driver.getUsername() + "'," + "password='"
-							+ driver.getPassword() + "'" + " where nic='"
-							+ driver.getNic() + "'";
-
-					Statement st1=conn.createStatement();
-					st1.executeUpdate(sql3);
-					
-					session.setAttribute("loggedAs", "driver");
-					session.setAttribute("nic", driver.getNic());
-					session.setAttribute("username", driver.getUsername());
-					session.setAttribute("password", driver.getPassword());
-
-					request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,response);
-				}
-			} catch (Exception e) {
+				pre.setString(1, fname);
+				pre.setString(2, lname);
+				pre.setString(3, email);
+				pre.setString(4, phone);
+				pre.setString(5, part);
+				
+				pre.execute();
+				
+				Object message = "Successfully updated";
+				request.setAttribute("message", message);
+				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request, response);
+				
+			}
+			catch(Exception e){
 				System.out.println("Got an exception");
 				System.out.println(e.getMessage());
 			}
-		}
-
-		
+				
 	}
 
+}
 }
