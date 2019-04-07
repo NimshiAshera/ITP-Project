@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+
+#footer {
+	width: 960px;
+	height: 840px;
+	margin: 0px auto 40px auto;
+	font-family: Arial, Helvetica, sans-serif;
+	color:black;
+	
+}
+
+#footer .contact-box2{
+    box-sizing: border-box;
+    width: 500px;
+    height: 300px;
+    //border: 2px solid black;
+    margin-left: 200px;
+}
+
+#footer .contact-box2 p{
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 25px;
+    color:black;
+    padding-bottom: 2px;
+    text-align: center;
+}
+
+#footer .contact-box3{
+    box-sizing: border-box;
+    width: 500px;
+    height: 300px;
+    //border: 2px solid black;
+    margin-left: 350px;
+}
+
+#footer .contact-box3 h2{
+    font-family: "Times New Roman cm";
+    font-weight: normal
+    font-size: 30px;
+    color:black;
+    //padding-top: 0px;
+    margin-left: 50px;
+}
+
+#footer .contact-box3 table{
+    //border: 2px solid black;
+    //margin-left: 50px;
+}
+
+#footer .contact-box3 img{
+	width: 60px;
+	height: 60px;
+	padding-left: 20px;
+}
