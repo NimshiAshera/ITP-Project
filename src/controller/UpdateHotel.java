@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ import dao.DBConnection;
  * Servlet implementation class UpdateHotel
  */
 @WebServlet("/UpdateHotel")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 public class UpdateHotel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -50,10 +53,16 @@ public class UpdateHotel extends HttpServlet {
 				
 		//String fname = request.getParameter("Fname"); // First name
 		//String lname = request.getParameter("Lname"); // Last name
-		String price = request.getParameter("price"); //Address
+		String facilities = request.getParameter("Facilities"); //Address
 		//String nic   = request.getParameter("NIC"); // NIC
 		//String gender   = request.getParameter("Gender"); // Gender
-		String contact_no   = request.getParameter("contact_no"); // Date of Birth
+		String activities   = request.getParameter("Activities"); // Date of Birth
+		String food = request.getParameter("Food"); // email
+		String re_services   = request.getParameter("Re_services"); // PhoneNo
+		String cleaning_services = request.getParameter("Cleaning_services");
+		String pool = request.getParameter("Pool"); // email
+		String rooms = request.getParameter("Rooms"); // email
+		
 		//String username = request.getParameter("username"); //Username
 		//String pass  = request.getParameter("password"); // password
 		
@@ -86,7 +95,7 @@ public class UpdateHotel extends HttpServlet {
 				
 				try{
 					String UserName = (String) session.getAttribute("username");
-					String sql2 = "update hotel2 set  price=? , contact_no=? "
+					String sql2 = "update hotel10 set  facilities=? , activities=? , food=?, re_services=?, cleaning_services=?, pool=?, rooms=? "
 							+ "where username = '"+UserName+"'";
 					
 					
@@ -94,10 +103,15 @@ public class UpdateHotel extends HttpServlet {
 					
 					//pre.setString(1, fname);
 					//pre.setString(2, lname);
-					pre.setString(1, price);
+					pre.setString(1, facilities);
 					//pre.setString(4, nic);
 					//pre.setString(5, gender);
-					pre.setString(2, contact_no);
+					pre.setString(2, activities);
+					pre.setString(3, food);
+					pre.setString(4, re_services);
+					pre.setString(5, cleaning_services);
+					pre.setString(6, pool);
+					pre.setString(7, rooms);
 					//pre.setString(11, username);
 					//pre.setString(12, pass);
 					

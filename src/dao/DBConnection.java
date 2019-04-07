@@ -9,18 +9,20 @@ public class DBConnection {
 	
 	public static Connection createConnection()
 	{
+		
 		Connection con = null;
 		try{
 			
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
+				
 			}catch (ClassNotFoundException e){
 				e.printStackTrace();
 				
 			}
 			
 			//connect to database
-			con = DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false" , "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/project?useSSL=false" , "root", "root");
 			System.out.println("Post establishing a DB connection");
 			
 		}catch(Exception e){
@@ -34,7 +36,7 @@ public class DBConnection {
 	public static ResultSet DBquery(String query) {
 		try{
 		//connect to database
-		   Connection con = DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false" , "root", "root");
+		   Connection con = DriverManager.getConnection("jdbc:mysql://localhost/project?useSSL=false" , "root", "root");
 		   
 		//create statement
 		   Statement mys = con.createStatement();

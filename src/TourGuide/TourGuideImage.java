@@ -36,8 +36,16 @@ public class TourGuideImage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+				
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		
-		PrintWriter out = response.getWriter();
+PrintWriter out = response.getWriter();
 		
 		TourGuide guide=new TourGuide();
 		
@@ -50,7 +58,7 @@ public class TourGuideImage extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select avatar,path from tourguide where username = '"+ guide.getUsername() +"'";
+			String sql = "select avatar,path from guide where username = '"+ guide.getUsername()+"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){
@@ -66,14 +74,6 @@ public class TourGuideImage extends HttpServlet {
 		catch(Exception p){
 			System.out.println(p);
 		}
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 	}
 

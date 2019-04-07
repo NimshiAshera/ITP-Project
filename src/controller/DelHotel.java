@@ -9,6 +9,7 @@ import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,9 +20,11 @@ import model.Hotel;
 import dao.DBConnection;
 
 /**
- * Servlet implementation class DeleteOwner
+ * Servlet implementation class DeleteHotel
  */
 @WebServlet("/DelHotel")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 public class DelHotel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -65,13 +68,13 @@ public class DelHotel extends HttpServlet {
 						request.getRequestDispatcher("/header.jsp").forward(request, response);*/
 					}
 					else{
-						response.sendRedirect("test4.jsp");
+						response.sendRedirect("test3.jsp");
 					}
 				}
 				
 				try{
 					String UserName = (String) session.getAttribute("username");
-					String sql2 = "delete from hotel2 where username = '"+UserName+"'";
+					String sql2 = "delete from hotel10 where username = '"+UserName+"'";
 					
 					
 					Statement st = conn.createStatement();

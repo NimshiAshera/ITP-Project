@@ -36,12 +36,18 @@ public class HotelDao {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, c.getPart());
 			ps.setString(2, c.getName());
-			ps.setString(3, c.getPrice());
-			ps.setString(4, c.getContact_no());
-			ps.setString(5, c.getHotel_id());
-			ps.setString(6, c.getAddress());
-			ps.setString(7, c.getUsername());
-			ps.setString(8, c.getPassword());
+			ps.setString(3, c.getHotel_id());
+			ps.setString(4, c.getDbimagelocation());
+			ps.setString(5, c.getFacilities());
+			ps.setString(6, c.getActivities());
+			ps.setString(7, c.getFood());
+			ps.setString(8, c.getRe_services());
+			ps.setString(9, c.getCleaning_services());
+			ps.setString(10, c.getPool());
+			ps.setString(11, c.getRooms());
+			ps.setString(12, c.getAddress());
+			ps.setString(13, c.getUsername());
+			ps.setString(14, c.getPassword());
 			
 			i=ps.executeUpdate();
 			
@@ -58,8 +64,8 @@ public class HotelDao {
         Connection con = connect();
         try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(7, c.getUsername());
-			ps.setString(8, c.getPassword());
+			ps.setString(13, c.getUsername());
+			ps.setString(14, c.getPassword());
 			
 			rs = ps.executeQuery();
 			
@@ -82,13 +88,19 @@ public class HotelDao {
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, c.getPart());
 		ps.setString(2, c.getName());
-		ps.setString(3, c.getPrice());
-		ps.setString(4, c.getContact_no());
-		ps.setString(5, c.getHotel_id());
-		ps.setString(6, c.getAddress());
-		ps.setString(7, c.getUsername());
-		ps.setString(8, c.getPassword());
-		ps.setString(9, c.getUsername());
+		ps.setString(3, c.getHotel_id());
+		ps.setString(4, c.getDbimagelocation());
+		ps.setString(5, c.getFacilities());
+		ps.setString(6, c.getActivities());
+		ps.setString(7, c.getFood());
+		ps.setString(8, c.getRe_services());
+		ps.setString(9, c.getCleaning_services());
+		ps.setString(10, c.getPool());
+		ps.setString(11, c.getRooms());
+		ps.setString(12, c.getAddress());
+		ps.setString(13, c.getUsername());
+		ps.setString(14, c.getPassword());
+		ps.setString(15, c.getUsername());
 		
 		i = ps.executeUpdate();
 		

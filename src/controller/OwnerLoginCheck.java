@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,8 @@ import dao.DBConnection;
  * Servlet implementation class LoginCheck
  */
 @WebServlet("/OwnerLoginCheck")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 public class OwnerLoginCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -58,12 +61,10 @@ public class OwnerLoginCheck extends HttpServlet {
 			write.write("Connection Not Established");
 
 		else {
-		
 			write.write("Connection Established");
 
 			String message=null;
 			String sql = "select Fname,Lname, Address, NIC, Gender, DOB, Email, PhoneNo, UserName,Password from owner where UserName ='"+uname+"'";
-			
 			
 				
 			try {
@@ -123,7 +124,7 @@ public class OwnerLoginCheck extends HttpServlet {
 					
 					message="Welcome "+uname;
 					request.setAttribute("message", message);
-					request.getRequestDispatcher("/homepage.jsp").forward(request,response);
+					request.getRequestDispatcher("homePage.jsp").forward(request,response);
 					
 				}
 

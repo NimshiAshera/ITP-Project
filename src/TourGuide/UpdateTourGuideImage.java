@@ -78,7 +78,7 @@ public class UpdateTourGuideImage extends HttpServlet {
 			out.write("Connection Not Established");
 		} else {
 			try {
-				String sql = "update tourguide set " + "avatar='"
+				String sql = "update guide set " + "avatar='"
 						+ guide.getAvatar() + "'," + "path='"
 						+ guide.getPath() + "'" + " where username='" + guide.getUsername()
 						+ "'";

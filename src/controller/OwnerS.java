@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,8 @@ import model.OwnerK;
  * Servlet implementation class DisplayOne
  */
 @WebServlet("/OwnerS")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 public class OwnerS extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -73,7 +76,7 @@ public class OwnerS extends HttpServlet {
 		if(i!=0){
 			System.out.println("value inserted");
 			request.setAttribute("msg", "Registration Succesful.....");
-			getServletContext().getRequestDispatcher("/test2.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/profilepage2.jsp").forward(request, response);
 			
 		}
 		else{

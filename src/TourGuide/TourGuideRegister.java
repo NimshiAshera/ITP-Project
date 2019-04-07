@@ -92,7 +92,7 @@ public class TourGuideRegister extends HttpServlet {
 			
 			try {
 				Statement st = conn.createStatement();
-				String sql = "select * from tourguide where nic = '"
+				String sql = "select * from guide where nic = '"
 						+ guide.getNic() + "'";
 				ResultSet rs = st.executeQuery(sql);
 
@@ -113,7 +113,7 @@ public class TourGuideRegister extends HttpServlet {
 				}
 
 				else  {
-					String sql2 = "insert into tourguide (fname,lname,nic,avatar,path,email,phone,language,part,license,dI,dE,part1,terms,username,password)"
+					String sql2 = "insert into guide (fname,lname,nic,avatar,path,email,phone,language,part,license,dI,dE,part1,terms,username,password)"
 							+ "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 					PreparedStatement pre = conn.prepareStatement(sql2);

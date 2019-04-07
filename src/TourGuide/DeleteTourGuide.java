@@ -56,7 +56,7 @@ public class DeleteTourGuide extends HttpServlet {
 		else {
 				write.write("Connection Established"+guide.getUsername());
 			
-				String sql = "delete from tourguide where username='"+guide.getUsername()+"'";
+				String sql = "delete from guide where username='"+guide.getUsername()+"'";
 				try {
 					Statement st = conn.createStatement();
 					st.executeUpdate(sql);

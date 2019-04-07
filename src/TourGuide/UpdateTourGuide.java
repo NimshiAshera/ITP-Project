@@ -78,7 +78,7 @@ public class UpdateTourGuide extends HttpServlet {
 		} else {
 			try {
 				Statement st = conn.createStatement();
-				String sql = "select * from tourguide where username = '"
+				String sql = "select * from guide where username = '"
 						+ guide.getUsername() +"'and nic ='" + guide.getNic() + "'";
 				ResultSet rs = st.executeQuery(sql);
 				
@@ -103,7 +103,7 @@ public class UpdateTourGuide extends HttpServlet {
 
 				else {
 
-					String sql3 = "update tourguide set " + "fname='"
+					String sql3 = "update guide set " + "fname='"
 							+ guide.getFname() + "'," + "lname='"
 							+ guide.getLname() + "'," + "email='"
 							+ guide.getEmail() + "'," + "phone='"

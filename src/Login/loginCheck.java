@@ -66,7 +66,7 @@ public class loginCheck extends HttpServlet {
 			String sql = "select username,password from driver where username='"
 					+ username + "'";
 
-			String sql2 = "select username,password from tourguide where username = '"
+			String sql2 = "select username,password from guide where username = '"
 					+ username + "'";
 			try {
 				Statement st = conn.createStatement();
@@ -134,7 +134,7 @@ public class loginCheck extends HttpServlet {
 								&& dbpassword.equals(password)) {
 							HttpSession session = request.getSession();
 
-							session.setAttribute("loggedAs", "tourguide");
+							session.setAttribute("loggedAs", "guide");
 							session.setAttribute("username", dbuname);
 							session.setAttribute("password", dbpassword);
 						
@@ -181,3 +181,4 @@ public class loginCheck extends HttpServlet {
 	}
 
 }
+

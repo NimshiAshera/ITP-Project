@@ -7,15 +7,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.MultipartConfig;
+import java.util.UUID;
+import java.sql.SQLException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.io.InputStream;
+import javax.servlet.http.Part;
+import javax.servlet.annotation.MultipartConfig;
 
 
 import dao.HotelDao;
 import model.Hotel;
 
 /**
- * Servlet implementation class DisplayOne
+ * Servlet implementation class 
+ * 
  */
+
 @WebServlet("/HotelReg")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 public class HotelReg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,12 +54,34 @@ public class HotelReg extends HttpServlet {
 		
 		String part = request.getParameter("part");
 		String name = request.getParameter("name");
-		String price = request.getParameter("price");
-		String contact_no = request.getParameter("contact_no");
 		String hotel_id = request.getParameter("hotel_id");
+		String facilities = request.getParameter("facilities");
+		String activities = request.getParameter("activities");
+		String food = request.getParameter("food");
+		String re_services = request.getParameter("re_services");
+		String cleaning_services = request.getParameter("cleaning_services");
+		String pool = request.getParameter("pool");
+		String rooms = request.getParameter("rooms");
 		String address = request.getParameter("address");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		
+		
+		InputStream inputStream = null;
+		
+		Part filePart = request.getPart("avatar");
+		
+		inputStream = filePart.getInputStream();
+		
+		String member_avatar ="C:/Users/Asus/Desktop/ECO Pro/gallery/WebContent/hotel/" + hotel_id + ".png";
+		
+		String dbImageLocation =  "hotel/" + hotel_id + ".png";
+		
+		OutputStream output = new FileOutputStream(member_avatar);
+		byte[] buffer = new byte[1024];
+		while(inputStream.read(buffer) > 0){
+			output.write(buffer);
+		}
 		
 		//2. Set all the values in Model class, object
 		
@@ -55,15 +89,21 @@ public class HotelReg extends HttpServlet {
 		
 		c.setPart(part);
 		c.setName(name);
-		c.setPrice(price);
-		c.setContact_no(contact_no);
 		c.setHotel_id(hotel_id);
+		c.setDbimagelocation(dbImageLocation);
+		c.setFacilities(facilities);
+		c.setActivities(activities);
+		c.setFood(food);
+		c.setRe_services(re_services);
+		c.setCleaning_services(cleaning_services);
+		c.setPool(pool);
+		c.setRooms(rooms);
 		c.setAddress(address);
 		c.setUsername(username);
 		c.setPassword(password);
 		
 		//3. call a method in Dao class to insert data in table
-		String sql="insert into hotel2 values(?,?,?,?,?,?,?,?)";
+		String sql="insert into hotel10 values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		int i = HotelDao.registerUser(c,sql);
 		
 		if(i!=0){

@@ -52,7 +52,7 @@ public class TourGuideDetails extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select fname,lname,nic,avatar,path,email,phone,language,part,license,dI,dE,part1,terms,username,password from tourguide where username = '"+guide.getUsername()+"'";
+			String sql = "select fname,lname,nic,avatar,path,email,phone,language,part,license,dI,dE,part1,terms,username,password from guide where username = '"+guide.getUsername()+"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){
