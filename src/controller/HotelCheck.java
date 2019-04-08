@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,16 +18,18 @@ import javax.servlet.http.HttpSession;
 import dao.DBConnection;
 
 /**
- * Servlet implementation class HotelCheck
+ * Servlet implementation class LoginCheck
  */
-@WebServlet("/HotelCheck")
-public class HotelCheck extends HttpServlet {
+@WebServlet("/Hotelcheck")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
+public class Hotelcheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HotelCheck() {
+    public Hotelcheck() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -47,7 +50,7 @@ public class HotelCheck extends HttpServlet {
 		String uname = request.getParameter("username").trim();
 		String password = request.getParameter("password").trim();
 		
-		String dbpart = null,dbname =null,dbprice =null,dbcontact_no=null,dbhotel_id=null,dbaddress =null,dbuser =null, dbpassword =null;
+		String dbpart = null,dbname =null,dbhotel_id =null,dbimagelocation=null,dbfacilities=null,dbactivities =null, dbfood =null,dbre_services=null,dbcleaning_services=null,dbpool=null,dbrooms=null,dbaddress=null,dbuser =null, dbpassword =null;
 		response.setContentType("text/html");
 		PrintWriter write=response.getWriter();
 		
@@ -58,12 +61,10 @@ public class HotelCheck extends HttpServlet {
 			write.write("Connection Not Established");
 
 		else {
-		
 			write.write("Connection Established");
 
 			String message=null;
-			String sql = "select part, name, price, contact_no, hotel_id, address, UserName,Password from hotel2 where UserName ='"+uname+"'";
-			
+			String sql = "select part, name, hotel_id, imagelocation, facilities, activities, food, re_services, cleaning_services, pool, rooms, address, UserName,password from hotel10 where UserName ='"+uname+"'";
 			
 				
 			try {
@@ -74,12 +75,18 @@ public class HotelCheck extends HttpServlet {
 				while (rs.next()) {
 					dbpart = (rs.getString(1));
 					dbname = (rs.getString(2));
-					dbprice = (rs.getString(3));
-					dbcontact_no = (rs.getString(4));
-					dbhotel_id = (rs.getString(5));
-					dbaddress = (rs.getString(6));
-					dbuser = (rs.getString(7));
-					dbpassword = (rs.getString(8));
+					dbhotel_id = (rs.getString(3));
+					dbimagelocation = (rs.getString(4));
+					dbfacilities = (rs.getString(5));
+					dbactivities = (rs.getString(6));
+					dbfood = (rs.getString(7));
+					dbre_services = (rs.getString(8));
+					dbcleaning_services = (rs.getString(9));
+					dbpool = (rs.getString(10));
+					dbrooms = (rs.getString(11));
+					dbaddress = (rs.getString(12));
+					dbuser = (rs.getString(13));
+					dbpassword = (rs.getString(14));
 					count += 1;
 				}
 
@@ -92,7 +99,7 @@ public class HotelCheck extends HttpServlet {
 					session.setAttribute("Admin", uname);
 					request.setAttribute("username", uname);
 					
-					request.getRequestDispatcher("/form.jsp").forward(request, response);
+					request.getRequestDispatcher("/AdminHomePage.jsp").forward(request, response);
 					}
 					
 					else if(dbuser.equals(dbuser)&& dbpassword.equals(password)){
@@ -102,24 +109,30 @@ public class HotelCheck extends HttpServlet {
 						session.setAttribute("Customer", uname);
 						request.setAttribute("username", uname);
 						
-						request.getRequestDispatcher("/hotelUpdate.jsp").forward(request, response);
+						request.getRequestDispatcher("/homepage.jsp").forward(request, response);
 					}
 					
 					HttpSession session = request.getSession();
 					
-					session.setAttribute("part", dbpart);
-					session.setAttribute("name", dbname);
-					session.setAttribute("price", dbprice);
-					session.setAttribute("contact_no", dbcontact_no);
-					session.setAttribute("hotel_id", dbhotel_id);
-					session.setAttribute("address", dbaddress);
+					session.setAttribute("Part", dbpart);
+					session.setAttribute("Name", dbname);
+					session.setAttribute("Hotel_id", dbhotel_id);
+					session.setAttribute("Imagelocation", dbimagelocation);
+					session.setAttribute("Facilities", dbfacilities);
+					session.setAttribute("Activities", dbactivities);
+					session.setAttribute("Food", dbfood);
+					session.setAttribute("Re_services", dbre_services);
+					session.setAttribute("Cleaning_services", dbcleaning_services);
+					session.setAttribute("Pool", dbpool);
+					session.setAttribute("Rooms", dbrooms);
+					session.setAttribute("Address", dbaddress);
 					session.setAttribute("username", dbuser);
 					session.setAttribute("password", dbpassword);
 					
 					
 					message="Welcome "+uname;
 					request.setAttribute("message", message);
-					request.getRequestDispatcher("/hotelUpdate.jsp").forward(request,response);
+					request.getRequestDispatcher("hotelUpdate.jsp").forward(request,response);
 					
 				}
 

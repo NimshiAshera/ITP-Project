@@ -114,7 +114,7 @@
 
 </script>
 
-<title>Local Customer</title>
+<title>Local Customer Register</title>
 
 </head>
 	
@@ -180,7 +180,7 @@
 	
 	<form action="" name="form1" method="post" enctype="multipart/form-data" onSubmit="return validation()">
 	
-	<i style='font-size:48px' class='fas'>&#xf183;</i><font color ="#00cc7a" size="8"> Customer Registration</font>
+	<i style='font-size:48px' class='fas'>&#xf183;</i><font color ="#00cc7a" size="8"> Customer Registration Form</font>
  
 		<label>First Name</label>
 		<p><input type="text" class="form-control"  name="fname" id="fname" placeholder="Jone"   ></p>

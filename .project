@@ -35,9 +35,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>WebContent/WEB-INF/lib/mysql-connector-java-8.0.9-rc.jar</name>
+			<name>WebContent/WEB-INF/lib/mysql-connector-java-8.0.11.jar</name>
 			<type>1</type>
-			<location>D:/My Softwares/mysql-connector-java-8.0.9-rc.jar</location>
+			<location>D:/2nd Year/2nd Sem/ITP/mysql-connector-java-8.0.11/mysql-connector-java-8.0.11.jar</location>
 		</link>
 	</linkedResources>
 </projectDescription>
