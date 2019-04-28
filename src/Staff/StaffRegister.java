@@ -57,7 +57,7 @@ public class StaffRegister extends HttpServlet {
 		staff.setNic(request.getParameter("nic"));
 		staff.setPhoneno(request.getParameter("phoneno"));
 		staff.setEmail(request.getParameter("email"));
-		staff.setUname(request.getParameter("uname"));
+		staff.setUsername(request.getParameter("username"));
 		staff.setPassword(request.getParameter("password"));
 		
 		//----------------------------------------------------------
@@ -78,8 +78,8 @@ public class StaffRegister extends HttpServlet {
 			
 			try {
 				Statement st = conn.createStatement();
-				String sql = "select * from staff where uname = '"
-						+ staff.getUname() + "'";
+				String sql = "select * from staff where username = '"
+						+ staff.getUsername() + "'";
 				ResultSet rs = st.executeQuery(sql);
 
 				if (rs.next()) {
@@ -90,7 +90,7 @@ public class StaffRegister extends HttpServlet {
 			   
 	           }
 				else  {
-					String sql2 = "insert into staff (role,fname,lname,nic,phoneno,email,uname,password)"
+					String sql2 = "insert into staff (role,fname,lname,nic,phoneno,email,username,password)"
 							+ "values (?,?,?,?,?,?,?,?)";
 
 					PreparedStatement pre = conn.prepareStatement(sql2);
@@ -101,22 +101,25 @@ public class StaffRegister extends HttpServlet {
 					pre.setString(4, staff.getNic());
 					pre.setString(5, staff.getPhoneno());
 					pre.setString(6, staff.getEmail());
-					pre.setString(7, staff.getUname());
+					pre.setString(7, staff.getUsername());
 					pre.setString(8, staff.getPassword());
 								
 				pre.execute();				
 				
-				request.getRequestDispatcher("/dashBOwner.jsp").forward(request,
+				request.getRequestDispatcher("/Home.jsp").forward(request,
 						response);
+				request.getRequestDispatcher("/Header.jsp").forward(request,
+						response);
+				
 				}		
 			
 		} catch (Exception e) {
 		System.out.println("Got an exception");
 		System.out.println(e.getMessage());
 		
-	}
-}	
+		}
+		}	
 		
-}
+	}
 }
 

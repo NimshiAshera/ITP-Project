@@ -1,4 +1,4 @@
-package TourGuide;
+package Platinum;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,20 +18,21 @@ import javax.servlet.http.Part;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import Driver.DBManager;
-import Driver.Driver;
 
 /**
- * Servlet implementation class UpdateTourGuideImage
+ * Servlet implementation class UpdatePlatinumImage
  */
-@WebServlet("/UpdateTourGuideImage")
+@WebServlet("/UpdatePlatinumImage")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
-public class UpdateTourGuideImage extends HttpServlet {
+
+
+public class UpdatePlatinumImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateTourGuideImage() {
+    public UpdatePlatinumImage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,7 +42,7 @@ public class UpdateTourGuideImage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -49,25 +50,26 @@ public class UpdateTourGuideImage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//doGet(request, response);
 		
 		
-		TourGuide guide = new TourGuide();
+		Platinum platinum = new Platinum();
 
 		HttpSession session = request.getSession();
 
-		guide.setUsername((String) session.getAttribute("username"));
+		platinum.setPid((String) session.getAttribute("pid"));
 
 		response.setContentType("text/html");
 
 		PrintWriter out = response.getWriter();
 
 		if (ServletFileUpload.isMultipartContent(request)) {
-			Part part = request.getPart("avatar");
-			guide.setAvatar(guide.extractAvatar(part));
-			guide.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\tourguide"
-					+ File.separator + guide.getAvatar());
-			File fileSaveDir = new File(guide.getPath());
-			part.write(guide.getPath() + File.separator);
+			Part part = request.getPart("pic");
+			platinum.setAvatar(platinum.extractAvatar(part));
+			platinum.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\package"
+					+ File.separator + platinum.getAvatar());
+			File fileSaveDir = new File(platinum.getPath());
+			part.write(platinum.getPath() + File.separator);
 		}
 
 
@@ -78,23 +80,19 @@ public class UpdateTourGuideImage extends HttpServlet {
 			out.write("Connection Not Established");
 		} else {
 			try {
-				String sql = "update guide set " + "avatar='"
-						+ guide.getAvatar() + "'," + "path='"
-						+ guide.getPath() + "'" + " where username='" + guide.getUsername()
+				String sql = "update platinum set " + "avatar='"
+						+ platinum.getAvatar() + "'," + "path='"
+						+ platinum.getPath() + "'" + " where pid='" + platinum.getPid()
 						+ "'";
 
 				Statement st = conn.createStatement();
 				st.executeUpdate(sql);
 
-				session.setAttribute("loggedAs", "guide");
-				session.setAttribute("avatar", guide.getAvatar());
+				session.setAttribute("loggedAs", "platinum");
+				session.setAttribute("pic", platinum.getAvatar());
 
-				request.getRequestDispatcher("/Home.jsp").forward(request,
+				request.getRequestDispatcher("/dashBOwner.jsp").forward(request,
 						response);
-				request.getRequestDispatcher("/Header.jsp").forward(request,
-						response);
-				
-				
 				
 			} catch (Exception e) {
 				System.out.println("Got an exception");

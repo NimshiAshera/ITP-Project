@@ -65,7 +65,7 @@ public class UpdateVehicleImage extends HttpServlet {
 		if (ServletFileUpload.isMultipartContent(request)) {
 			Part part = request.getPart("avatar");
 			vehicle.setAvatar(vehicle.extractAvatar(part));
-			vehicle.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\vehicle"
+			vehicle.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\vehicle"
 					+ File.separator + vehicle.getAvatar());
 			File fileSaveDir = new File(vehicle.getPath());
 			part.write(vehicle.getPath() + File.separator);
@@ -90,8 +90,11 @@ public class UpdateVehicleImage extends HttpServlet {
 				session.setAttribute("loggedAs", "vehicle");
 				session.setAttribute("avatar", vehicle.getAvatar());
 
-				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,
+				request.getRequestDispatcher("/Home.jsp").forward(request,
 						response);
+				request.getRequestDispatcher("/Header.jsp").forward(request,
+						response);
+				
 				
 			} catch (Exception e) {
 				System.out.println("Got an exception");

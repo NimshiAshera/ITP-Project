@@ -63,8 +63,10 @@ public class DeleteTourGuide extends HttpServlet {
 					
 					session.invalidate();  
 			        
-			        RequestDispatcher rd = request.getRequestDispatcher("/Home-AfterLogin.jsp");
+					RequestDispatcher rd = request.getRequestDispatcher("/Home.jsp");
+			        RequestDispatcher rd1 = request.getRequestDispatcher("/Header-Before.jsp");
 					rd.forward(request, response);
+					rd1.forward(request, response);
 					
 					}catch (SQLException e) {
 						// TODO Auto-generated catch block

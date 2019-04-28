@@ -115,7 +115,7 @@ public class VehicleRegister extends HttpServlet {
 					if (ServletFileUpload.isMultipartContent(request)) {
 						Part part = request.getPart("avatar");
 						vehicle.setAvatar(vehicle.extractAvatar(part));
-						vehicle.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\vehicle\\"
+						vehicle.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\vehicle\\"
 								+ File.separator + vehicle.getAvatar());
 						File fileSaveDir = new File(vehicle.getPath());
 						part.write(vehicle.getPath() + File.separator);

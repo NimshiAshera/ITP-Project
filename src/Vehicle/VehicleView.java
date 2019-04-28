@@ -1,10 +1,11 @@
-package TourGuide;
+package Vehicle;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,20 +13,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Driver.DBManager;
 
 /**
- * Servlet implementation class TourGuideView
+ * Servlet implementation class VehicleView
  */
-@WebServlet("/TourGuideView")
-public class TourGuideView extends HttpServlet {
+@WebServlet("/VehicleView")
+public class VehicleView extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TourGuideView() {
+    public VehicleView() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,19 +38,19 @@ public class TourGuideView extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-	
+		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		TourGuide guide = new TourGuide();
+		Vehicle vehicle=new Vehicle();
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
-	
+		
 		try{
 			
 			
-			String sql = "select fname,lname,avatar,phone,language,part,license,dI,dE,part1 from guide ";
+			String sql = "select fname,lname,phone,type,status,noPlate,avatar,part,features from vehicle ";
 			
 			PreparedStatement st = conn.prepareStatement(sql);
 			ResultSet rs = st.executeQuery(sql);
@@ -56,7 +58,7 @@ public class TourGuideView extends HttpServlet {
 			out.println("<html>");
             out.println("<head>");
             out.println("<title>Details</title>");
-            out.println("<link href=styles/15.css rel=stylesheet type=text/css>"); 
+            out.println("<link href=styles/17.css rel=stylesheet type=text/css>"); 
             out.println("</head>");
             
             RequestDispatcher rd = request
@@ -68,39 +70,37 @@ public class TourGuideView extends HttpServlet {
             
             out.println("<div class=\"container-table100\">\r\n");
             out.println("<div class=\"wrap-table100\">\r\n");
-            out.println("<div class=\"table100\">\r\n");   
+            out.println("<div class=\"table100\">\r\n"); 
             
-            
+            out.print("<div class=\"form-style-5\" align='center' style='background:url(images/img01.gif) repeat'>");
             out.println("<br/><br/><br/><br/><br/><br/>");
-    		out.print("<h1>Display the Price List(Per Person)</h1>");
-    		out.print("<table border><tr><th>40 USD per 1 day</th></tr><tr><th>200 USD per 5 days</th></tr><tr><th>300 USD per 7 days</th></tr><tr><th>450 USD per 10 days</th></tr><tr><th>600 USD per 14 days</th></tr><tr><th>1500 USD per 1 month</th></tr></table>");
+            
+    		out.print("<h1>Display the Price List</h1>");
+    		out.print("<table border><tr><th>For 2 Days : 25 USD per day</th></tr><tr><th>For 5 Days : 20 USD per day</th></tr><tr><th>For 7 Days : 18 USD per day</th></tr></table>");
     		out.println("<br/><br/><br/>");
-    		out.println("<h1>View Registered Tour Guides</h1>");
+    		
+    		out.println("<h1>View Registered Vehicles</h1>");
 			
     		
-    		String st1 ="<table class=\"new\" border=0; width=120%;><tr class=\"tab\"><th class=\"col1\">First Name</th><th class=\"col2\">Last Name</th><th class=\"col3\">Image</th><th class=\"col4\">Phone</th><th class=\"col5\">Languages</th><th class=\"col6\">Category</th><th class=\"col7\">License</th><th class=\"col8\">Date Issued</th><th class=\"col9\">Data Expired</th><th class=\"col10\">Availability</th><th class=\"col11\">Book</th></tr>";
+    		String st1 ="<table class=\"new\" border=0; width=100%;><tr class=\"tab\"><th class=\"col1\">First Name</th><th class=\"col2\">Last Name</th><th class=\"col3\">Phone No.</th><th class=\"col4\">Vehicle Type</th><th class=\"col5\">Vehicle Model</th><th class=\"col6\">Register No.</th><th class=\"col7\">Features</th><th class=\"col8\">Image</th><th class=\"col9\">Availability</th><th class=\"col10\">Book</th></tr>";
 			
     		
     		while(rs.next()){
 				  
-    			st1 += "<tr class=\"tab\"><td class=\"col1\"><p class=\"font\">"+rs.getString(1)+"</td><td class=\"col2\"><p class=\"font\">"+rs.getString(2)+"</td><td>"+"<img src=\"tourguide/"+rs.getString(3)+"\" width=\"200\" height=\"300\">"+"</td><td class=\"col4\"><p class=\"font\">"+rs.getString(4)+"</td><td class=\"col5\"><p class=\"font\">"+rs.getString(5)+"</td><td class=\"col6\"><p class=\"font\">"+rs.getString(6)+"</td><td class=\"col7\"><p class=\"font\">"+rs.getString(7)+"</td><td class=\"col8\"><p class=\"font\">"+rs.getString(8)+"</td><td class=\"col9\"><p class=\"font\">"+rs.getString(9)+"</td><td class=\"col10\"><p class=\"font\">"+rs.getString(10)+"</td><td class=\"col11\"><a href=\"tourguidebooking.jsp\" class=\"btn btn-danger ml-2 btn-sm\"><i class=\"fas fa-spinner\" style=\"font-size:30px\"></i><font size=\"6\"> Booking</font></a></td></tr>";
+    			st1 += "<tr class=\"tab\"><td class=\"col1\"><p class=\"font\">"+rs.getString(1)+"</td><td class=\"col2\"><p class=\"font\">"+rs.getString(2)+"</td><td class=\"col3\"><p class=\"font\">"+rs.getString(3)+"</td><td class=\"col4\"><p class=\"font\">"+rs.getString(4)+"</td><td class=\"col5\"><p class=\"font\">"+rs.getString(5)+"</td><td class=\"col6\"><p class=\"font\">"+rs.getString(6)+"</td><td class=\"col7\"><p class=\"font\">"+rs.getString(9)+"</td><td >"+"<img src=\"vehicle/"+rs.getString(7)+"\" width=\"300\" height=\"200\">"+"</td><td class=\"col9\"><p class=\"font\">"+rs.getString(8)+"</td><td class=\"col10\"><a href=\"vehicleBooking.jsp\" class=\"btn btn-danger ml-2 btn-sm\"><i class=\"fas fa-spinner\" style=\"font-size:30px\"></i><font size=\"6\"> Booking</font></a></td></tr>";
     		}	
 				
     			st1 += "</table>";
     			out.println(st1);
-    			
     			out.println("<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>");
-    			
-    			
     			out.print("<div class=\"w3-black w3-center w3-padding-24\"><h3><b>Powered by ECO Tours</b></h3></div>");
     			out.println("</body>");
                 out.println("</html>");
     			
     		}catch(Exception p) {
     			System.out.println(p);
-    		}
+    		}	
 		
-	
 	}
 
 	/**

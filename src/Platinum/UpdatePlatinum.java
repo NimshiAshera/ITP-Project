@@ -1,4 +1,4 @@
-package Vehicle;
+package Platinum;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,19 +13,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Driver.DBManager;
-import Vehicle.Vehicle;
 
 /**
- * Servlet implementation class UpdateVehicle
+ * Servlet implementation class UpdatePlatinum
  */
-@WebServlet("/UpdateVehicle")
-public class UpdateVehicle extends HttpServlet {
+@WebServlet("/UpdatePlatinum")
+public class UpdatePlatinum extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateVehicle() {
+    public UpdatePlatinum() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +34,7 @@ public class UpdateVehicle extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -43,14 +42,22 @@ public class UpdateVehicle extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//doGet(request, response);
 		
-		Vehicle vehicle = new Vehicle();
+		Platinum platinum = new Platinum();
 		
-		//String fname=request.getParameter("fname");
-		//String lname=request.getParameter("lname");
-		//String phone=request.getParameter("phone");
-		String part=request.getParameter("part");
-		//String features=request.getParameter("features");
+		String pname=request.getParameter("pname");
+		String person=request.getParameter("person");
+		String view=request.getParameter("view");
+		String bed=request.getParameter("bed");
+		String d1=request.getParameter("d1");
+		String d2=request.getParameter("d2");
+		String d3=request.getParameter("d3");
+		String d4=request.getParameter("d4");
+		String d5=request.getParameter("d5");
+		String d6=request.getParameter("d6");
+		String d7=request.getParameter("d7");
+
 		
 		response.setContentType("text/html");
 		PrintWriter write =response.getWriter();
@@ -64,39 +71,49 @@ public class UpdateVehicle extends HttpServlet {
 		else{
 			HttpSession session = request.getSession();
 			if(session != null){
-				if(session.getAttribute("username")!= null){
-					String username = (String) session.getAttribute("username");
-					//String password = (String)session.getAttribute("password");
+				if(session.getAttribute("pid")!= null){
+					String pid = (String) session.getAttribute("pid");
 				}
 				else{
-					response.sendRedirect("vehicleSignin.jsp");
+					response.sendRedirect("dashBOwner.jsp");
 				}
 			}
+			
 			try{
-				String username = (String) session.getAttribute("username");
-				String sql2 = "update vehicle set  part=? "
-						+ " where username = '"+ username +"'";
+				String pid = (String) session.getAttribute("pid");
+				String sql2 = "update platinum set  pname=? ,person=? , view=? , bed=? , d1=? , d2=? , d3=? , d4=? , d5=? , d6=? , d7=? "
+						+ "where pid = '"+pid+"'";
 		
 				PreparedStatement pre = conn.prepareStatement(sql2);
 				
-				
-				pre.setString(1, part);
-			
+				pre.setString(1, pname);
+				pre.setString(2, person);
+				pre.setString(3, view);
+				pre.setString(4, bed);
+				pre.setString(5, d1);
+				pre.setString(6, d2);
+				pre.setString(7, d3);
+				pre.setString(8, d4);
+				pre.setString(9, d5);
+				pre.setString(10, d6);
+				pre.setString(11, d7);
+
 				
 				pre.execute();
 				
 				Object message = "Successfully updated";
 				request.setAttribute("message", message);
-				request.getRequestDispatcher("/Home.jsp").forward(request, response);
-				request.getRequestDispatcher("/Header.jsp").forward(request,
-						response);
+				request.getRequestDispatcher("/dashBOwner.jsp").forward(request, response);
 				
 			}
 			catch(Exception e){
 				System.out.println("Got an exception");
 				System.out.println(e.getMessage());
 			}
-		}	
+				
+	}
+
+
 		
 	}
 

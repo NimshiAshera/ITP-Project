@@ -1,4 +1,4 @@
-package TourGuide;
+package Silver;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,20 +18,20 @@ import javax.servlet.http.Part;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
 import Driver.DBManager;
-import Driver.Driver;
 
 /**
- * Servlet implementation class UpdateTourGuideImage
+ * Servlet implementation class UpdateSilverImage
  */
-@WebServlet("/UpdateTourGuideImage")
+@WebServlet("/UpdateSilverImage")
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
-public class UpdateTourGuideImage extends HttpServlet {
+
+public class UpdateSilverImage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateTourGuideImage() {
+    public UpdateSilverImage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,7 +41,7 @@ public class UpdateTourGuideImage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -49,13 +49,13 @@ public class UpdateTourGuideImage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//doGet(request, response);
 		
-		
-		TourGuide guide = new TourGuide();
+		Silver silver = new Silver();
 
 		HttpSession session = request.getSession();
 
-		guide.setUsername((String) session.getAttribute("username"));
+		silver.setPid((String) session.getAttribute("pid"));
 
 		response.setContentType("text/html");
 
@@ -63,11 +63,11 @@ public class UpdateTourGuideImage extends HttpServlet {
 
 		if (ServletFileUpload.isMultipartContent(request)) {
 			Part part = request.getPart("avatar");
-			guide.setAvatar(guide.extractAvatar(part));
-			guide.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\tourguide"
-					+ File.separator + guide.getAvatar());
-			File fileSaveDir = new File(guide.getPath());
-			part.write(guide.getPath() + File.separator);
+			silver.setAvatar(silver.extractAvatar(part));
+			silver.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\package"
+					+ File.separator + silver.getAvatar());
+			File fileSaveDir = new File(silver.getPath());
+			part.write(silver.getPath() + File.separator);
 		}
 
 
@@ -78,23 +78,19 @@ public class UpdateTourGuideImage extends HttpServlet {
 			out.write("Connection Not Established");
 		} else {
 			try {
-				String sql = "update guide set " + "avatar='"
-						+ guide.getAvatar() + "'," + "path='"
-						+ guide.getPath() + "'" + " where username='" + guide.getUsername()
+				String sql = "update silver set " + "avatar='"
+						+ silver.getAvatar() + "'," + "path='"
+						+ silver.getPath() + "'" + " where pid='" + silver.getPid()
 						+ "'";
 
 				Statement st = conn.createStatement();
 				st.executeUpdate(sql);
 
-				session.setAttribute("loggedAs", "guide");
-				session.setAttribute("avatar", guide.getAvatar());
+				session.setAttribute("loggedAs", "silver");
+				session.setAttribute("pic", silver.getAvatar());
 
-				request.getRequestDispatcher("/Home.jsp").forward(request,
+				request.getRequestDispatcher("/dashBOwner.jsp").forward(request,
 						response);
-				request.getRequestDispatcher("/Header.jsp").forward(request,
-						response);
-				
-				
 				
 			} catch (Exception e) {
 				System.out.println("Got an exception");

@@ -10,7 +10,7 @@ public class Staff {
 	private String nic;
 	private String phoneno;
 	private String email;
-	private String uname;
+	private String username;
 	private String password;
 	private String cPassword;
 	
@@ -57,11 +57,11 @@ public class Staff {
 		this.email = email;
 	}
 	
-	public String getUname() {
-		return uname;
+	public String getUsername() {
+		return username;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	public String getPassword() {
@@ -81,7 +81,7 @@ public class Staff {
 	
 	public String toString(){
 		return "Fname " + fname+ "\n" + "Lname " + lname + "\n" +" Nic" + nic+ "\n"+ "Phone " + phoneno +"\n"+ "Email " + email + "\n"
-				+ "Username" +uname+"\n"+ "Password" + password + "\n" + "Confirm Password" + cPassword;
+				+ "Username" +username+"\n"+ "Password" + password + "\n" + "Confirm Password" + cPassword;
 		
 	}
 

@@ -122,7 +122,11 @@ public class UpdateTourGuide extends HttpServlet {
 					session.setAttribute("username", guide.getUsername());
 					session.setAttribute("password", guide.getPassword());
 
-					request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,response);
+					request.getRequestDispatcher("/Home.jsp").forward(request,response);
+					request.getRequestDispatcher("/Header.jsp").forward(request,
+							response);
+					
+					
 				}
 			} catch (Exception e) {
 				System.out.println("Got an exception");

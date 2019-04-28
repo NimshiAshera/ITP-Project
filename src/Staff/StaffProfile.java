@@ -56,17 +56,21 @@ public class StaffProfile extends HttpServlet {
 			out.println("<html>");
             out.println("<head>");
             out.println("<title>Details</title>");
-            out.println("<link href=profile.css rel=stylesheet type=text/css>"); 
+            out.println("<link href=styles/11.css rel=stylesheet type=text/css>"); 
             out.println("</head>");
             out.println("<body>");
+   
+            out.println("<div class=\"container-table100\">\r\n");
+            out.println("<div class=\"wrap-table100\">\r\n");
+            out.println("<div class=\"table100\">\r\n");
             
             out.println("<h1>Staff Details</h1>");
             
-			String st1 ="<table border=2; width=100%;><tr><th>Role</th><th>First Name</th><th>Last Name</th><th>NIC</th><th>Email</th><th>Phone No.</th><th>User Name</th><th>Password</th></tr>";
+			String st1 ="<table class=\"new\" border=2; width=100%;><tr class=\"tab\"><th class=\"col1\">Role</th><th class=\"col2\">First Name</th><th class=\"col3\">Last Name</th><th class=\"col4\">NIC</th><th class=\"col5\">Email</th><th class=\"col6\">Phone No.</th><th class=\"col7\">User Name</th><th class=\"col8\">Password</th></tr>";
 			
 			while(rs.next()){
 				
-				st1 += "<tr><td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td><td>"+rs.getString(7)+"</td><td>"+rs.getString(8)+"</td></tr>";
+				st1 += "<tr><td><p class=\"font\">"+rs.getString(1)+"</p></td><td><p class=\"font\">"+rs.getString(2)+"</p></td><td><p class=\"font\">"+rs.getString(3)+"</p></td><td><p class=\"font\">"+rs.getString(4)+"</p></td><td><p class=\"font\">"+rs.getString(5)+"</p></td><td><p class=\"font\">"+rs.getString(6)+"</td><td><p class=\"font\">"+rs.getString(7)+"</p></td><td><p class=\"font\">"+rs.getString(8)+"</p></td></tr>";
 				
 			}
 			

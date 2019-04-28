@@ -125,7 +125,7 @@ public class TourGuideRegister extends HttpServlet {
 					if (ServletFileUpload.isMultipartContent(request)) {
 						Part part = request.getPart("avatar");
 						guide.setAvatar(guide.extractAvatar(part));
-						guide.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\tourGuide\\"
+						guide.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\tourguide\\"
 								+ File.separator + guide.getAvatar());
 						File fileSaveDir = new File(guide.getPath());
 						part.write(guide.getPath() + File.separator);
@@ -151,6 +151,9 @@ public class TourGuideRegister extends HttpServlet {
 					
 					request.getRequestDispatcher("/Home.jsp").forward(request,
 							response);
+					request.getRequestDispatcher("/Header.jsp").forward(request,
+							response);
+					
 				}
 
 			} catch (Exception e) {
