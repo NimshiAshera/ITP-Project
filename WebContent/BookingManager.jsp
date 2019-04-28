@@ -18,7 +18,7 @@
 
             <!-- Header -->
             <header class="w3-container" style="padding-top:22px">
-                <h2><b><i class="fa fa-dashboard"></i>Service Manager Dashboard</b></h2>
+                <h2><b><i class="fa fa-dashboard"></i>Booking Manager Dashboard</b></h2>
             </header>
 
             <div class="w3-panel" ;">
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                             </a>
-							<a href="VehicleList">
+							<a href="#">
                                 <div class="w3-col ">
                                     <div class="w3-container w3- w3-padding-24  w3-hover-dark-gray" style="background-color:#b3e6cc">
                                         <div class="w3-left w3-padding"><i class="fa fa-car w3-xxxlarge"></i></div>
@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="ViewDriverBook">
+                            <a href="#">
                                 <div class="w3-col ">
                                     <div class="w3-container w3- w3-padding-24   w3-hover-dark-gray" style="background-color:#66cc99">
                                         <div class="w3-left w3-padding"><i style='font-size:48px' class='fas'>&#xf1cd;</i></div>
@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="TourGuideList">
+                            <a href="#">
                                 <div class="w3-col ">
                                     <div class="w3-container w3- w3-padding-24  w3-hover-dark-gray" style="background-color:#b3e6cc">
                                         <div class="w3-left w3-padding"><i style='font-size:48px' class='fas'>&#xf3c5;</i></div>

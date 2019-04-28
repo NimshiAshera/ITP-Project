@@ -10,7 +10,7 @@
 <title>Owner</title>
 </head>
 
-<body style=background-image:url("background/vehicle.jpg") >
+<body style=background-image:url("background/jk.png") >
 
 <div class="container">
 

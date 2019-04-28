@@ -4,11 +4,21 @@
 <html>
 <head>
 <script type="text/javascript" src=""></script>
-<link rel="stylesheet" type="text/css" href="formcss.css">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="formpks.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
-
+<style>
+body{
+background-image:url("images/90.jpg");
+background-color:;
+}
+</style>
 
 </head>
 
@@ -23,37 +33,52 @@
 					<div class="post">
 					
 					
+						<!-- Navbar -->
+
+	<%
+		if (session.getAttribute("uname") == null  ||  session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>			
+					
+					
 					<br><br><br><div class="form-style-5">
 
-
- <a href="#"><font size="6">What do you want to register?</font></a><br><br><br><br>
+<br/>
+ <center><font size="5">What do you want to register?</font></center><br><br>
 <fieldset>
-<legend> <a href="#"><font size="5"> </font></a></legend>
- <center><a href="test2.jsp"><img src="images/Hotel.png" width="150" height="150" style="float:center"> </a> </center>  
+<legend> <font size="5">HOTEL </font></legend>
+ <center><a href="test2.jsp"><img src="images/icon2.png" width="170" height="170" style="float:center"> </a> </center>  
 </fieldset><br><br>
  
  
   <fieldset>
-<legend> <font size="5"></font></a></legend>
-<center><a href="test5.jsp"><img src="images/spa.png"   width="150" height="150" style="float:center">  </a></center>
-</fieldset><br><br>
-
-<fieldset>
-<legend> <font size="5"></font></a></legend>
-<center><a href=""><img src="images/vehicle.png"   width="150" height="150" style="float:center">  </a></center>
+<legend> <font size="5">SPA</font></a></legend>
+<center><a href="test5.jsp"><img src="images/icon1.png"   width="170" height="170" style="float:center">  </a></center>
 </fieldset><br><br>
 
 
+ <fieldset>
+<legend> <font size="5">ADVENTURE</font></a></legend>
+<center><a href="adventureCompaniesRegister.jsp"><img src="images/icon3.png"   width="170" height="170" style="float:center">  </a></center>
+</fieldset><br><br>
 
 
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 
 
 			
 			</div>
 
 </div>
 					
-					
+					</div>
+<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
 					</div>
 					</div>
 					</div>

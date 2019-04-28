@@ -12,9 +12,85 @@
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
 <title>Adventure Company</title>
+
+<script type="text/javascript" >
+		function validation(){
+
+			var part = document.form1.part.value;
+			
+			if(part==""){
+				alert("Please select an option.");
+				return false;
+			}
+		
+			
+			var name=document.form1.name.value;
+						
+				if(name==""){
+					alert("Please insert the company name");
+					return false;
+				}else if(!isNaN(fname)){
+					alert("Please insert a valid  name");
+					return false;
+				}
+			
+
+			var contact_no = document.form1.contact_no.value;
+			var Phone =  /^[0-9]{10}$/;
+				
+				if(contact_no==""){
+					alert("Please insert the contact number");
+					return false;
+				}else if(!contact_no.match(Phone)){
+					alert("Please insert a correct contact number");
+					return false;
+				}
+			
+				
+				
+			var avatar = document.form1.avatar.value;
+				
+				if(avatar==""){				
+					alert("Insert a image");
+					return false;
+				}	
+			
+			
+			var username = document.form1.username.value;
+			
+				if(username==""){
+					alert("Please insert a user name");
+					return false;
+				}
+				
+				
+			var password = document.form1.password.value;
+				
+				if(password==""){
+					alert("Please insert a password");
+					return false;
+				}	
+			
+			var cpassword = document.form1.cpassword.value;
+				
+				if(cpassword==""){
+					alert("Please insert your password again");
+					return false;
+				}else if(!password.match(cpassword)){
+					alert("Password not matching. Check again");
+					return false;
+				}	
+								
+				
+		}
+
+
+</script>
+
+
 </head>
 	
-<body>
+<body style="background:url(images/91.jpg) repeat;">
   <div id="wrapper">
 	<div id="page">
 		<div id="page-bgtop">
@@ -26,68 +102,35 @@
 					
 <!-- Navbar -->
 
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT SRILANKA</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MAP</a>
-    <a href="Gallery_01.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">THINGS TO DO <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">HOTEL & RESORT</a>
-        <a href="#" class="w3-bar-item w3-button">SPA</a>
-        <a href="#" class="w3-bar-item w3-button">ADVENTURS</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">HIRE FOR YOU <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">VEHICLE</a>
-        <a href="#" class="w3-bar-item w3-button">TOUR GUIDE</a>
-        <a href="#" class="w3-bar-item w3-button">DRIVERS</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">BOOK & REQUEST <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">TOUR PACKAGES</a>
-        <a href="#" class="w3-bar-item w3-button">EVENT</a>
-      </div>
-    </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG OUT</a>
-    <a href="customerLogin.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG IN</a>   
-    <a href="customerRegister.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">SIGN IN</a>
-    
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-  </div>
-</div>
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT SRILANKA</a>
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MAP</a>
-  <a href="Contacts.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
-					
+
+						<div class="container">
 					
 					<br><br><br><div class="form-style-5">
 
 	
 	<div class="form">
 	
-	<form action="AdventureCompanyReg" method="post">
+	<form action="AdventureRegister" name="form1" method="post" enctype="multipart/form-data" onSubmit="return validation()">
 	
 	<i style='font-size:48px' class='fas'>&#xf6ec;</i><h2><font color ="#00cc7a" size="8">Adventure Company Registration </font></h2>
 	<br>
 	
-	                          	<label>Whale Watching  / Wild Safari / Beach Holidies</label>	                          	
+	                          	<label>Whale Watching  / Wild Safari </label>	                          	
                               	<p><input type="radio" name="part" id="part1" value="Whale Watching" />Whale Watching</input></p>
 							  	<p><input type="radio" name="part" id="part2" value="Wild Safari" />Wild Safari</input></p>
-							  	<p><input type="radio" name="part" id="part3" value="Beach Holidays" />Beach Holidays</input></p>
+							
 							  
 							    <hr><br/>
                             
@@ -95,36 +138,23 @@
 		                        <label>Company Name</label>
                                 <p><input type="text" class="form-control"  name="name" placeholder=" Name"  ></p>
                                 
-                                
-                                <label>Company ID</label>
-                                <p><input type="text" class="form-control"  name="company_id" placeholder="Company ID"></p>                                
-                                                                                                                    
-                            
-                                <label>Contact_No  </label>
+  
+                                <label>Contact Person No.  </label>
                                 <p><input type="text" class="form-control"  name="contact_no" placeholder="Contact No"></p>
-                                                                                                                                      
-                            
-                                <label>Address</label>
-                                <p><input type="text" class="form-control"  name="address" placeholder="Address"></p>
+                                                                                                                                    
                                 
                                 <hr><br/>
                                 
                                 
+                                <label>Image</label>
+                                <p><input type="file" class="form-control"  name="avatar" size="4000000" ></p><br>
+                               
                                 <label>Adventure Details</label>
                                 <p><textarea  type="text" placeholder="Details" name="details" ></textarea></p>
-                                                                                                                               
-                                
-                                <label>Upload Image</label>
-                                <p><input  type="file" name="image" required ></p><br/>
-                                
-                                
-                                <label> Price List</label>
-                                <p> <input type="text" class="form-control" name="price" placeholder="Price"  ></p>
-                                
-                               
+  
                                 <label>Service Availability Status</label>
-                               	<p><input type="radio"  name="part" id="part" value="a1" />Available</input></p>
-							   	<p><input type="radio" name="part" id="part" value="a2" />Not available</input></p><br/>
+                               	<p><input type="radio"  name="avb" id="avb" value="Available" />Available</input></p>
+							   	<p><input type="radio" name="avb" id="avb" value="Not available" />Not available</input></p><br/>
                            
                            
                             	<hr><br/>
@@ -140,9 +170,7 @@
                                	
                                	<label>Confirm Password</label>
                                 <p><input type="text" class="form-control"  name="cpassword" placeholder="cPassword"></p>
-                               
-                                <label>Do you agree with our <a href="terms.jsp"><u>Terms & Conditions</u></a>???</label>
-                                <p><input type="radio" id="part"  name="terms"  required  ></p>
+                                                               
 		
 	
 	<input type="submit" value="Submit" name="submitButton"

@@ -13,7 +13,7 @@
 
 <title>Register</title>
 </head>
-<body>
+<body style="background:url(background/back.jpg) repeat;">
 
 
 <!----Register form------------>
@@ -21,59 +21,26 @@
 	<div class="container" >
 	
 	<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT SRILANKA</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MAP</a>
-    <a href="Gallery_01.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">THINGS TO DO <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">HOTEL & RESORT</a>
-        <a href="#" class="w3-bar-item w3-button">SPA</a>
-        <a href="#" class="w3-bar-item w3-button">ADVENTURS</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">HIRE FOR YOU <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">VEHICLE</a>
-        <a href="#" class="w3-bar-item w3-button">TOUR GUIDE</a>
-        <a href="#" class="w3-bar-item w3-button">DRIVERS</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">BOOK & REQUEST <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">TOUR PACKAGES</a>
-        <a href="#" class="w3-bar-item w3-button">EVENT</a>
-      </div>
-    </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG OUT</a>
-    <a href="customerLogin.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG IN</a>   
-    <a href="customerRegister.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">SIGN IN</a>
-    
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-  </div>
-</div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT SRILANKA</a>
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MAP</a>
-  <a href="Contacts.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>
+
 
 <br><br><br><div class="form-style-5">
 	<div class="form">
 
 		
 			<div class="w3-rest">
-                        <div class="w3-row w3-margin-left">
+                       
                         
                         <tr>
                         <th>
@@ -129,9 +96,9 @@
                            </th>
                            <th>
             					<a href="test1.jsp">
-                                <div class="w3-col ">
+                                <div class="w3-col">
                                     <div class="w3-container w3- w3-padding-24   w3-hover-dark-gray" style="background-color:#85e0e0">
-                                        <div class="w3-left w3-padding"><i class="fa fa-spa w3-xxxlarge"></i></div>
+                                        <div class="w3-left w3-padding"><i class="fa fa-envira w3-xxxlarge"></i></div>
                                         <div class="w3-right w3-padding">
                                             <h3>Spa</h3>
                                         </div>
@@ -162,7 +129,7 @@
                                 </div>
                             </a>
                             
-            					<a href="adventureCompanyRegister.jsp">
+            					<a href="test1.jsp">
                                 <div class="w3-col ">
                                     <div class="w3-container w3 w3-padding-24  w3-hover-dark-gray" style="background-color:#70dbdb">
                                         <div class="w3-left w3-padding"><i style='font-size:48px' class='fas'>&#xf6ec;</i></div>
@@ -186,7 +153,7 @@
 			
 			
 			</div>
-			</div>
+		
 			
 			
 			</div>

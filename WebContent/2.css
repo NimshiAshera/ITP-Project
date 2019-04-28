@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+@charset "ISO-8859-1";
+
+h2{
+	font-size: 40px;
+	//text-align: centre;
+	color: green; 
+}
+
+.topic{
+	width: 100%;
+	text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 35%;
+  /*margin: 50px 0px 100px 800px;*/
+}
+
+th, td{
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size:20px;
+}
+
+tr:nth-child(even) {
+  background-color:  #ffffe6;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}

@@ -36,6 +36,26 @@
                                     </div>
                                 </div>
                  </a>
+                 <a href="companyOwnerReports.jsp">
+                                <div class="w3-col ">
+                                    <div class="w3-container w3- w3-padding-24  w3-hover-dark-gray" style="background-color:#33cccc">
+                                        <div class="w3-left w3-padding"><i style='font-size:48px' class='fas'>&#xf183;</i></div>
+                                        <div class="w3-right  w3-padding">
+                                            <h3>View Registered Services</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                 </a>
+                 <a href="report/Book.pdf">
+                                <div class="w3-col ">
+                                    <div class="w3-container w3- w3-padding-24  w3-hover-dark-gray" style="background-color:#fff">
+                                        <div class="w3-left w3-padding"><i style='font-size:48px' class='fas'>&#xf183;</i></div>
+                                        <div class="w3-right  w3-padding">
+                                            <h3>View Business Report</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                 </a>
             </header>
 
             <div class="w3-panel">

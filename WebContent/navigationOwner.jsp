@@ -34,12 +34,13 @@
             <div class="w3-dropdown-hover">
             <button class="w3-button" style="text-decoration: none"><i class="fa fa-users fa-fw"></i>&nbsp; Staff <i class="fa fa-caret-down"></i></button>
             <div class="w3-dropdown-content w3-bar-block">
-              <a href="/.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building fa-fw"></i>&nbsp;Service Manager</a>
-              <a href="dashboard.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Accountant</a>
-              <a href="/.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Booking Manager</a>
+              <a href="CustomerManager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building fa-fw"></i>&nbsp;Customer Manager</a>
+              <a href="ServiceManager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-building fa-fw"></i>&nbsp;Service Manager</a>
+              <a href="view_income_menu.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Accountant</a>
+              <a href="BookingManager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Booking Manager</a>
               <a href="</.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Event Manager</a>
-              <a href="</.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Package Manager</a>
-              <a href="</.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Travel Manager</a>
+              <a href="PackageManager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Package Manager</a>
+              <a href="TravelManager.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cart-arrow-down fa-fw"></i>&nbsp; Travel Manager</a>
             </div>
             </div>
             

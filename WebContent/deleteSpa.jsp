@@ -10,38 +10,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="form.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src=""></script>
 <link rel="stylesheet" type="text/css" href="">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-    align: center;
-}
 
-th{
-    border: 2px solid #dddddd;
-    text-align: center;
-    padding: 8px;
-    
-}
-
-td {
-    border: 2px solid #D0D3D4;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-</style>
 <title>Insert title here</title>
 
 
@@ -57,6 +42,21 @@ tr:nth-child(even) {
 				<div id="page-content">
 					
 					<div class="post">
+					
+					
+						<!-- Navbar -->
+
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>
 					<%
   if(session.getAttribute("username") != null){
 	  String username = (String) session.getAttribute("username");
@@ -66,7 +66,7 @@ tr:nth-child(even) {
 	 
       Class.forName("com.mysql.jdbc.Driver").newInstance();
             
-           Connection con=DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false","root","root");
+           Connection con=DriverManager.getConnection("jdbc:mysql://localhost/project?useSSL=false","root","root");
    
             PreparedStatement ps = con.prepareStatement("select * from spa where username='"+username+"'");
             
@@ -79,16 +79,15 @@ tr:nth-child(even) {
 		<form action="DelSpa">
 	
 
-		<table width="800px" border="0" align="center">
-			 <br><br><center><font size="4">Delete Spa Details</font></center>
+	
+			 <br><br><br><center><font size="4">Delete Spa Details</font></center>
 			<br><br><center><font size="5">Detail Information of <%=rs.getString(1)%> <%=rs.getString(2)%></font></center><br><br>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
-			
-				
-			<tr>
+			<div class="container">
+			 <table class="table">
+			 
+   
+    <tbody>
+			<tr class="Customer First Name">
 				<td>Name:</td>
 				<td><%=rs.getString(1)%></td>
 			</tr>
@@ -129,22 +128,12 @@ tr:nth-child(even) {
 				<td><%=rs.getString(9)%></td>
 
 			</tr>
-			<tr>
-				<td>User Name:</td>
-				<td><%=rs.getString(10)%></td>
-
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><%=rs.getString(11)%></td>
-
-			</tr>
-			
+		
 			
 			<tr><td></td>
-				<td><br><br><input type="submit" value="DELETE"></td>
+				<td><br><br><input type="submit" value="Delete" class="btn btn-danger"></td>
 			</tr>
-		
+		</tbody>
 		</table>
 	</form>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -165,7 +154,8 @@ tr:nth-child(even) {
         %>
  
 </div>
-					
+			</div>
+<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>		
 					</div>
 					</div>
 					</div>
