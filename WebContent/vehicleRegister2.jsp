@@ -53,6 +53,45 @@
     
     function validation(){
 		
+    	var fname=document.form1.fname.value;
+		var Fname= /^[a-zA-Z]+$/;
+					
+			if(fname==""){
+				alert("Please insert the first name");
+				return false;
+			}else if(!isNaN(fname)){
+				alert("Please insert a valid first name");
+				return false;
+			}else if(!fname.match(Fname)){
+				alert("Please insert letters only for first name");
+				return false;
+			}
+		
+		
+		var lname=document.form1.lname.value;
+		var Lname= /^[a-zA-Z]+$/;
+		
+			if(lname==""){
+				alert("Please insert the last name");
+				return false;
+			}else if(!isNaN(lname)){
+				alert("Please insert a valid last name");
+				return false;
+			}else if(!lname.match(Lname)){
+				alert("Please insert letters only for first name");
+				return false;
+			}
+			
+		var phone = document.form1.phone.value;
+		var Phone =  /^[0-9]{10}$/;
+				
+				if(phone==""){
+					alert("Please insert the contact number");
+					return false;
+				}else if(!phone.match(Phone)){
+					alert("Please insert a correct contact number");
+					return false;
+				}	
 	
 		var noPlate = document.form.noPlate.value;
 		var NoPlate =  /^[0-9]{4}[A-Z]{1}[a-z]{1}$/;
@@ -65,17 +104,7 @@
 				alert("Please insert a valid vehicle registered number");
 				return false;
 			}
-			
-		var hire = document.form.hire.value;
-			
-			if(hire==""){
-				alert("Please enter the per a kilometer");
-				return false;
-			}else if(hire==0 || hire<50){
-				alert("Please enter the per a kilometer. Hire should be greater then 50.00 rupees.");
-				return false;
-			}
-			
+				
 			
 		var image = document.form.image.value;
 		
@@ -113,6 +142,33 @@
 			}
 			
 			
+		var uname = document.form1.uname.value;
+			
+			if(uname==""){
+				alert("Please insert a user name");
+				return false;
+		}
+			
+			
+		var password = document.form1.password.value;
+			
+			if(password==""){
+				alert("Please insert a password");
+				return false;
+			}	
+		
+		var cPassword = document.form1.cPassword.value;
+			
+			if(cPassword==""){
+				alert("Please insert your password again");
+				return false;
+			}else if(!password.match(cPassword)){
+				alert("Password not matching. Check again");
+				return false;
+			}	
+							
+			
+			
 	}
     
     
@@ -123,56 +179,22 @@
 </head>
 			
 
-<body>
+<body style="background:url(images/img01.gif) repeat;">
 	<div class="container">
 	
 		<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT SRILANKA</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MAP</a>
-    <a href="Gallery_01.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
-    <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">THINGS TO DO <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">HOTEL & RESORT</a>
-        <a href="#" class="w3-bar-item w3-button">SPA</a>
-        <a href="#" class="w3-bar-item w3-button">ADVENTURS</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">HIRE FOR YOU <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">VEHICLE</a>
-        <a href="#" class="w3-bar-item w3-button">TOUR GUIDE</a>
-        <a href="#" class="w3-bar-item w3-button">DRIVERS</a>
-      </div>
-    </div>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">BOOK & REQUEST <i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">TOUR PACKAGES</a>
-        <a href="#" class="w3-bar-item w3-button">EVENT</a>
-      </div>
-    </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG OUT</a>
-    <a href="customerLogin.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOG IN</a>   
-    <a href="customerRegister.jsp" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">SIGN IN</a>
-    
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
-  </div>
-</div>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">ABOUT SRILANKA</a>
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MAP</a>
-  <a href="Contacts.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="Home.jsp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-</div>
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>
 	
 	
 	
@@ -180,10 +202,22 @@
 	
 	<div class="form">
 	
-	<form action="" name="form" method="post" enctype="multipart/form-data" onSubmit="return validation()">
+	<form action="VehicleRegister" name="form" method="post" enctype="multipart/form-data" onSubmit="return validation()">
 	
 	<h2><font color ="#00cc7a" size="8" >Register Your Vehicle</font></h2><br/>
 
+								<label>Owner First Name</label>
+                                <p><input type="text" class="form-control"  id="fname" name="fname" placeholder="First Name"    ></p>
+                            
+                            
+                                <label>Owner Last Name</label>
+                               <p> <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name"   ></p>
+                            
+								<label>Contact Number</label>
+                               <p> <input type="text" class="form-control"  id="phone" name="phone" placeholder="011999999"   ></p>
+                               
+                               <hr><br/>
+                               								
 								<label>Vehicle Type</label>
                                 <p><select id="type" name="type" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
         
@@ -209,24 +243,36 @@
                                <p> <input type="text" class="form-control"  name="noPlate" id="noPlate" placeholder="1234Xx" ></p>
                                
                            
-                               <label>Hire per Kilometer</label>
-                               <p><input type="number" class="form-control"  min="0" name="hire" id="hire"  placeholder="50.00" ></p>
-                           
-                            
                            
                                 <label>Upload Image</label>
-                                <p><input id="vehicle" type="file" name="image" id="image" ></p><br/>
+                                <p><input id="vehicle" type="file" name="avatar" id="avatar" ></p><br/>
                                
                                 <label>Service Availability Status</label>
-                               <p><input type="radio"  name="part" id="part" value="a1" />Available</input></p>
-							   <p><input type="radio" name="part" id="part" value="a2" />Not available</input></p><br/>
+                               <p><input type="radio"  name="part" id="part" value="Available" />Available</input></p>
+							   <p><input type="radio" name="part" id="part" value="Not available" />Not available</input></p><br/>
                                 
                                 <label>Facilities</label>
-                                <p><textarea id="vehicle" type="text" placeholder="Features" name="features" id="features" ></textarea></p>                                                                                                                        
+                                <p><textarea id="vehicle" type="text" placeholder="Features" name="features" id="features" ></textarea></p>   
+                                
+                                <hr><br/>                                                                                                                     
 	
 								<label>Do you agree with our <a href="terms.jsp"><u>Terms & Conditions</u></a>???</label>
-                                <p><input type="radio"  name="terms" id="terms" value="t1" />Yes</input></p>
-							   	<p><input type="radio" name="terms" id="terms" value="t2" />No</input></p><br/>
+                                <p><input type="radio"  name="terms" id="terms" value="Yes" />Yes</input></p>
+							   	<p><input type="radio" name="terms" id="terms" value="No" />No</input></p><br/>
+							   	
+							   	<label>User Name</label>
+                               <p> <input type="text" class="form-control"  id="username" name="username" placeholder="UserName" ></p>
+                               
+                               
+                              
+                               <label>Password</label>
+                               <p><input type="text" class="form-control"  id="password" name="password" placeholder="Password"  ></p>
+                              
+                                
+                               
+                                <label>Confirm Password</label>
+                                <p><input type="text" class="form-control"  id="cPassword" name="cPassword" placeholder="Re-Password" ></p>
+                                
 				
 	<input type="submit" value="Register" name="submitButton" id="sButton">	
 	

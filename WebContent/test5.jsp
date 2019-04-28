@@ -14,7 +14,23 @@
 <title>Hotel</title>
 </head>
 	
-<body>
+<body style="background:url(images/img01.gif) repeat;">
+
+
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>
+
+
+
   <div id="wrapper">
 	<div id="page">
 		<div id="page-bgtop">

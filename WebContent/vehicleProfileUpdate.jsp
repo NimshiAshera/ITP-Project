@@ -1,7 +1,6 @@
-<%@page import="TourGuide.TourGuide"%>
+<%@page import="Vehicle.Vehicle"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -13,8 +12,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
-<title>Tour Guide Profile Update</title>
 
+<title>Vehicle Profile Update</title>
 </head>
 <body style="background:url(images/img01.gif) repeat;">
 
@@ -34,67 +33,52 @@
 		}
 	%>
 	
+	
 	<br><br><br>
 
-<h1 style="text-align: center; font-size: 50px; color: green">Update Tour Guide Profile</h1>
+<h1 style="text-align: center; font-size: 50px; color: green">Update Vehicle Profile</h1>
 		<br> <br>
 		<%
-			TourGuide guide=(TourGuide)request.getAttribute("guide");
+			Vehicle vehicle=(Vehicle)request.getAttribute("vehicle");
 		%>
 	
 		<div class="form-style-5">
 			<div class="form">
-				<form action="UpdateTourGuide" method="post" enctype="multipart/form-data">
+				<form action="UpdateVehicle" method="post" enctype="multipart/form-data">
 																
 					
 						<lable>First Name</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getFname() %>' name="fname"></p>
+							value='<%=vehicle.getFname() %>' name="fname" disabled="disabled"></p>
 					
 						<lable>Last Name</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getLname() %>' name="lname"></p>
+							value='<%=vehicle.getLname() %>' name="lname" disabled="disabled"></p>
 							
-						<lable>NIC</lable>
-						<p><input id="input" type="text" value='<%=guide.getNic() %>'
-							name="nic" disabled="disabled"></p>	
-							
-					
-						<lable>E mail</lable>
-						<p><input id="input" type="text"
-							value='<%=guide.getEmail() %>' name="email"></p>
-				
-						<lable></lable>
-						<p style="font-size: 20px; color: red;">${emailErr}</p>
-						
 						<lable>Phone</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getPhone() %>' name="phone"></p>
-						
-						<lable>Language</lable>
-						<p><input id="input" type="text"
-							value='<%=guide.getLanguage() %>' name="language"></p>
-						
-						<lable>Category</lable>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="National Tourist Guide" disabled="disabled">National Tourist Guide</p>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="Chauffeur Tourist Guide" disabled="disabled">Chauffeur Tourist Guide</p>
-						
+							value='<%=vehicle.getPhone() %>' name="phone" disabled="disabled"></p>
 										
-						<lable>License</lable>
+						<lable>Type</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getLicense() %>' name="license" disabled="disabled"></p>
+							value='<%=vehicle.getType() %>' name="type" disabled="disabled"></p>
 					
-						<lable>Date Issued</lable>
+						<lable>Model</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getdI() %>' name="dI" disabled="disabled"></p>
+							value='<%=vehicle.getStatus() %>' name="status" disabled="disabled"></p>
 					
-						<lable>Date Expired</lable>
+						<lable>Register No.</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getdE() %>' name="dE" disabled="disabled"></p>
+							value='<%=vehicle.getNoPlate() %>' name="noPlate" disabled="disabled"></p>
 							
 						<lable>Service Availability</lable>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="part1" value="Available">Available</p>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="part1" value="Not available">Not available</p>
+						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="Available">Available</p>
+						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="Not available">Not available</p>
+						
+						<lable>Features</lable>
+						<p><input id="input" type="text"
+							value='<%=vehicle.getFeatures() %>' name="features" disabled="disabled"></p>
+						
 							
 						<lable>Terms & Conditions</lable>
 						<p><input style="height: 20px; width: 20px;" type="radio" name="terms" value="Yes" disabled="disabled">Yes</p>
@@ -103,22 +87,18 @@
 					
 						<lable>User name</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getUsername() %>' name="username"></p>
+							value='<%=vehicle.getUsername() %>' name="username" disabled="disabled"></p>
 					
-						<lable></lable>
-						<p style="font-size: 15px; color: black;">${unameExist}</td>
-					
+						
 						<lable>Password</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getPassword() %>' name="password"></p>
+							value='<%=vehicle.getPassword() %>' name="password" disabled="disabled"></p>
 					
 						<lable>Confirm password</lable>
 						<p><input id="input" type="text"
-							value='<%=guide.getcPassword() %>' name="cPassword" required></p>
+							value='<%=vehicle.getcPassword() %>' name="cPassword" disabled="disabled"></p>
 					
-						<lable></lable>
-						<p style="font-size: 15px; color: black;">${passwordMatchingErr}</p>
-					
+						
 					
 				       <br/> <input type="submit" value="Update" name="submitButton" id="sButton">
 				</form>
@@ -133,7 +113,7 @@
 		<script>
 		function myFunction() {
 		    if (confirm("THINK TWICE ! If you pressed \"ok\" your user account will be deleted permanently..")) {
-    			window.location.href = "DeleteTourGuide";
+    			window.location.href = "DeleteVehicle";
     		} else {
     			window.location.href = "Home-AfterLogin.jsp";
     		}
@@ -147,7 +127,6 @@
 <!-- End page content -->
 
 	</div>
-
 
 
 </body>

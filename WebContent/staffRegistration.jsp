@@ -136,6 +136,7 @@
 			
 			
 		<label>Designation</label>	
+		<p><input type="radio" name="role" id="role" value="Customer Manager" />Customer Manager</input></p>
  		<p><input type="radio" name="role" id="role" value="Manager" />Service Manager</input></p>
 		<p><input type="radio" name="role" id="role" value="Accountant" />Accountant</input></p>
 		<p><input type="radio" name="role" id="role" value="Booking Manager" />Booking Manager</input></p>
@@ -161,7 +162,7 @@
 		<p><input type="text" class="form-control"  name="email" id="email" placeholder="tour@gmail.com"   ></p>
                            
  		<label>User Name</label>
- 		<p> <input type="text" class="form-control"  name="uname" id="uname" placeholder="UserName"  ></p>                              
+ 		<p> <input type="text" class="form-control"  name="username" id="username" placeholder="UserName"  ></p>                              
                                                              
 		<label>Password</label>
 		<p> <input type="text" class="form-control"  name="password" id="password" placeholder="Password"  ></p>

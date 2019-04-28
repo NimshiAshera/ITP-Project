@@ -144,7 +144,7 @@
 </head>
 	
 	
-<body>
+<body style="background:url(images/img01.gif) repeat;">
   <div id="wrapper">
 	<div id="page">
 		<div id="page-bgtop">

@@ -1,7 +1,6 @@
-<%@page import="TourGuide.TourGuide"%>
+<%@page import="Vehicle.Vehicle"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -13,15 +12,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
-<title>Tour Guide Image Update</title>
+
+<title>Vehicle Image Update</title>
 
 </head>
-<body style="background:url(images/img01.gif) repeat;">
 
+<body style="background:url(images/img01.gif) repeat;">
 
 <div class="container" >
 	
-<!-- Navbar -->
+	<!-- Navbar -->
+
 
 	<%
 		if (session.getAttribute("username") == null) {
@@ -35,22 +36,21 @@
 		}
 	%>
 	
-	
 	<br><br><br><br><br><br>
 
-<h1 style="text-align: center; font-size: 50px; color: green">Update Tour Guide Image</h1>
+<h1 style="text-align: center; font-size: 50px; color: green">Update Vehicle Image</h1>
 		<br> <br><br> <br>
 		<%
-			TourGuide guide=(TourGuide)request.getAttribute("guide");
+			Vehicle vehicle=(Vehicle)request.getAttribute("vehicle");
 		%>
 	
 		<div class="form-style-5">
 			<div class="form">
-				<form action="UpdateTourGuideImage" method="post" enctype="multipart/form-data">
+				<form action="UpdateVehicleImage" method="post" enctype="multipart/form-data">
 										
 						<lable>User Name</lable>
 						<p><input id="input" type="text"
-							value="<%=guide.getUsername() %>" name="username" disabled="disabled"></p>
+							value="<%=vehicle.getUsername() %>" name="username" disabled="disabled"></p>
 						
 					 
  						<lable>Upload Image</lable> 
@@ -71,7 +71,5 @@
 <!-- End page content -->
 
 	</div>
-
-
 </body>
 </html>

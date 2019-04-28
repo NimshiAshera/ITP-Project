@@ -6,24 +6,26 @@
 <link rel="stylesheet" type="text/css" href="login-styles.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Vehicle Signin</title>
+
+	<title>Signin</title>
+
 </head>
 
 
-<body style=background-image:url("background/vehicle.jpg") >
+<body style=background-image:url("background/drive.jpg") >
 
 <div class="container">
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Vehicle Owner Login<span></span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">Staff Login<span></span></span></h1>
 		</div>
 		
-		<form action="loginCheck1" method="post"  >
+		<form action="loginCheck4" method="post"  >
 		
 		<div class="login-box animated fadeInUp">
-			<div class="box-header">			
-				
+			<div class="box-header">
+					
 					<h2>Log In</h2>
-			
+				
 			</div>
 			
 			<label for="username">Username</label>
@@ -43,7 +45,8 @@
 			
 			 <button type="submit">Sign In</button>
 				
-		</div>
+		
+	</div>
 	</form>
 </div>
 </body>
