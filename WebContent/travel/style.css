@@ -1,0 +1,85 @@
+h3{
+	text-align: center;
+	color: #fff;
+	text-shadow: 4px 4px #006652;
+}
+
+.travel{
+	max-width:1600px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+.col{
+	flex: 25%;
+	padding: 10px;
+	max-width: 450px;
+	box-sizing: border-box;	
+}
+.table{
+	background: #ccfff5;
+	padding: 40px 20px;
+	font-family: "montserrat",sans-serif;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 0 10px #000;
+	min-height:650px;
+	
+}
+
+.table h2{
+	text-transform: uppercase;
+}
+
+.table ul{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+
+.visit{
+	font-size: 40px;
+	margin-bottom: 20px;
+}
+
+.visit span{
+	display: block;
+	font-size: 14px;
+}
+
+.table a {
+	text-decoration : none;
+	color: #2c3e50;
+	boreder: 2px solid #2c3e50;
+	display: block;
+	padding : 10px 0;
+	margin: 10px 0;
+	border-radius: 40px;
+	text-transform: uppercase;
+	font-size: 14px;
+	transition: 0.5s linear;
+}
+
+.table a:hover{
+	background: #2c3e50;
+	color: #fff;
+}
+
+.pop{
+	background: #2c3e50;
+	color: #fff;
+	transform: rotate(45deg);
+	padding: 10px 40px;
+	position: absolute;
+	top: 16px;
+	right: -34px;
+}
+
+@media screen and (max-width:980px){
+	.col{
+		flex: 100%;
+	}
+}

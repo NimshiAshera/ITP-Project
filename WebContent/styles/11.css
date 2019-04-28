@@ -1,0 +1,148 @@
+@charset "ISO-8859-1";
+
+h1{
+	text-align:center;
+	//padding-top: 100px;
+	color: #26734d;
+	font-size: 65px;
+}
+
+.container-table100 {
+  width: 120%;
+  min-height: 100vh;
+  background: #66cc99;
+  background: -webkit-linear-gradient(45deg, #b3e6cc, #39ac73);
+  background: linear-gradient(45deg, #b3e6cc, #39ac73);
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  //align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  //padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1170px;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 120%;
+  margin: 0 auto;
+  position: relative;
+}
+
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 1;
+}
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.tab th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: white;
+  line-height: 1.2;
+  font-weight: unset;
+  background-color: black;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.col1 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col2 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col3 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col4 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col5 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col6 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col7 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.col8 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.font{
+	font-size: 20px;
+}
+

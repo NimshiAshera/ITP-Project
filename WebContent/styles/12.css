@@ -1,0 +1,99 @@
+@charset "ISO-8859-1";
+
+h1{
+	text-align:center;
+	//padding-top: 100px;
+	color: #006600;
+	font-size: 65px;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #e6ffe6;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  //padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1300px;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col1 .col2 .col3 .col4 .col5 .col6{
+  width: 265px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.tab th {
+  padding-top: 24px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+.tab td {
+  padding-top: 18px;
+  padding-bottom: 14px;
+  font-size: 20px;
+}
+
+/**************************/
+
+.table100 td {
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  color: #808080;
+  line-height: 3.0;
+}
+
+.table100 th {
+  font-family: Montserrat-Medium;
+  font-size: 12px;
+  color: #fff;
+  line-height: 3.0;
+  text-transform: uppercase;
+  font-size: 20px;
+  background-color: #53c653;
+}
+
+.table100 .tab:hover {
+  background-color: #f2f2f2;
+}
+
+.table100 .new {
+  background-color: #f2f2f2;
+}
+
+.table100 .new {
+  background-color: #b3e6b3 !important;
+}
+
+.table100  td:hover {
+  background-color:#8cd98c;
+  color: #fff;
+}
+
+/****************************/
+
+.font{
+	font-size: 20px;
+}

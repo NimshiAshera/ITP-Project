@@ -1,0 +1,64 @@
+@charset "ISO-8859-1";
+
+#main {
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#box {
+    text-align: center;
+    min-height:1080px;
+    width: 700px;
+    background: #DDE3E3;
+    -webkit-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.38);
+    -moz-box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.38);
+    box-shadow: 0px 0px 5px rgba(50, 50, 50, 0.38);
+}
+
+#Profile {
+	width: 400px;
+	height: 400px;
+	right: -76px;
+	bottom: -41px;
+	position: relative;
+	z-index: 99999;
+	overflow: hidden;
+	//border: solid thin #FFF;
+	text-align: left;	
+}
+
+#Profile img {
+    width: 100%;
+    height: auto;
+    //border: solid thin #FFF;
+    cursor: pointer;
+    position: absolute;
+   	top: 10%;
+   	left: 10%;
+}
+
+
+h1 {
+  //margin-top: 55px;
+  font-family: arial;
+}
+
+h3 {
+    //margin-top: 3px;
+    color: #686868;
+    font-size: 18px;
+    line-height: 0px;
+}
+
+#social {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 35px;
+}
+/*///////////////// ICONS/////////////////////*/
+
+.low:hover {
+    opacity: 1.5;
+}

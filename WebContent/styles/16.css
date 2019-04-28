@@ -1,0 +1,143 @@
+@charset "ISO-8859-1";
+
+body{
+	background-color: #fff;
+}
+
+h1{
+	text-align:center;
+	//padding-top: 100px;
+	color: #004d99;
+	font-size: 65px;
+}
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  //padding: 33px 30px;
+}
+
+.wrap-table100 {
+  width: 1300px;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col1 .col2 .col3 .col4 .col5 .col6 .col7 .col8 .col9{
+  width: 265px;
+  text-align: right;
+  padding-right: 62px;
+}
+
+.tab th {
+  padding-top: 24px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+.tab td {
+  padding-top: 18px;
+  padding-bottom: 14px;
+  font-size: 20px;
+}
+
+/**************************/
+
+.table100 tbody tr:nth-child(even) {
+  background-color: #99ccff;
+}
+
+.table100 td {
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  color: #004d99;
+  line-height: 3.0;
+  position: relative;
+}
+
+.table100 th {
+  font-family: Montserrat-Medium;
+  font-size: 12px;
+  color: #fff;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-size: 20px;
+  background-color: #004d99;
+}
+
+.table100 .tab:hover td{
+  color: #004d99;
+}
+
+.table100 .hov-column {color: #004d99;}
+.table100 .hov-column::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-left: 1px solid #99ccff;
+  border-right: 1px solid #99ccff;
+}
+
+.table100 .hov-column-head {
+  background-color: #004d99 !important;
+  color: #004d99;
+}
+
+.table100 .new .new1 {
+  background-color: #99ccff;
+}
+
+.table100 .new .new1{
+  background-color: #99ccff !important;
+}
+
+.table100  td:hover {
+  background-color:#4da6ff;
+  color: #fff;
+}
+
+.table100 .tab td:hover {
+  color: #fe3e64;
+}
+
+.table100 .tab td:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border: 1px solid #004d99;
+}
+
+/****************************/
+
+.font{
+	font-size: 30px;
+}
