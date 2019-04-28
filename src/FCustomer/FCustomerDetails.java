@@ -43,7 +43,7 @@ public class FCustomerDetails extends HttpServlet {
 		FCustomer fcustomer = new FCustomer();
 		
 		HttpSession session=request.getSession();  
-		fcustomer.setUname((String)session.getAttribute("uname"));
+		fcustomer.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
@@ -51,7 +51,7 @@ public class FCustomerDetails extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select * from fcustomer where uname = '"+ fcustomer.getUname()+"'";
+			String sql = "select * from fcustomer where username = '"+ fcustomer.getUsername()+"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){
@@ -64,7 +64,7 @@ public class FCustomerDetails extends HttpServlet {
 				fcustomer.setPhone(rs.getString(6));
 				fcustomer.setGender(rs.getString(7));
 				fcustomer.setEmail(rs.getString(8));
-				fcustomer.setUname(rs.getString(9));
+				fcustomer.setUsername(rs.getString(9));
 				fcustomer.setPassword(rs.getString(10));
 			}
 			System.out.println("worked");

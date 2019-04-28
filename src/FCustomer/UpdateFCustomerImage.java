@@ -54,7 +54,7 @@ public class UpdateFCustomerImage extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 
-		fcustomer.setUname((String) session.getAttribute("uname"));
+		fcustomer.setUsername((String) session.getAttribute("username"));
 
 		response.setContentType("text/html");
 
@@ -63,7 +63,7 @@ public class UpdateFCustomerImage extends HttpServlet {
 		if (ServletFileUpload.isMultipartContent(request)) {
 			Part part = request.getPart("avatar");
 			fcustomer.setAvatar(fcustomer.extractAvatar(part));
-			fcustomer.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\customer"
+			fcustomer.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\customer"
 					+ File.separator + fcustomer.getAvatar());
 			File fileSaveDir = new File(fcustomer.getPath());
 			part.write(fcustomer.getPath() + File.separator);
@@ -79,7 +79,7 @@ public class UpdateFCustomerImage extends HttpServlet {
 			try {
 				String sql = "update fcustomer set " + "avatar='"
 						+ fcustomer.getAvatar() + "'," + "path='"
-						+ fcustomer.getPath() + "'" + " where uname='" + fcustomer.getUname()
+						+ fcustomer.getPath() + "'" + " where username='" + fcustomer.getUsername()
 						+ "'";
 
 				Statement st = conn.createStatement();
@@ -88,8 +88,11 @@ public class UpdateFCustomerImage extends HttpServlet {
 				session.setAttribute("loggedAs", "fcustomer");
 				session.setAttribute("avatar", fcustomer.getAvatar());
 
-				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,
+				request.getRequestDispatcher("/Home.jsp").forward(request,
 						response);
+				request.getRequestDispatcher("/Header.jsp").forward(request,
+						response);
+				
 				
 			} catch (Exception e) {
 				System.out.println("Got an exception");

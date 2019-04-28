@@ -51,7 +51,7 @@ public class FCustomerImage extends HttpServlet {
 		FCustomer fcustomer = new FCustomer();
 		
 		HttpSession session=request.getSession();  
-		fcustomer.setUname((String)session.getAttribute("uname"));
+		fcustomer.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
@@ -59,7 +59,7 @@ public class FCustomerImage extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select avatar,path from fcustomer where uname = '"+ fcustomer.getUname() +"'";
+			String sql = "select avatar,path from fcustomer where username = '"+ fcustomer.getUsername() +"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){

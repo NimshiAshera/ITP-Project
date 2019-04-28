@@ -61,7 +61,7 @@ public class LCustomerRegister extends HttpServlet {
 		lcustomer.setPhone(request.getParameter("phone"));
 		lcustomer.setGender(request.getParameter("gender"));
 		lcustomer.setEmail(request.getParameter("email"));
-		lcustomer.setUname(request.getParameter("uname"));
+		lcustomer.setUsername(request.getParameter("username"));
 		lcustomer.setPassword(request.getParameter("password"));
 		
 		//--------------------------------
@@ -81,8 +81,8 @@ public class LCustomerRegister extends HttpServlet {
 		else {
 			try {
 				Statement st = conn.createStatement();
-				String sql= "select * from lcustomer where uname= '"
-						+lcustomer.getUname()+"'";
+				String sql= "select * from lcustomer where username= '"
+						+lcustomer.getUsername()+"'";
 				
 				ResultSet rs= st.executeQuery(sql);
 				
@@ -95,7 +95,7 @@ public class LCustomerRegister extends HttpServlet {
 	           }
 				
 				else  {
-					String sql2 = "insert into lcustomer (fname,lname,nic,avatar,path,phone,gender,email,uname,password)"
+					String sql2 = "insert into lcustomer (fname,lname,nic,avatar,path,phone,gender,email,username,password)"
 							+ "values (?,?,?,?,?,?,?,?,?,?)";
 
 					PreparedStatement pre = conn.prepareStatement(sql2);
@@ -109,7 +109,7 @@ public class LCustomerRegister extends HttpServlet {
 					if (ServletFileUpload.isMultipartContent(request)) {
 						Part part = request.getPart("avatar");
 						lcustomer.setAvatar(lcustomer.extractAvatar(part));
-						lcustomer.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\customer\\"
+						lcustomer.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\customer\\"
 								+ File.separator + lcustomer.getAvatar());
 						File fileSaveDir = new File(lcustomer.getPath());
 						part.write(lcustomer.getPath() + File.separator);
@@ -119,7 +119,7 @@ public class LCustomerRegister extends HttpServlet {
 					pre.setString(6, lcustomer.getPhone()); 
 					pre.setString(7, lcustomer.getGender());
 					pre.setString(8, lcustomer.getEmail());					
-					pre.setString(9, lcustomer.getUname());
+					pre.setString(9, lcustomer.getUsername());
 					pre.setString(10, lcustomer.getPassword());
 
 					}	
@@ -128,6 +128,8 @@ public class LCustomerRegister extends HttpServlet {
 
 					
 					request.getRequestDispatcher("/Home.jsp").forward(request,
+							response);
+					request.getRequestDispatcher("/Header.jsp").forward(request,
 							response);
 				}
 

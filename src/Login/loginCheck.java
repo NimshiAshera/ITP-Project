@@ -99,7 +99,9 @@ public class loginCheck extends HttpServlet {
 						request.setAttribute("message", message);
 						
 
-						request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(
+						request.getRequestDispatcher("/Home.jsp").forward(
+								request, response);
+						request.getRequestDispatcher("/Header.jsp").forward(
 								request, response);
 						
 
@@ -142,7 +144,9 @@ public class loginCheck extends HttpServlet {
 							message = (String) session.getAttribute("username");
 							request.setAttribute("message", message);
 
-							request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(
+							request.getRequestDispatcher("/Home.jsp").forward(
+									request, response);
+							request.getRequestDispatcher("/Header.jsp").forward(
 									request, response);
 
 						}

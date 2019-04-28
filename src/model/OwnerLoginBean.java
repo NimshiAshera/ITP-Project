@@ -4,7 +4,6 @@ package model;
 
 		private String username;
 		private String password;
-		
 		public String getUsername() {
 			return username;
 		}
@@ -17,6 +16,8 @@ package model;
 		public void setPassword(String password) {
 			this.password = password;
 		}
+		
+		
 		
 		
 	}

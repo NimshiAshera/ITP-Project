@@ -54,7 +54,7 @@ public class UpdateLCustomerImage extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 
-		lcustomer.setUname((String) session.getAttribute("uname"));
+		lcustomer.setUsername((String) session.getAttribute("username"));
 
 		response.setContentType("text/html");
 
@@ -63,7 +63,7 @@ public class UpdateLCustomerImage extends HttpServlet {
 		if (ServletFileUpload.isMultipartContent(request)) {
 			Part part = request.getPart("avatar");
 			lcustomer.setAvatar(lcustomer.extractAvatar(part));
-			lcustomer.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\customer"
+			lcustomer.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\customer"
 					+ File.separator + lcustomer.getAvatar());
 			File fileSaveDir = new File(lcustomer.getPath());
 			part.write(lcustomer.getPath() + File.separator);
@@ -79,7 +79,7 @@ public class UpdateLCustomerImage extends HttpServlet {
 			try {
 				String sql = "update lcustomer set " + "avatar='"
 						+ lcustomer.getAvatar() + "'," + "path='"
-						+ lcustomer.getPath() + "'" + " where uname='" + lcustomer.getUname()
+						+ lcustomer.getPath() + "'" + " where username='" + lcustomer.getUsername()
 						+ "'";
 
 				Statement st = conn.createStatement();
@@ -88,7 +88,9 @@ public class UpdateLCustomerImage extends HttpServlet {
 				session.setAttribute("loggedAs", "lcustomer");
 				session.setAttribute("avatar", lcustomer.getAvatar());
 
-				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,
+				request.getRequestDispatcher("/Home.jsp").forward(request,
+						response);
+				request.getRequestDispatcher("/Header.jsp").forward(request,
 						response);
 				
 			} catch (Exception e) {

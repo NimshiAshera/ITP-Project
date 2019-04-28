@@ -21,7 +21,7 @@ import dao.DBConnection;
  * Servlet implementation class LoginCheck
  */
 @WebServlet("/OwnerLoginCheck")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 
 public class OwnerLoginCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -95,7 +95,7 @@ public class OwnerLoginCheck extends HttpServlet {
 					session.setAttribute("Admin", uname);
 					request.setAttribute("username", uname);
 					
-					request.getRequestDispatcher("/form.jsp").forward(request, response);
+					request.getRequestDispatcher("/AdminDashBoard.jsp").forward(request, response);
 					}
 					
 					else if(dbuser.equals(dbuser)&& dbpassword.equals(password)){
@@ -105,7 +105,7 @@ public class OwnerLoginCheck extends HttpServlet {
 						session.setAttribute("Customer", uname);
 						request.setAttribute("username", uname);
 						
-						request.getRequestDispatcher("/homepage.jsp").forward(request, response);
+						request.getRequestDispatcher("/Home.jsp").forward(request, response);
 					}
 					
 					HttpSession session = request.getSession();
@@ -124,7 +124,7 @@ public class OwnerLoginCheck extends HttpServlet {
 					
 					message="Welcome "+uname;
 					request.setAttribute("message", message);
-					request.getRequestDispatcher("homePage.jsp").forward(request,response);
+					request.getRequestDispatcher("Home.jsp").forward(request,response);
 					
 				}
 

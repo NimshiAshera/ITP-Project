@@ -12,7 +12,7 @@ public class LCustomer {
 	private String phone;
 	private String gender;
 	private String email;
-	private String uname;
+	private String username;
 	private String password;
 	private String cPassword;
 	
@@ -65,11 +65,11 @@ public class LCustomer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getUname() {
-		return uname;
+	public String getUsername() {
+		return username;
 	}
-	public void setUname(String uname) {
-		this.uname = uname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -87,7 +87,7 @@ public class LCustomer {
 	
 	public String toString(){
 		return "Fname " + fname+ "\n" + "Lname " + lname + "\n" +" Nic" + nic+ "\n"+"Image"+ avatar +"\n" +"Path " + path  + "\n" + "Phone " + phone +"\n"+ "Gender " + gender + "\n" +"Email " + email + "\n"
-				 + "Username" +uname+"\n"+ "Password" + password + "\n" + "Confirm Password" + cPassword;
+				 + "Username" +username+"\n"+ "Password" + password + "\n" + "Confirm Password" + cPassword;
 		
 	}
 

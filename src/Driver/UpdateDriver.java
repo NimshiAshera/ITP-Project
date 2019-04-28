@@ -91,7 +91,8 @@ public class UpdateDriver extends HttpServlet {
 				
 				Object message = "Successfully updated";
 				request.setAttribute("message", message);
-				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request, response);
+				request.getRequestDispatcher("/Home.jsp").forward(request, response);
+				request.getRequestDispatcher("/Header.jsp").forward(request, response);
 				
 			}
 			catch(Exception e){

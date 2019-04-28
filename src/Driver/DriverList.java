@@ -53,17 +53,21 @@ public class DriverList extends HttpServlet {
 			out.println("<html>");
             out.println("<head>");
             out.println("<title>Details</title>");
-            out.println("<link href=profile.css rel=stylesheet type=text/css>"); 
+            out.println("<link href=styles/13.css rel=stylesheet type=text/css>"); 
             out.println("</head>");
             out.println("<body>");
             
+            out.println("<div class=\"container-table100\">\r\n");
+            out.println("<div class=\"wrap-table100\">\r\n");
+            out.println("<div class=\"table100\">\r\n");   
+            
             out.println("<h1>List of Registered Drivers</h1>");
             
-			String st1 ="<table border=2; width=100%;><tr><th>First Name</th><th>Last Name</th><th>NIC</th><th>Email</th><th>Phone No.</th><th>License</th><th>Date Issued</th><th>Date Expired</th></tr>";
+			String st1 ="<table class=\"new\" border=0; width=100%;><tr class=\"tab\"><th class=\"col1\">First Name</th><th class=\"col2\">Last Name</th><th class=\"col3\">NIC</th><th class=\"col4\">Email</th><th class=\"col5\">Phone No.</th><th class=\"col6\">License</th><th class=\"col7\">Date Issued</th><th class=\"col1\">Date Expired</th></tr>";
 			
 			while(rs.next()){
 				
-				st1 += "<tr><td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td><td>"+rs.getString(7)+"</td><td>"+rs.getString(8)+"</td></tr>";
+				st1 += "<tr class=\"tab\"><td class=\"col1\"><p class=\"font\">"+rs.getString(1)+"</td><td class=\"col2\"><p class=\"font\">"+rs.getString(2)+"</td><td class=\"col3\"><p class=\"font\">"+rs.getString(3)+"</td><td class=\"col4\"><p class=\"font\">"+rs.getString(4)+"</td><td class=\"col5\"><p class=\"font\">"+rs.getString(5)+"</td><td class=\"col6\"><p class=\"font\">"+rs.getString(6)+"</td><td class=\"col7\"><p class=\"font\">"+rs.getString(7)+"</td><td class=\"col8\"><p class=\"font\">"+rs.getString(8)+"</td></tr>";
 				
 			}
 			

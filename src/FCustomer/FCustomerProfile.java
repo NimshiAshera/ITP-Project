@@ -50,7 +50,7 @@ public class FCustomerProfile extends HttpServlet {
 		FCustomer fcustomer = new FCustomer();
 		
 		HttpSession session=request.getSession();  
-		fcustomer.setUname((String)session.getAttribute("uname"));
+		fcustomer.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
@@ -58,7 +58,7 @@ public class FCustomerProfile extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select fname,lname,pass,phone,gender,email,uname,password from fcustomer where uname = '"+fcustomer.getUname()+"'";
+			String sql = "select fname,lname,pass,phone,gender,email,uname,password from fcustomer where username = '"+fcustomer.getUsername()+"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){
@@ -69,7 +69,7 @@ public class FCustomerProfile extends HttpServlet {
 				fcustomer.setPhone(rs.getString(4));
 				fcustomer.setGender(rs.getString(5));
 				fcustomer.setEmail(rs.getString(6));
-				fcustomer.setUname(rs.getString(7));
+				fcustomer.setUsername(rs.getString(7));
 				fcustomer.setPassword(rs.getString(8));
 				
 			}

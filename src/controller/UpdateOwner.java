@@ -19,7 +19,7 @@ import dao.DBConnection;
  * Servlet implementation class UpdateOwner
  */
 @WebServlet("/UpdateOwner")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 
 public class UpdateOwner extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class UpdateOwner extends HttpServlet {
 		String address = request.getParameter("Address"); //Address
 		//String nic   = request.getParameter("NIC"); // NIC
 		//String gender   = request.getParameter("Gender"); // Gender
-		String dob   = request.getParameter("DOB"); // Date of Birth
+		//String dob   = request.getParameter("DOB"); // Date of Birth
 		String email = request.getParameter("Email"); // email
 		String phoneno   = request.getParameter("PhoneNo"); // PhoneNo
 		//String username = request.getParameter("username"); //Username
@@ -91,7 +91,7 @@ public class UpdateOwner extends HttpServlet {
 				
 				try{
 					String UserName = (String) session.getAttribute("username");
-					String sql2 = "update owner set  Address=? , DOB=? , Email=?, PhoneNo=? "
+					String sql2 = "update owner set  Address=? , Email=?, PhoneNo=? "
 							+ "where username = '"+UserName+"'";
 					
 					
@@ -102,7 +102,7 @@ public class UpdateOwner extends HttpServlet {
 					pre.setString(1, address);
 					//pre.setString(4, nic);
 					//pre.setString(5, gender);
-					pre.setString(2, dob);
+					//pre.setString(2, dob);
 					pre.setString(3, email);
 					pre.setString(4, phoneno);
 					//pre.setString(11, username);
@@ -112,7 +112,7 @@ public class UpdateOwner extends HttpServlet {
 					
 					Object message = "Successfully updated";
 					request.setAttribute("message", message);
-					request.getRequestDispatcher("/homepage.jsp").forward(request, response);
+					request.getRequestDispatcher("/Home.jsp").forward(request, response);
 					request.getRequestDispatcher("/header.jsp").forward(request, response);
 				
 				}

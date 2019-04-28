@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class LogoutServelet
  */
 @WebServlet("/OwnerLogout")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 
 public class OwnerLogout extends HttpServlet {
 	private static final long serialVersionUID = 1L;

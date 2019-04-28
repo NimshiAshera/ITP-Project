@@ -49,7 +49,7 @@ public class LCustomerImage extends HttpServlet {
 		LCustomer lcustomer = new LCustomer();
 		
 		HttpSession session=request.getSession();  
-		lcustomer.setUname((String)session.getAttribute("uname"));
+		lcustomer.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
@@ -57,7 +57,7 @@ public class LCustomerImage extends HttpServlet {
 		try{
 			
 			Statement st = conn.createStatement();
-			String sql = "select avatar,path from lcustomer where uname = '"+ lcustomer.getUname() +"'";
+			String sql = "select avatar,path from lcustomer where username = '"+ lcustomer.getUsername() +"'";
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()){

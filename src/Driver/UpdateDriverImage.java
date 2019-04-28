@@ -61,7 +61,7 @@ public class UpdateDriverImage extends HttpServlet {
 		if (ServletFileUpload.isMultipartContent(request)) {
 			Part part = request.getPart("avatar");
 			driver.setAvatar(driver.extractAvatar(part));
-			driver.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\driver"
+			driver.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\driver"
 					+ File.separator + driver.getAvatar());
 			File fileSaveDir = new File(driver.getPath());
 			part.write(driver.getPath() + File.separator);
@@ -86,7 +86,9 @@ public class UpdateDriverImage extends HttpServlet {
 				session.setAttribute("loggedAs", "driver");
 				session.setAttribute("avatar", driver.getAvatar());
 
-				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request,
+				request.getRequestDispatcher("/Home").forward(request,
+						response);
+				request.getRequestDispatcher("/Header").forward(request,
 						response);
 				
 			} catch (Exception e) {

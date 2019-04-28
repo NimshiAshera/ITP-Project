@@ -63,8 +63,8 @@ public class UpdateFCustomer extends HttpServlet {
 		else{
 			HttpSession session = request.getSession();
 			if(session != null){
-				if(session.getAttribute("uname")!= null){
-					String uname = (String) session.getAttribute("uname");
+				if(session.getAttribute("username")!= null){
+					String username = (String) session.getAttribute("username");
 					//String password = (String)session.getAttribute("password");
 				}
 				else{
@@ -73,9 +73,9 @@ public class UpdateFCustomer extends HttpServlet {
 			}
 			
 			try{
-				String uname = (String) session.getAttribute("uname");
+				String username = (String) session.getAttribute("username");
 				String sql2 = "update fcustomer set  fname=? ,lname=? , phone=? ,email=?  "
-						+ "where uname = '"+uname+"'";
+						+ "where username = '"+ username +"'";
 		
 				PreparedStatement pre = conn.prepareStatement(sql2);
 				
@@ -89,7 +89,9 @@ public class UpdateFCustomer extends HttpServlet {
 				
 				Object message = "Successfully updated";
 				request.setAttribute("message", message);
-				request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(request, response);
+				request.getRequestDispatcher("/Home.jsp").forward(request, response);
+				request.getRequestDispatcher("/Header.jsp").forward(request, response);
+				
 				
 			}
 			catch(Exception e){

@@ -45,7 +45,8 @@ public class loginCheck3 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String uname = request.getParameter("uname").trim();
+		
+		String username = request.getParameter("username").trim();
 		String password = request.getParameter("password").trim();
 		String dbuname = null, dbpassword = null ;
 
@@ -63,11 +64,11 @@ public class loginCheck3 extends HttpServlet {
 			write.write("Connection Established");
 
 			String message = null;
-			String sql = "select uname,password from lcustomer where uname='"
-					+ uname + "'";
+			String sql = "select username,password from lcustomer where username='"
+					+ username + "'";
 
-			String sql2 = "select uname,password from fcustomer where uname = '"
-					+ uname + "'";
+			String sql2 = "select username,password from fcustomer where username = '"
+					+ username + "'";
 			try {
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(sql);
@@ -86,26 +87,28 @@ public class loginCheck3 extends HttpServlet {
 						count += 1;
 					}
 
-					if (count == 1 && dbuname.equals(uname)
+					if (count == 1 && dbuname.equals(username)
 							&& dbpassword.equals(password)) {
 						HttpSession session = request.getSession();
 
 						session.setAttribute("loggedAs", "lcustomer");
-						session.setAttribute("uname", dbuname);
+						session.setAttribute("username", dbuname);
 						session.setAttribute("password", dbpassword);
 						
 
-						message = (String) session.getAttribute("uname");
+						message = (String) session.getAttribute("username");
 						request.setAttribute("message", message);
 						
 
-						request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(
+						request.getRequestDispatcher("/Home.jsp").forward(
+								request, response);
+						request.getRequestDispatcher("/Header.jsp").forward(
 								request, response);
 						
 
 					}
 
-					else if (count == 1 && dbuname.equals(uname)
+					else if (count == 1 && dbuname.equals(username)
 							&& !dbpassword.equals(password)) {
 						message = "Incorrect password";
 						request.setAttribute("message1", message);
@@ -114,7 +117,7 @@ public class loginCheck3 extends HttpServlet {
 					}
 
 					else if (count > 1) {
-						message = "Dupplicate register " + uname;
+						message = "Dupplicate register " + username;
 						request.setAttribute("message1", message);
 						request.getRequestDispatcher("/customerLogin.jsp").forward(
 								request, response);
@@ -130,24 +133,26 @@ public class loginCheck3 extends HttpServlet {
 							countF += 1;
 						}
 						
-						if (countF == 1 && dbuname.equals(uname)
+						if (countF == 1 && dbuname.equals(username)
 								&& dbpassword.equals(password)) {
 							HttpSession session = request.getSession();
 
 							session.setAttribute("loggedAs", "fcustomer");
-							session.setAttribute("uname", dbuname);
+							session.setAttribute("username", dbuname);
 							session.setAttribute("password", dbpassword);
 						
 
-							message = (String) session.getAttribute("uname");
+							message = (String) session.getAttribute("username");
 							request.setAttribute("message", message);
 
-							request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(
+							request.getRequestDispatcher("/Home.jsp").forward(
+									request, response);
+							request.getRequestDispatcher("/Header.jsp").forward(
 									request, response);
 
 						}
 
-						else if (countF == 1 && dbuname.equals(uname)
+						else if (countF == 1 && dbuname.equals(username)
 								&& !dbpassword.equals(password)) {
 							message = "Incorrect password";
 							request.setAttribute("message1", message);
@@ -156,14 +161,14 @@ public class loginCheck3 extends HttpServlet {
 						}
 
 						else if (countF > 1) {
-							message = "Dupplicate register " + uname;
+							message = "Dupplicate register " + username;
 							request.setAttribute("message1", message);
 							request.getRequestDispatcher("/customerLogin.jsp").forward(
 									request, response);
 						}
 						
 						else {
-							message = "Cannot find user " + uname;
+							message = "Cannot find user " + username;
 							request.setAttribute("message1", message);
 							request.getRequestDispatcher("/customerLogin.jsp").forward(request,
 									response);
@@ -178,6 +183,7 @@ public class loginCheck3 extends HttpServlet {
 			}
 
 		}
+
 	}
 
 }

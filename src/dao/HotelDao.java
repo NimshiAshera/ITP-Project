@@ -15,7 +15,7 @@ public class HotelDao {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/itp?useSSL=false" , "root", "root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/project?useSSL=false" , "root", "root");
 			System.out.println("Post establishing a DB connection");
 			
 		} catch (ClassNotFoundException e) {

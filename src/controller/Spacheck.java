@@ -21,7 +21,7 @@ import dao.DBConnection;
  * Servlet implementation class LoginCheck
  */
 @WebServlet("/Spacheck")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 
 public class Spacheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;

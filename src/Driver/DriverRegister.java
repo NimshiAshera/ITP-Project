@@ -131,7 +131,7 @@ public class DriverRegister extends HttpServlet {
 					if (ServletFileUpload.isMultipartContent(request)) {
 						Part part = request.getPart("avatar");
 						driver.setAvatar(driver.extractAvatar(part));
-						driver.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\driver\\"
+						driver.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\driver\\"
 								+ File.separator + driver.getAvatar());
 						File fileSaveDir = new File(driver.getPath());
 						part.write(driver.getPath() + File.separator);

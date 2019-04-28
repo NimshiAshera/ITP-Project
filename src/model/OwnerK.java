@@ -2,7 +2,9 @@ package model;
 
 import java.sql.ResultSet;
 
-import com.mysql.cj.protocol.Resultset;
+
+
+import com.mysql.cj.api.mysqla.result.Resultset;
 
 import dao.DBConnection;
 import dao.IValidation;

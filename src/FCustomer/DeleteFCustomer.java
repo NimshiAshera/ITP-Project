@@ -45,7 +45,7 @@ public class DeleteFCustomer extends HttpServlet {
 		
 		FCustomer fcustomer = new FCustomer();
 		
-		fcustomer.setUname((String)session.getAttribute("uname"));
+		fcustomer.setUsername((String)session.getAttribute("username"));
 		
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
@@ -54,16 +54,21 @@ public class DeleteFCustomer extends HttpServlet {
 			write.write("Connection Not Established");
 	
 		else {
-			write.write("Connection Established"+fcustomer.getUname());
+			write.write("Connection Established"+fcustomer.getUsername());
 		
-			String sql = "delete from fcustomer where uname='"+fcustomer.getUname()+"'";
+			String sql = "delete from fcustomer where username='"+fcustomer.getUsername()+"'";
 			try {
 				Statement st = conn.createStatement();
 				st.executeUpdate(sql);
 				
 				session.invalidate();  
 		        
-		        RequestDispatcher rd = request.getRequestDispatcher("/Home-AfterLogin.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("/Home.jsp");
+		        RequestDispatcher rd1 = request.getRequestDispatcher("/Header-Before.jsp");
+				rd.forward(request, response);
+				rd1.forward(request, response);
+		        
+		        
 				rd.forward(request, response);
 				
 				}catch (SQLException e) {

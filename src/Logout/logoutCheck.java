@@ -38,7 +38,7 @@ public class logoutCheck extends HttpServlet {
           
         out.print("You are successfully logged out!");
         
-        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/Home.jsp");
 		rd.forward(request, response);
           
         out.close(); 

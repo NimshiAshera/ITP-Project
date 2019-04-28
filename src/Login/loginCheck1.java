@@ -65,14 +65,20 @@ public class loginCheck1 extends HttpServlet {
 			String message = null;
 			String sql = "select username,password from vehicle where username='"
 					+ username + "'";
+			
+			String sql2 = "select username,password from adventure where username = '"
+					+ username + "'";
 
 			
 			try {
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery(sql);
 				
+				Statement st2 = conn.createStatement();
+				ResultSet rs2 = st2.executeQuery(sql2);
 
 				int count = 0;
+				int adcount=0;
 		
 					while (rs.next()) {
 
@@ -95,7 +101,9 @@ public class loginCheck1 extends HttpServlet {
 						request.setAttribute("message", message);
 						
 
-						request.getRequestDispatcher("/Home-AfterLogin.jsp").forward(
+						request.getRequestDispatcher("/Home.jsp").forward(
+								request, response);
+						request.getRequestDispatcher("/Header.jsp").forward(
 								request, response);
 						
 
@@ -115,12 +123,57 @@ public class loginCheck1 extends HttpServlet {
 						request.getRequestDispatcher("/vehicleSignin.jsp").forward(
 								request, response);
 					}	
-					else {
+					else{
+						
+						while (rs2.next()) {
+
+							
+							dbuname = (rs2.getString(1));
+							dbpassword = (rs2.getString(2));
+							adcount += 1;
+						}
+						
+						if (adcount == 1 && dbuname.equals(username)
+								&& dbpassword.equals(password)) {
+							HttpSession session = request.getSession();
+
+							session.setAttribute("loggedAs", "adventure");
+							session.setAttribute("username", dbuname);
+							session.setAttribute("password", dbpassword);
+						
+
+							message = (String) session.getAttribute("username");
+							request.setAttribute("message", message);
+
+							request.getRequestDispatcher("/Home.jsp").forward(
+									request, response);
+							request.getRequestDispatcher("/Header.jsp").forward(
+									request, response);
+
+						}
+
+						else if (adcount == 1 && dbuname.equals(username)
+								&& !dbpassword.equals(password)) {
+							message = "Incorrect password";
+							request.setAttribute("message1", message);
+							request.getRequestDispatcher("/AdventureLogin.jsp").forward(
+									request, response);
+						}
+
+						else if (adcount > 1) {
+							message = "Dupplicate  " + username;
+							request.setAttribute("message1", message);
+							request.getRequestDispatcher("/AdventureLogin.jsp").forward(
+									request, response);
+						}
+						
+						else {
 							message = "Cannot find user " + username;
 							request.setAttribute("message1", message);
 							request.getRequestDispatcher("/customerLogin.jsp").forward(request,
 									response);
-						}			
+						}	
+					}	
 					
 					
 			} catch (SQLException e) {

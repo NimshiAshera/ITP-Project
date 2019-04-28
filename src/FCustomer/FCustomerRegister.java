@@ -61,7 +61,7 @@ public class FCustomerRegister extends HttpServlet {
 		fcustomer.setPhone(request.getParameter("phone"));
 		fcustomer.setGender(request.getParameter("gender"));
 		fcustomer.setEmail(request.getParameter("email"));
-		fcustomer.setUname(request.getParameter("uname"));
+		fcustomer.setUsername(request.getParameter("username"));
 		fcustomer.setPassword(request.getParameter("password"));
 		
 		//--------------------------------
@@ -81,8 +81,8 @@ public class FCustomerRegister extends HttpServlet {
 		else {
 			try {
 				Statement st = conn.createStatement();
-				String sql= "select * from fcustomer where uname= '"
-						+fcustomer.getUname()+"'";
+				String sql= "select * from fcustomer where username= '"
+						+fcustomer.getUsername()+"'";
 				
 				ResultSet rs= st.executeQuery(sql);
 				
@@ -95,7 +95,7 @@ public class FCustomerRegister extends HttpServlet {
 	           }
 				
 				else  {
-					String sql2 = "insert into fcustomer (fname,lname,pass,avatar,path,phone,gender,email,uname,password)"
+					String sql2 = "insert into fcustomer (fname,lname,pass,avatar,path,phone,gender,email,username,password)"
 							+ "values (?,?,?,?,?,?,?,?,?,?)";
 
 					PreparedStatement pre = conn.prepareStatement(sql2);
@@ -109,7 +109,7 @@ public class FCustomerRegister extends HttpServlet {
 					if (ServletFileUpload.isMultipartContent(request)) {
 						Part part = request.getPart("avatar");
 						fcustomer.setAvatar(fcustomer.extractAvatar(part));
-						fcustomer.setPath("C:\\Users\\Asus\\Desktop\\ECO Pro\\gallery\\WebContent\\customer\\"
+						fcustomer.setPath("C:\\Users\\Asus\\Desktop\\TOUR NEW\\tour\\WebContent\\customer\\"
 								+ File.separator + fcustomer.getAvatar());
 						File fileSaveDir = new File(fcustomer.getPath());
 						part.write(fcustomer.getPath() + File.separator);
@@ -119,7 +119,7 @@ public class FCustomerRegister extends HttpServlet {
 					pre.setString(6, fcustomer.getPhone()); 
 					pre.setString(7, fcustomer.getGender());
 					pre.setString(8, fcustomer.getEmail());					
-					pre.setString(9, fcustomer.getUname());
+					pre.setString(9, fcustomer.getUsername());
 					pre.setString(10, fcustomer.getPassword());
 
 					}	
@@ -129,6 +129,9 @@ public class FCustomerRegister extends HttpServlet {
 					
 					request.getRequestDispatcher("/Home.jsp").forward(request,
 							response);
+					request.getRequestDispatcher("/Header.jsp").forward(request,
+							response);
+					
 				}
 
 			} catch (Exception e) {

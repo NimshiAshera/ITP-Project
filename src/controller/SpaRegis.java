@@ -24,10 +24,8 @@ import model.Spa;
  * Servlet implementation class 
  * 
  */
-
+@MultipartConfig
 @WebServlet("/SpaRegis")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
-
 public class SpaRegis extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -71,7 +69,7 @@ public class SpaRegis extends HttpServlet {
 		
 		inputStream = filePart.getInputStream();
 		
-		String member_avatar ="C:/Users/ASUS-PC/Desktop/java/hh/WebContent/hotel/" + id + ".png";
+		String member_avatar ="C:/Users/Asus/Desktop/TOUR NEW/tour/WebContent/hotel/" + id + ".png";
 		
 		String dbImageLocation =  "hotel/" + id + ".png";
 		

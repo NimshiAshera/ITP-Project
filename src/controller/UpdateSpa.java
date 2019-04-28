@@ -19,7 +19,7 @@ import dao.DBConnection;
  * Servlet implementation class UpdateHotel
  */
 @WebServlet("/UpdateSpa")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 
 public class UpdateSpa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -117,7 +117,7 @@ public class UpdateSpa extends HttpServlet {
 					
 					Object message = "Successfully updated";
 					request.setAttribute("message", message);
-					request.getRequestDispatcher("/homepage.jsp").forward(request, response);
+					request.getRequestDispatcher("/Home.jsp").forward(request, response);
 					request.getRequestDispatcher("/header.jsp").forward(request, response);
 				
 				}

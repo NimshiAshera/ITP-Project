@@ -24,9 +24,9 @@ import model.Hotel;
  * Servlet implementation class 
  * 
  */
-
+@MultipartConfig
 @WebServlet("/HotelReg")
-@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 10, maxRequestSize = 1024 * 1024 * 50)
+
 
 public class HotelReg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -73,7 +73,7 @@ public class HotelReg extends HttpServlet {
 		
 		inputStream = filePart.getInputStream();
 		
-		String member_avatar ="C:/Users/Asus/Desktop/ECO Pro/gallery/WebContent/hotel/" + hotel_id + ".png";
+		String member_avatar ="C://Users//Asus//Desktop//TOUR NEW//tour//WebContent//hotel//" + hotel_id + ".png";
 		
 		String dbImageLocation =  "hotel/" + hotel_id + ".png";
 		
