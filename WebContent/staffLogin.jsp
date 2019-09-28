@@ -37,7 +37,7 @@
 			<label for="password">Password</label>
 			<br/>
 			
-			 <input type="text"  placeholder="Password" name="password" required>
+			 <input type="password"  placeholder="Password" name="password" required>
 			 <br/>
 			 
 			 <span style="color:black"><%=(request.getAttribute("errmessage") == null) ? "" : request.getAttribute("errmessage")%></span>

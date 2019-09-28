@@ -46,30 +46,22 @@
 			<div class="form">
 				<form action="UpdateVehicle" method="post" enctype="multipart/form-data">
 																
-					
-						<lable>First Name</lable>
-						<p><input id="input" type="text"
-							value='<%=vehicle.getFname() %>' name="fname" disabled="disabled"></p>
-					
-						<lable>Last Name</lable>
-						<p><input id="input" type="text"
-							value='<%=vehicle.getLname() %>' name="lname" disabled="disabled"></p>
 							
 						<lable>Phone</lable>
 						<p><input id="input" type="text"
-							value='<%=vehicle.getPhone() %>' name="phone" disabled="disabled"></p>
+							value='<%=vehicle.getPhone() %>' name="phone" ></p>
 										
 						<lable>Type</lable>
 						<p><input id="input" type="text"
-							value='<%=vehicle.getType() %>' name="type" disabled="disabled"></p>
+							value='<%=vehicle.getType() %>' name="type" ></p>
 					
 						<lable>Model</lable>
 						<p><input id="input" type="text"
-							value='<%=vehicle.getStatus() %>' name="status" disabled="disabled"></p>
+							value='<%=vehicle.getStatus() %>' name="status" ></p>
 					
 						<lable>Register No.</lable>
 						<p><input id="input" type="text"
-							value='<%=vehicle.getNoPlate() %>' name="noPlate" disabled="disabled"></p>
+							value='<%=vehicle.getNoPlate() %>' name="noPlate" ></p>
 							
 						<lable>Service Availability</lable>
 						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="Available">Available</p>
@@ -77,27 +69,8 @@
 						
 						<lable>Features</lable>
 						<p><input id="input" type="text"
-							value='<%=vehicle.getFeatures() %>' name="features" disabled="disabled"></p>
+							value='<%=vehicle.getFeatures() %>' name="features" ></p>
 						
-							
-						<lable>Terms & Conditions</lable>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="terms" value="Yes" disabled="disabled">Yes</p>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="terms" value="No" disabled="disabled">No</p>		
-							
-					
-						<lable>User name</lable>
-						<p><input id="input" type="text"
-							value='<%=vehicle.getUsername() %>' name="username" disabled="disabled"></p>
-					
-						
-						<lable>Password</lable>
-						<p><input id="input" type="text"
-							value='<%=vehicle.getPassword() %>' name="password" disabled="disabled"></p>
-					
-						<lable>Confirm password</lable>
-						<p><input id="input" type="text"
-							value='<%=vehicle.getcPassword() %>' name="cPassword" disabled="disabled"></p>
-					
 						
 					
 				       <br/> <input type="submit" value="Update" name="submitButton" id="sButton">
@@ -107,20 +80,9 @@
 
 		<h1 style="font-size: 40px; color: red;">${insertUnsuccess}</h1>
 		
-		<div class="form-style-5">
-		<div class="form">
-		<input type="submit" id="dButton" onclick="myFunction()" value="Delete Your Profile">
-		<script>
-		function myFunction() {
-		    if (confirm("THINK TWICE ! If you pressed \"ok\" your user account will be deleted permanently..")) {
-    			window.location.href = "DeleteVehicle";
-    		} else {
-    			window.location.href = "Home-AfterLogin.jsp";
-    		}
-		}
-		</script>
-		</div>
-		</div>
+		
+		
+		
 		
 		<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
   

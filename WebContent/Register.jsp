@@ -129,7 +129,7 @@
                                 </div>
                             </a>
                             
-            					<a href="test1.jsp">
+            					<a href="adventureCompaniesRegister.jsp">
                                 <div class="w3-col ">
                                     <div class="w3-container w3 w3-padding-24  w3-hover-dark-gray" style="background-color:#70dbdb">
                                         <div class="w3-left w3-padding"><i style='font-size:48px' class='fas'>&#xf6ec;</i></div>

@@ -80,36 +80,20 @@
 		<label>Max Person</label>
 		<p> 
 		<select name="person" placeholder="Select Max person">
-		<option name="person" id="person" value="1">1</option>
   		<option name="person" id="person" value="2">2</option>
-  		<option name="person" id="person" value="3">3</option>
-  		<option name="person" id="person" value="4">4</option>
-  		<option name="person" id="person" value="5">5</option>
   		<option name="person" id="person" value="6">6</option>
-  	  	<option name="person" id="person" value="7">7</option>
-  	  	<option name="person" id="person" value="8">8</option>
-  	  	<option name="person" id="person" value="9">9</option>
   	  	<option name="person" id="person" value="10">10</option>
   	
 		</select>
 		</p>
 		
-		<label>View</label>
-		<p> 
-		<select name="view" placeholder="Select View">
-		<option name="view" id="view" value="sea view">Sea View</option>
-  		<option name="view" id="view" value="land view">Land View</option>
-		</select>
-		</p>
-                               
-                               
+
+                                                             
 		<label>Bed</label>
 		<p> 
 		<select name="bed" placeholder="Select Bed">
   		<option name="bed" id="bed" value="1">1</option>
-  		<option name="bed" id="bed" value="2">2</option>
   		<option name="bed" id="bed" value="3">3</option>
-  		<option name="bed" id="bed" value="4">4</option>
   		<option name="bed" id="bed" value="5">5</option>
 		</select>
 		</p> 

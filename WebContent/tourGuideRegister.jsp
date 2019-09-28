@@ -287,12 +287,12 @@
                                
                               
                                <label>Password</label>
-                               <p><input type="text" class="form-control"  id="password" name="password" placeholder="Password"  ></p>
+                               <p><input type="password" class="form-control"  id="password" name="password" placeholder="Password"  ></p>
                               
                                 
                                
                                 <label>Confirm Password</label>
-                                <p><input type="text" class="form-control"  id="cPassword" name="cPassword" placeholder="Re-Password" ></p>
+                                <p><input type="password" class="form-control"  id="cPassword" name="cPassword" placeholder="Re-Password" ></p>
                              
 								
                              

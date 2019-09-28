@@ -94,7 +94,19 @@ function validateForm() {
 	  if (price == "") {
 		  alert("price  must be filled out");
 		  return false;
-	  }	  
+	  }	 
+	  	  
+}
+
+function date(){
+	if(date=="2019-05-08" && gname=="Nimshi"){
+		alert("Tour Guide Nimshi is already booked for 2019-05-08 ");
+		  return false;
+	}
+	else if(date=="2019-05-08" && gname=="Yasas"){
+		alert("Tour Guide Yasas is already booked for 2019-05-08 ");
+		  return false;
+	}
 }
 
 
@@ -190,7 +202,7 @@ body{
     					  <br/>
     				
     				  
-    					  <button class="w3-button w3-block w3-black">Book</button>
+    					  <button class="w3-button w3-block w3-black" onclick="date()" >Book</button>
     			
     				
     	</form>	

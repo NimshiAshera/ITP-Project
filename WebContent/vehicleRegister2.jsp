@@ -216,6 +216,9 @@
 								<label>Contact Number</label>
                                <p> <input type="text" class="form-control"  id="phone" name="phone" placeholder="011999999"   ></p>
                                
+                               <label>Email</label>
+                               <p> <input type="text" class="form-control"  id="email" name="email" placeholder="Email"   ></p>
+                               
                                <hr><br/>
                                								
 								<label>Vehicle Type</label>
@@ -266,12 +269,12 @@
                                
                               
                                <label>Password</label>
-                               <p><input type="text" class="form-control"  id="password" name="password" placeholder="Password"  ></p>
+                               <p><input type="password" class="form-control"  id="password" name="password" placeholder="Password"  ></p>
                               
                                 
                                
                                 <label>Confirm Password</label>
-                                <p><input type="text" class="form-control"  id="cPassword" name="cPassword" placeholder="Re-Password" ></p>
+                                <p><input type="password" class="form-control"  id="cPassword" name="cPassword" placeholder="Re-Password" ></p>
                                 
 				
 	<input type="submit" value="Register" name="submitButton" id="sButton">	
