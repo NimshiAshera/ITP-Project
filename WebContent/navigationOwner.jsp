@@ -25,7 +25,7 @@
     </div>
     <div class="w3-bar-block">
        
-        <a href="StartUp.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-business-time fa-fw"></i>&nbsp; Our Official Site</a>     
+        <a href="Home.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-business-time fa-fw"></i>&nbsp; Our Official Site</a>     
         <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>&nbsp; Close Menu</a>
         <a href="dashBOwner.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-tachometer-alt fa-fw"></i>&nbsp; Dashboard</a>
         <a href="companyOwnerProfile.jsp" class="w3-bar-item w3-button w3-padding"><i class="fa fa-business-time fa-fw"></i>&nbsp; Company Owner</a>

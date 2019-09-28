@@ -16,12 +16,19 @@
 <title>Booking</title>
 
 <style type="text/css">
+
 /*backgroung image fix*/
 body{
       background-image: url("background/ac.jpg");
       background-size:100% 100%;
        background-repeat: no-repeat;
 }
+
+.w3-button {
+	width:700px;
+	height:80px;
+}
+
 </style>
  
 </head>
@@ -52,54 +59,50 @@ body{
 	<div class="containerForUserDetails">
 		<br> <br>
 		<div  class="userDetailsVS" align="center">
-			<table border="5" style="border-color:white; width: 80%;" cellpadding="12">
-			
+	
 				<%
 					VehicleBook vehicle = (VehicleBook) request.getAttribute("vehicle");	
 				%>
 				<caption>
-					<I><h2 style="color:black"><font size="15px">Details of Booking</h2></I>
+					<I><h2 style="color:black"><font size="15px">Details of The Booking</h2></I>
 				</caption>
-				<tr style="color:black">
-					<th style="color:black"><font size="10px">Customer Name</font></th>
-					<th style="color:black"><font size="10px">Vehicle Owner Name</font></th>
-					<th style="color:black"><font size="10px">Vehicle Type</font></th>
-					<th style="color:black"><font size="10px">Service Required Date</font></th>
-					<th style="color:black"><font size="10px">No. of Days</font></th>
-					<th style="color:black"><font size="10px">Price</font></th>
-					<th style="color:black"><font size="10px">Total Price</font></th>
+				
+					<font size="10px" color="red">Customer Name : </font><font size="8px"><%=vehicle.getUsername()%></font><br>
+					<font size="10px" color="red">Vehicle Owner Name : </font><font size="8px"><%=vehicle.getvname()%></font><br>
+					<font size="10px" color="red">Vehicle Type : </font><font size="8px"><%=vehicle.gettype()%></font><br>
+					<font size="10px" color="red">Service Required Date : </font><font size="8px"><%=vehicle.getdate()%></font><br>
+					<font size="10px" color="red">No. of Days : </font><font size="8px"><%=vehicle.getnumd()%></font><br>
+					<font size="10px" color="red">Price : </font><font size="8px"><%=vehicle.getprice()%></font><br>
+					<font size="10px" color="red">Total Price : </font><font size="8px"><%=vehicle.getamount()%></font><br>
 					 
-				</tr>
-				
-				<tr  style="color:black">
-					<td  style="color:black"><font size="10px"><%=vehicle.getUsername()%></font></td>
-					<td  style="color:black"><font size="10px"><%=vehicle.getvname()%></font></td>
-					<td  style="color:black"><font size="10px"><%=vehicle.gettype()%></font></td>
-					<td  style="color:black"><font size="10px"><%=vehicle.getdate()%></font></td>
-					<td  style="color:black"><font size="10px"><%=vehicle.getnumd()%></font></td>
-					<td  style="color:black"><font size="10px"><%=vehicle.getprice()%></font></td>
-					<td  style="color:black"><font size="10px"><%=vehicle.getamount()%></font></td>
-				
-					<td>
+					<br>
+					
 						<form method="POST" action="getUserSV">
 							<input type="hidden" name="username>"
-								value="<%=session.getAttribute("username")%>" /> <input class="w3-button w3-block w3-black" type="submit"
-								value="Edit Booking" class="select-button" />
+								value="<%=session.getAttribute("username")%>" /> <input class="w3-button w3-block w3-teal" type="submit"
+								value="Edit Booking" class="select-button" style="font-size:30px"/>
 						</form>
-					</td>
-				</tr>
-
-			</table>
+			
+						<br>
+						
+						<button class="w3-button w3-teal" onclick="myFunction()"><font size="6px">Print the Booking Detail</font></button>
+				
 		</div>
 
 	</div>
 	</div>
 	
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br>
 	<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
   
 <!-- End page content -->
 	</div>
+	
+	<script>
+		function myFunction() {
+  			window.print();
+		}
+	</script>
 		
 </body>
  

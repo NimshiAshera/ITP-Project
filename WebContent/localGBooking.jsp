@@ -35,8 +35,8 @@
 	<br/><br/>
 	
 		<div class="new">
-		 		<form action=""  method="get">
-		 		<input type="text" class="form-control" name="q" placeholder="Enter guides name to search your bookings..."/>
+		 		<form action="LGuideSearch"  method="get">
+		 		<input type="text" class="form-control" name="gname" placeholder="Enter guides name to search your bookings..."/>
 				<i class="fa fa-search"></i>
 				</form>
 		

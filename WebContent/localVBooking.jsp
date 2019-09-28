@@ -76,6 +76,7 @@
                 			<TH class="cell100 column5">Service Required Date</TH>
                 			<TH class="cell100 column6">No. of Dates</TH>
                 			<TH class="cell100 column7">Total Amount(USD)</TH>
+                			
             			</TR>
             		</Thead>
             	
@@ -110,6 +111,7 @@
                 <TD class="cell100 column5"> <%= resultset.getString(5) %></TD>
                 <TD class="cell100 column6"> <%= resultset.getString(6) %></TD>
                 <TD class="cell100 column7"> <%= resultset.getString(7) %></TD>
+            
             </TR>
             
             <% 
@@ -123,7 +125,8 @@
         
         <br/><br/> 
         <a href="localVBookingHistory.jsp"><button class="button" >View History</button></a>
-        
+        <button class="w3-button w3-black" onclick="myFunction()"><font size="4px">Print the Booking Detail</font></button>
+				
 	
 	</div>
 	
@@ -131,6 +134,13 @@
 <div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
   
 <!-- End page content -->
+
+	<script>
+		function myFunction() {
+  			window.print();
+		}
+	</script>
+		
 
 </body>
 </html>

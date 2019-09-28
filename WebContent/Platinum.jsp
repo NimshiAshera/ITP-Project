@@ -7,6 +7,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <style type="text/css">
+    .mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+
+    
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
 
@@ -30,22 +92,33 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+  
+  <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">ECO</a>
-	    
-	    </div>
-	  </nav>
-    <!-- END nav -->
 
-    <div class="hero-wrap" style="background-image: url('images/bg_1.jpg');">
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+		<jsp:include page="Header-Before.jsp"></jsp:include>
+	<%
+		} else {
+	%>
+		<jsp:include page="Header.jsp"></jsp:include>
+	<%
+		}
+	%>
+
+
+	<!-- END nav -->
+		
+		<br><br>
+
+    <div class="hero-wrap" style="background-image: url('images/bg6.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
           <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
           	<div class="text">
-	            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home</a></span> <span class="mr-2"><a href="index.html">Packages</a></span><span>Platinum</span></p>
 	            <h1 class="mb-4 bread">Platinum</h1>
             </div>
           </div>
@@ -56,191 +129,176 @@
 
     <section class="ftco-section bg-light">
     	<div class="container">
+    	
+    	<div class="col-md-12 room-single mt-4 mb-5 ftco-animate">
+    						<p style="font-size:25px">What is the Speciality in Platinum ???</p>
+    						<div class="d-md-flex mt-5 mb-5">
+    							<ul class="list">
+	    							<li style="font-size:20px"><span>*</span> A <b>luxury tour package</b> for 7 days with unforgettable memories.. </li><br>
+	    							<li style="font-size:20px"><span>*</span> Specially for families , honeymoon couples , & office staff vacations.</li><br>
+	    							<li style="font-size:20px"><span>*</span> Package Includes ;</li><br>
+	    							<li style="font-size:20px; color:platinum"><span>**</span> Candle Light Dinners</li>
+	    							<li style="font-size:20px; color:platinum"><span>**</span> Cruise Tour For Whale Watching</li>
+	    							<li style="font-size:20px; color:platinum"><span>**</span> Luxury Treats For Your Mind, Body & Soul </li>
+	    							<li style="font-size:20px; color:platinum"><span>**</span> With Finest Dishes</li>
+	    						</ul>
+	    						
+    						</div>
+    			</div>
+    	
     		<div class="row">
-	        <div class="col-lg-9">
-		    		<div class="row">
+
 		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
 		    				<div class="room">
-		    					<a href="rooms-single.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-1.jpg);">
+		    					<a href="Platinum_View" class="img d-flex justify-content-center align-items-center" style="background-image: url(package/p9.jpg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3 text-center">
-		    						<h3 class="mb-3"><a href="rooms-single.html">Suite Room</a></h3>
-		    						<p><span class="price mr-2">$120.00</span> <span class="per">per night</span></p>
-		    						<ul class="list">
-		    							<li><span>Max:</span> 3 Persons</li>
-		    							<li><span>Size:</span> 45 m2</li>
-		    							<li><span>View:</span> Sea View</li>
-		    							<li><span>Bed:</span> 1</li>
-		    						</ul>
-		    						<hr>
-		    						<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
-		    				<div class="room">
-		    					<a href="rooms-single.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-2.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3 text-center">
-		    						<h3 class="mb-3"><a href="rooms-single.html">Family Room</a></h3>
-		    						<p><span class="price mr-2">$20.00</span> <span class="per">per night</span></p>
-		    						<ul class="list">
-		    							<li><span>Max:</span> 3 Persons</li>
-		    							<li><span>Size:</span> 45 m2</li>
-		    							<li><span>View:</span> Sea View</li>
-		    							<li><span>Bed:</span> 1</li>
-		    						</ul>
-		    						<hr>
-		    						<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
-		    				<div class="room">
-		    					<a href="rooms-single.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-3.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3 text-center">
-		    						<h3 class="mb-3"><a href="rooms-single.html">Deluxe Room</a></h3>
-		    						<p><span class="price mr-2">$150.00</span> <span class="per">per night</span></p>
-		    						<ul class="list">
-		    							<li><span>Max:</span> 5 Persons</li>
-		    							<li><span>Size:</span> 45 m2</li>
-		    							<li><span>View:</span> Sea View</li>
-		    							<li><span>Bed:</span> 2</li>
-		    						</ul>
-		    						<hr>
-		    						<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
-		    				<div class="room">
-		    					<a href="rooms-single.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-4.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3 text-center">
-		    						<h3 class="mb-3"><a href="rooms-single.html">Classic Room</a></h3>
-		    						<p><span class="price mr-2">$130.00</span> <span class="per">per night</span></p>
-		    						<ul class="list">
-		    							<li><span>Max:</span> 5 Persons</li>
-		    							<li><span>Size:</span> 45 m2</li>
-		    							<li><span>View:</span> Sea View</li>
-		    							<li><span>Bed:</span> 2</li>
-		    						</ul>
-		    						<hr>
-		    						<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
-		    					</div>
-		    				</div>
-		    			</div>
-		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
-		    				<div class="room">
-		    					<a href="rooms-single.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-5.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3 text-center">
-		    						<h3 class="mb-3"><a href="rooms-single.html">Superior Room</a></h3>
-		    						<p><span class="price mr-2">$300.00</span> <span class="per">per night</span></p>
+		    						<h3 class="mb-3"><a href="Platinum_View">Family Package</a></h3>
+		    						<p><span class="price mr-2">$120.00</span> <span class="per">per person</span></p>
+		    						<p><span class="per">Price Includes Children above 8 years</span></p>
 		    						<ul class="list">
 		    							<li><span>Max:</span> 6 Persons</li>
-		    							<li><span>Size:</span> 45 m2</li>
 		    							<li><span>View:</span> Sea View</li>
-		    							<li><span>Bed:</span> 3</li>
+		    							<li><span>Bed Rooms:</span> 3</li>
 		    						</ul>
 		    						<hr>
-		    						<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
+		    						<p class="pt-1"><a href="Platinum_View" class="btn-custom">View More <span class="icon-long-arrow-right"></span></a></p>
 		    					</div>
 		    				</div>
 		    			</div>
 		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
 		    				<div class="room">
-		    					<a href="rooms-single.html" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-6.jpg);">
+		    					<a href="PlatinumV" class="img d-flex justify-content-center align-items-center" style="background-image: url(images/room-3.jpg);">
 		    						<div class="icon d-flex justify-content-center align-items-center">
 		    							<span class="icon-search2"></span>
 		    						</div>
 		    					</a>
 		    					<div class="text p-3 text-center">
-		    						<h3 class="mb-3"><a href="rooms-single.html">Luxury Room</a></h3>
-		    						<p><span class="price mr-2">$500.00</span> <span class="per">per night</span></p>
+		    						<h3 class="mb-3"><a href="PlatinumV">Deluxe Package</a></h3>
+		    						<p><span class="price mr-2">$120.00</span> <span class="per">per person</span></p>
 		    						<ul class="list">
-		    							<li><span>Max:</span> 5 Persons</li>
-		    							<li><span>Size:</span> 45 m2</li>
+		    							<li><span>Max:</span> 10 Persons</li>
 		    							<li><span>View:</span> Sea View</li>
-		    							<li><span>Bed:</span> 2</li>
+		    							<li><span>Bed Rooms:</span> 5</li>
 		    						</ul>
 		    						<hr>
-		    						<p class="pt-1"><a href="room-single.html" class="btn-custom">Book Now <span class="icon-long-arrow-right"></span></a></p>
+		    						<p class="pt-1"><a href="PlatinumV" class="btn-custom">View More<span class="icon-long-arrow-right"></span></a></p>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<div class="col-sm col-md-6 col-lg-4 ftco-animate">
+		    				<div class="room">
+		    					<a href="PlatinumView" class="img d-flex justify-content-center align-items-center" style="background-image: url(package/p1.jpg);">
+		    						<div class="icon d-flex justify-content-center align-items-center">
+		    							<span class="icon-search2"></span>
+		    						</div>
+		    					</a>
+		    					<div class="text p-3 text-center">
+		    						<h3 class="mb-3"><a href="PlatinumView">Couple Package</a></h3>
+		    						<p><span class="price mr-2">$120.00</span> <span class="per">per person</span></p>
+		    						<p><span class="per">Special for Honeymoon Couples</span></p>
+		    						<ul class="list">
+		    							<li><span>Max:</span> 2 Persons</li>
+		    							<li><span>View:</span> Sea View</li>
+		    							<li><span>Bed Rooms:</span> 1</li>
+		    						</ul>
+		    						<hr>
+		    						<p class="pt-1"><a href="PlatinumView" class="btn-custom">View More <span class="icon-long-arrow-right"></span></a></p>
 		    					</div>
 		    				</div>
 		    			</div>
 		    		</div>
-		    	</div>
-		    </div>
+		    		
+		    		<div class="slideshow-container">
+
+							<div class="mySlides fade">
+  							<div class="numbertext">1 / 9</div>
+  							<img src="package/p1.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">2 / 9</div>
+  							<img src="package/p2.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">3 / 9</div>
+  							<img src="package/p3.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">4 / 9</div>
+  							<img src="package/p4.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">5 / 9</div>
+  							<img src="package/p5.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">6 / 9</div>
+  							<img src="package/p6.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">7 / 9</div>
+  							<img src="package/p7.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">8 / 9</div>
+  							<img src="package/p8.jpg" style="width:80%"></div>
+  							
+  							<div class="mySlides fade">
+  							<div class="numbertext">9 / 9</div>
+  							<img src="package/p9.jpg" style="width:80%"></div>
+
+
+
+				</div>
+				<br>
+
+				<div style="text-align:center">
+  					<span class="dot"></span> 
+  					<span class="dot"></span> 
+  					<span class="dot"></span>
+  					<span class="dot"></span> 
+  					<span class="dot"></span> 
+  					<span class="dot"></span> 
+  					<span class="dot"></span> 
+  					<span class="dot"></span> 
+  					<span class="dot"></span>  
+				</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+		    		
+
     	</div>
     </section>
 
 
-    <section class="instagram pt-5">
-      <div class="container-fluid">
-        <div class="row no-gutters justify-content-center pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2><span>Instagram</span></h2>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-1.jpg" class="insta-img image-popup" style="background-image: url(images/insta-1.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-2.jpg" class="insta-img image-popup" style="background-image: url(images/insta-2.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-3.jpg" class="insta-img image-popup" style="background-image: url(images/insta-3.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-4.jpg" class="insta-img image-popup" style="background-image: url(images/insta-4.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md ftco-animate">
-            <a href="images/insta-5.jpg" class="insta-img image-popup" style="background-image: url(images/insta-5.jpg);">
-              <div class="icon d-flex justify-content-center">
-                <span class="icon-instagram align-self-center"></span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <footer>
 
-    <footer >
-    </footer>
+		<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
+
+	</footer>
     
   
 

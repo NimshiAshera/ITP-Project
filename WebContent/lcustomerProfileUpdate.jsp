@@ -54,12 +54,7 @@
 						<lable>Last Name</lable>
 						<p><input id="input" type="text"
 							value='<%=lcustomer.getLname() %>' name="lname"></p>
-							
-						<lable>NIC</lable>
-						<p><input id="input" type="text" value='<%=lcustomer.getNic() %>'
-							name="nic" disabled="disabled"></p>	
-							
-					
+												
 						<lable>E mail</lable>
 						<p><input id="input" type="text"
 							value='<%=lcustomer.getEmail() %>' name="email"></p>
@@ -68,21 +63,6 @@
 						<p style="font-size: 20px; color: red;">${emailErr}</p>
 						
 													
-					
-						<lable>User name</lable>
-						<p><input id="input" type="text"
-							value='<%=lcustomer.getUsername() %>' name="username" disabled="disabled"></p>
-					
-						
-						<lable>Password</lable>
-						<p><input id="input" type="text"
-							value='<%=lcustomer.getPassword() %>' name="password" disabled="disabled"></p>
-					
-						<lable>Confirm password</lable>
-						<p><input id="input" type="text"
-							value='<%=lcustomer.getcPassword() %>' name="cPassword" disabled="disabled"></p>
-					
-						
 					
 				       <br/> <input type="submit" value="Update" name="submitButton" id="sButton">
 				</form>

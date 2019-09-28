@@ -53,7 +53,7 @@
 					<label style="font-size:20px"><b>Last Name :</b> <%=lcustomer.getLname()%></label>
 					<label style="font-size:20px"><b>NIC :</b> <%=lcustomer.getNic()%></label>
 					
-					<label style="font-size:20px"><b>Image :</b> <img src="customer/<%=lcustomer.getAvatar() %>"  width="200" height="150">
+					<label style="font-size:20px"><b>Image :</b> <img src="customer/<%=lcustomer.getAvatar() %>"  width="200" height="300">
 												
 												
 												<form method="post" action="LCustomerImage">

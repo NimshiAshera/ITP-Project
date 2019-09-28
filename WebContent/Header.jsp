@@ -36,7 +36,8 @@
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="#" class="w3-bar-item w3-button">HOTEL & RESORT</a>
         <a href="#" class="w3-bar-item w3-button">SPA</a>
-        <a href="#" class="w3-bar-item w3-button">ADVENTURS</a>
+        <a href="AdventureWhaleView" class="w3-bar-item w3-button">WHALE WATCHING ADVENTURES</a>
+        <a href="AdventureSafariView" class="w3-bar-item w3-button">SAFARI ADVENTURS</a>        
         <a href="Travel.jsp" class="w3-bar-item w3-button">TRAVEL</a>
       </div>
     </div>

@@ -31,7 +31,6 @@
 					<label style="font-size:20px;"><b>Name :</b><%=gold.getPname()%></label>
 					<label style="font-size:20px"><b>PID:</b> <%=gold.getPid()%></label>
 					<label style="font-size:20px"><b>No of.Person :</b> <%=gold.getPerson()%> </label>
-					<label style="font-size:20px;"><b>View :</b><%=gold.getView()%></label>
 					<label style="font-size:20px"><b>No. of Beds:</b> <%=gold.getBed()%></label>
 					<label style="font-size:20px"><b>Image :</b> <img src="package/<%=gold.getAvatar() %>"  width="200" height="150">
 												

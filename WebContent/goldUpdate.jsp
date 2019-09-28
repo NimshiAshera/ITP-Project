@@ -1,4 +1,4 @@
-
+<%@page import="Gold.Gold"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
     
 
 
-		<title>Gold Image Update</title>
+		<title>Gold  Update</title>
 
 		<%@ include file="styles.jsp" %>
 
@@ -39,6 +39,10 @@
 	
 			<i style='font-size:48px' class='fas'>&#xf183;</i><font color ="#00cc7a" size="8"> Gold Image Update</font>
 			
+		<br> <br>
+		<%
+			Gold gold=(Gold)request.getAttribute("gold");
+		%>
 		
 		<div class="form-style-5">
 			<div class="form">
@@ -46,11 +50,8 @@
 										
 						<lable>Package ID</lable>
 						<p><input id="input" type="text"
-							value="pid" name="pid" disabled="disabled"></p>
+							value='<%=gold.getPid() %>' name="pid" disabled="disabled"></p>
 							
-						<lable>Package Name</lable>
-						<p><input id="input" type="text"
-							value="pname" name="pname" disabled="disabled"></p>	
 						
 					 	<lable>Day 1</lable>
 						<p><input id="input" type="text"
@@ -72,11 +73,7 @@
 						<p><input id="input" type="text"
 							value="d5" name="d5" ></p>					
  						
- 					
-
-				       <br/> <input type="submit" value="Update" name="submitButton" id="sButton">
-				       <br/> <input type="submit" value="Delete" name="submitButton" id="sButton">
-				</form>
+ 	</form>
 			</div>
 		</div>
 

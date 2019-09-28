@@ -53,21 +53,22 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image:url(images/bg_1.jpg);">
+      <div class="slider-item" style="background-image:url(images/bg4.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-12 ftco-animate text-center">
           	<div class="text mb-5 pb-3">
 	            <h1 class="mb-3">Welcome To ECO Packages</h1>
-	            <h2>Hotels &amp; Resorts</h2>
+	            <h2>Hotels &amp; Resorts</h2><br>
+	            <h2>Adventures &amp; Spa Therapy</h2>
             </div>
           </div>
         </div>
         </div>
       </div>
 
-      <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
+      <div class="slider-item" style="background-image:url(images/bg6.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -91,18 +92,18 @@
 	        		
 	        			<div class="col-md d-flex">
 	        				<div class="form-group d-flex align-self-stretch">
-			              <a href="PlatinumView"><input type="button" value="Platinum" class="btn btn-primary py-3 px-4 align-self-stretch"></a>
+			              <a href="Platinum.jsp"><input type="button" value="Platinum" class="btn btn-primary py-3 px-4 align-self-stretch"></a>
 			            </div>
 	        			</div>
 	        			<div class="col-md d-flex">
 	        				<div class="form-group d-flex align-self-stretch">
-			              <a href="GoldView"><input type="button" value="Gold" class="btn btn-primary py-3 px-4 align-self-stretch"></a>
+			              <a href="Gold.jsp"><input type="button" value="Gold" class="btn btn-primary py-3 px-4 align-self-stretch"></a>
 			            </div>
 			           
 	        			</div>
 	        			<div class="col-md d-flex">
 	        				<div class="form-group d-flex align-self-stretch">
-			              <a href="SilverView"><input type="button" value="Silver" class="btn btn-primary py-3 px-4 align-self-stretch"></a>
+			              <a href="Silver.jsp"><input type="button" value="Silver" class="btn btn-primary py-3 px-4 align-self-stretch"></a>
 			            </div>
 	        			</div>
 	        		</div>
@@ -116,16 +117,20 @@
     <section class="ftco-section ftc-no-pb ftc-no-pt">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/bg_2.jpg);">
-						<a href="#" class="icon popup-vimeo d-flex justify-content-center align-items-center">
-							<span class="icon-play"></span>
-						</a>
-					</div>
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section heading-section-wo-line pt-md-5 pl-md-5 mb-5">
 	          	<div class="ml-md-0">
 		          	<span class="subheading">Welcome to ECO</span>
 		            <h2 class="mb-4">Welcome To Our ECO Packages</h2>
+	            </div>
+	            <div class="ml-md-0">
+	            	<span class="subheading" style="font-size:25px">Thanks for visiting ECO Tours. 
+	            	ECO Tours is one of the leading SriLankan Tour Operator In SriLanka. 
+	            	Established in 2018, located in Galle , SriLanka. 
+	            	ECO specialized in customized SriLanka tour packages, SriLanka tours vacations and holidays in SriLanka.
+
+					Step into the island and discover SriLanka. Our goal is to provide an unforgettable travel experience to our clients, 
+					not just to see the SriLanka to experience the real SriLanka.</span>
 	            </div>
 	          </div>
 	         
@@ -134,17 +139,7 @@
 			</div>
 		</section>
 
-		
-
-    <section class="ftco-section bg-light">
-    	<div class="container">
-				<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Our Packages</h2>
-          </div>
-        </div>    		
-    		
-
+	
 
     <section class="instagram">
       <div class="container-fluid">
@@ -193,7 +188,9 @@
       </div>
     </section>
 	<footer>
-<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
+
+		<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
+
 	</footer>
     
     
