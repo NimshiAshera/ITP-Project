@@ -27,7 +27,7 @@
 .form-style-5 input[type="email"],
 .form-style-5 input[type="number"],
 .form-style-5 input[type="date"],
-.form-style-5 input[type="url"],
+.form-style-5 input[type="password"],
 .form-style-5 textarea,
 .form-style-5 select {
 	font-family: Georgia, "Times New Roman", Times, serif;
@@ -51,7 +51,7 @@
 .form-style-5 input[type="text"]:focus,
 .form-style-5 input[type="email"]:focus,
 .form-style-5 input[type="number"]:focus,
-.form-style-5 input[type="url"]:focus,
+.form-style-5 input[type="password"]:focus,
 .form-style-5 textarea:focus,
 .form-style-5 select:focus{
 	background: #d2d9dd;

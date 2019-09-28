@@ -29,7 +29,7 @@
 			<br/>
 			<label for="password">Password</label>
 			<br/>
-			 <input type="text"  placeholder="Password" name="password" required>
+			 <input type="password"  placeholder="Password" name="password" required>
 			 
 			  
 			<br/>

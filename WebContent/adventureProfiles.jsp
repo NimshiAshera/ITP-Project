@@ -53,8 +53,14 @@
 				
 					
 					<label style="font-size:20px"><b>Company Type:</b> <%=adventure.getPart()%></label>
+					
+					<hr/>
+					
 					<label style="font-size:20px"><b>Contact No. :</b> <%=adventure.getContact_no()%> </label>
-					<label style="font-size:20px"><b>Image :</b> <img src="Adventure/<%=adventure.getAvatar() %>"  width="200" height="150">
+					
+					<hr/>
+					
+					<label style="font-size:20px"><b>Image :</b> <img src="Adventure/<%=adventure.getAvatar() %>"  width="500" height="400">
 												
 												
 												<form method="post" action="AdventureImage">
@@ -64,17 +70,65 @@
 												</form>
 					</label>
 					
+					<hr/>
 					
 					<label style="font-size:20px"><b>Details : </b><%=adventure.getDetails()%> </label>
-					<label style="font-size:20px"><b>Availability : </b><%=adventure.getAvb()%> </label>
+					
+					<hr/>
+					
+					<label style="font-size:20px"><b>Best Season : </b><%=adventure.getSeason()%> </label>
+					
+					<hr/>
+					
+					<label style="font-size:20px"><b>What can be seen? : </b><%=adventure.getSee()%> </label>
+					
+					<hr/>
+					
+					<label style="font-size:20px"><b>Trip Time Duration : </b><%=adventure.getTime()%> </label>
+					
+					<hr/>
+					
+					<label style="font-size:20px"><b>Availability : </b><%=adventure.getAvb()%> 
+					
+												<form method="post" action="AdventureProfile">
+												<br/>
+													<input type="hidden" name="username" value="<%=session.getAttribute("username")%>" /> 
+													<input type="submit" value="Update Avability" class="select-button" />
+												</form>
+					
+					</label>
+					
+					<hr/>
+					
 					<label style="font-size:20px"><b>User Name : </b><%=adventure.getUsername()%> </label>
+					
+					<hr/>
+					
 					<label style="font-size:20px"><b>Password : </b><%=adventure.getPassword()%> </label>				
 					
 												
-												<form method="POST" action="AdventureProfile">
+												<form method="POST" action="AdventureProfile2">
 													<input type="hidden" name="username" value="<%=session.getAttribute("username")%>" /> 
-													<input type="submit" value="Edit Your Details" class="select-button" />
+													<input type="submit" value="Update Other Details" class="select-button" />
 												</form>
+												
+												<div class="form-style-5">
+					<div class="form">
+					<input type="submit" id="dButton" onclick="myFunction()" value="Delete Your Profile">
+					<script>
+					function myFunction() {
+		    		if (confirm("THINK TWICE ! If you pressed \"ok\" your account will be deleted permanently..")) {
+    					window.location.href = "DeleteAdventure";
+    				} else {
+    					window.location.href = "Home.jsp";
+    					window.location.href = "Header.jsp";
+    				}
+					}
+		</script>
+		</div>
+		</div>
+												
+												
 										  
 					
 				</table>

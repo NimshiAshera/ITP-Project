@@ -151,6 +151,16 @@
                                
                                 <label>Adventure Details</label>
                                 <p><textarea  type="text" placeholder="Details" name="details" ></textarea></p>
+                                
+                                <label>Best Season</label>
+                                <p><textarea  type="text" placeholder="When is best?" name="season" ></textarea></p>
+                                
+                                <label>What can be seen?</label>
+                                <p><textarea  type="text" placeholder="" name="see" ></textarea></p>
+                                
+                                <label>How long is the trip?</label>
+                                <p><textarea type="text" placeholder="" name="time" ></textarea></p>
+                                
   
                                 <label>Service Availability Status</label>
                                	<p><input type="radio"  name="avb" id="avb" value="Available" />Available</input></p>
@@ -165,11 +175,11 @@
                                 
                                                                               
                                 <label>Password</label>
-                                <p><input type="text" class="form-control"  name="password" placeholder="Password"></p>
+                                <p><input type="password" class="form-control"  name="password" placeholder="Password"></p>
                                
                                	
                                	<label>Confirm Password</label>
-                                <p><input type="text" class="form-control"  name="cpassword" placeholder="cPassword"></p>
+                                <p><input type="password" class="form-control"  name="cpassword" placeholder="cPassword"></p>
                                                                
 		
 	

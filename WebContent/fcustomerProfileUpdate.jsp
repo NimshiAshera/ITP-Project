@@ -55,33 +55,12 @@
 						<p><input id="input" type="text"
 							value='<%=fcustomer.getLname() %>' name="lname"></p>
 							
-						<lable>NIC</lable>
-						<p><input id="input" type="text" value='<%=fcustomer.getPass() %>'
-							name="pass" disabled="disabled"></p>	
-							
-					
 						<lable>E mail</lable>
 						<p><input id="input" type="text"
 							value='<%=fcustomer.getEmail() %>' name="email"></p>
 				
 						<lable></lable>
 						<p style="font-size: 20px; color: red;">${emailErr}</p>
-						
-													
-					
-						<lable>User name</lable>
-						<p><input id="input" type="text"
-							value='<%=fcustomer.getUsername() %>' name="username" disabled="disabled"></p>
-					
-						
-						<lable>Password</lable>
-						<p><input id="input" type="text"
-							value='<%=fcustomer.getPassword() %>' name="password" disabled="disabled"></p>
-					
-						<lable>Confirm password</lable>
-						<p><input id="input" type="text"
-							value='<%=fcustomer.getcPassword() %>' name="cPassword" disabled="disabled"></p>
-					
 						
 					
 				       <br/> <input type="submit" value="Update" name="submitButton" id="sButton">

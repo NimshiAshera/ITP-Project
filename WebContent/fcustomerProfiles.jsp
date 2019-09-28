@@ -55,7 +55,7 @@
 					<label style="font-size:20px"><b>Last Name :</b> <%=fcustomer.getLname()%></label>
 					<label style="font-size:20px"><b>Passport :</b> <%=fcustomer.getPass()%></label>
 					
-					<label style="font-size:20px"><b>Image :</b> <img src="customer/<%=fcustomer.getAvatar() %>"  width="200" height="150">
+					<label style="font-size:20px"><b>Image :</b> <img src="customer/<%=fcustomer.getAvatar() %>"  width="200" height="300">
 												
 												
 												<form method="post" action="FCustomerImage">

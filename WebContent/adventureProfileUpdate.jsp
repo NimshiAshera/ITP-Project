@@ -1,7 +1,8 @@
-<%@page import="Driver.Driver"%>
+<%@page import="Adventure.Adventure" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -13,8 +14,11 @@
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
 
-<title>Driver Profile Update</title>
+<meta charset="ISO-8859-1">
+<title>Adventure Company</title>
+
 </head>
+
 <body style="background:url(images/img01.gif) repeat;">
 
 <div class="container" >
@@ -33,47 +37,29 @@
 		}
 	%>
 	
-	
 	<br><br><br>
 
-<h1 style="text-align: center; font-size: 50px; color: green">Update Driver Profile</h1>
+<h1 style="text-align: center; font-size: 50px; color: green">Update Profile</h1>
 		<br> <br>
 		<%
-			Driver driver=(Driver)request.getAttribute("driver");
+			Adventure adventure=(Adventure)request.getAttribute("adventure");
 		%>
 	
 		<div class="form-style-5">
 			<div class="form">
-				<form action="UpdateDriver" method="post" enctype="multipart/form-data">
+				<form action="UpdateAdventure" method="post" enctype="multipart/form-data">
 																
 
-					
-						<lable>E mail</lable>
+						<lable>User Name</lable>
 						<p><input id="input" type="text"
-							value='<%=driver.getEmail() %>' name="email"></p>
-				
-						<lable></lable>
-						<p style="font-size: 20px; color: red;">${emailErr}</p>
+							value="<%=adventure.getUsername() %>" name="username" disabled="disabled"></p>
 						
-						<lable>Phone</lable>
-						<p><input id="input" type="text"
-							value='<%=driver.getPhone() %>' name="phone"></p>
-										
-					
-						<lable>Date Issued</lable>
-						<p><input id="input" type="date"
-							value='<%=driver.getdI() %>' name="dI" ></p>
-					
-						<lable>Date Expired</lable>
-						<p><input id="input" type="date"
-							value='<%=driver.getdE() %>' name="dE" ></p>
-							
-						<lable>Service Availability</lable>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="Available">Available</p>
-						<p><input style="height: 20px; width: 20px;" type="radio" name="part" value="Not available">Not available</p>
-							
+					 
+ 						<lable>Update Availability Status</lable> 
+ 						<p><input type="radio"  name="avb" id="avb" value="Available" />Available</input></p>
+						<p><input type="radio" name="avb" id="avb" value="Not available" />Not available</input></p><br/>
+                                  	
 
-					
 				       <br/> <input type="submit" value="Update" name="submitButton" id="sButton">
 				</form>
 			</div>
@@ -81,14 +67,12 @@
 
 		<h1 style="font-size: 40px; color: red;">${insertUnsuccess}</h1>
 		
-	
+		<br> <br><br> <br><br> <br><br> <br>
 		
 		<div class="w3-black w3-center w3-padding-24"><h3><b>Powered by ECO Tours</b></h3></div>
   
 <!-- End page content -->
 
 	</div>
-
-
 </body>
 </html>
