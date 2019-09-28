@@ -1,21 +1,16 @@
 @charset "ISO-8859-1";
 
-body{
-	background-color: #fff;
-}
-
 h1{
 	text-align:center;
 	//padding-top: 100px;
-	color: #660000;
+	color: #806000;
 	font-size: 65px;
 }
 
 .container-table100 {
   width: 100%;
   min-height: 100vh;
-  background: #fff;
-
+  background: #ffecb3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -32,6 +27,7 @@ h1{
 }
 
 table {
+  width: 100%;
   background-color: #fff;
 }
 
@@ -41,7 +37,7 @@ th, td {
   padding-left: 10px;
 }
 
-.col1 .col2 .col3 .col4 .col5 .col6 .col7 .col8 .col9 .col10 .col11{
+.col1 .col2 .col3 .col4 .col5 .col6{
   width: 265px;
   text-align: right;
   padding-right: 62px;
@@ -66,7 +62,6 @@ th, td {
   font-size: 14px;
   color: #808080;
   line-height: 3.0;
-  font-size: 25px;
 }
 
 .table100 th {
@@ -76,30 +71,28 @@ th, td {
   line-height: 3.0;
   text-transform: uppercase;
   font-size: 20px;
-
-  background-color: #fa4251;
+  background-color: #806000;
 }
 
-.table100 .tab:hover td {
-  color: #fa4251;
+.table100 .tab:hover {
+  background-color: #fff2cc;
 }
 
-.table100 .hov-column {
-  background-color: #ffebed;
+.table100 .new {
+  background-color: #f2f2f2;
 }
 
-.table100 .hov-column-head {
-  background-color: #f95462 !important;
+.table100 .new {
+  background-color: #fff2cc !important;
 }
 
-.table100 .tab td:hover {
-  background-color: #ffebed;
-  color: #fa4251;
+.table100  td:hover {
+  background-color:#ffdf80;
+  color: #fff;
 }
-
 
 /****************************/
 
 .font{
-	font-size: 25px;
+	font-size: 20px;
 }

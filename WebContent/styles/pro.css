@@ -31,9 +31,9 @@
 #Profile img {
     width: 100%;
     height: auto;
-    //border: solid thin #FFF;
+    border: solid thin black;
     cursor: pointer;
-    position: absolute;
+    position: center;
    	top: 10%;
    	left: 10%;
 }
